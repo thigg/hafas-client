@@ -14,7 +14,7 @@ test('throttle works', (t) => {
 		calls++
 		return vbbProfile.transformReqBody(body)
 	}
-	const mockProfile = Object.assign({}, vbbProfile, {transformReqBody})
+	const mockProfile = {...vbbProfile, transformReqBody}
 
 	const client = createThrottledClient(mockProfile, userAgent, 2, 1000)
 	for (let i = 0; i < 10; i++) client.departures(spichernstr, {duration: 1})

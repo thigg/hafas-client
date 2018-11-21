@@ -280,7 +280,7 @@ const parseHint = (profile, h, icons) => {
 	if (h.type === 'A') {
 		const hint = hintsByCode[h.code && h.code.trim().toLowerCase()]
 		if (hint) {
-			return Object.assign({text: h.txtN}, hint)
+			return {text: h.txtN, ...hint}
 		}
 	}
 

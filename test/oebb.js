@@ -352,11 +352,11 @@ test('station', co(function* (t) {
 	const validateStation = createValidateStation(cfg)
 	const validate = createValidate(cfg, {
 		stop: (validate, s, name) => {
-			const withFakeProducts = Object.assign({products: allProducts}, s)
+			const withFakeProducts = {products: allProducts, ...s}
 			validateStop(validate, withFakeProducts, name)
 		},
 		station: (validate, s, name) => {
-			const withFakeProducts = Object.assign({products: allProducts}, s)
+			const withFakeProducts = {products: allProducts, ...s}
 			validateStation(validate, withFakeProducts, name)
 		}
 	})
@@ -387,7 +387,7 @@ test('radar Salzburg', co(function* (t) {
 	const validateStation = createValidateStation(cfg)
 	const validate = createValidate(cfg, {
 		station: (validate, s, name) => {
-			const withFakeProducts = Object.assign({products: allProducts}, s)
+			const withFakeProducts = {products: allProducts, ...s}
 			validateStation(validate, withFakeProducts, name)
 		},
 		line: validateLine

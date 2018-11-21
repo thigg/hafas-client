@@ -38,8 +38,7 @@ const validateLine = (validate, l, name) => {
 	if (l && l.product === 'onCall') {
 		// skip line validation
 		// https://github.com/derhuerst/hafas-client/issues/8#issuecomment-355839965
-		l = Object.assign({}, l)
-		l.mode = 'taxi'
+		l = {...l, mode: 'taxi'}
 	}
 	_validateLine(validate, l, name)
 }
@@ -338,9 +337,7 @@ test('radar', co(function* (t) {
 	const validateStation = createValidateStation(cfg)
 	const validate = createValidate(cfg, {
 		station: (validate, s, name) => {
-			s = Object.assign({
-				products: allProducts // todo: fix station.products
-			}, s)
+			s = {products: allProducts, ...s} // todo: fix station.products
 			if (!s.name) s.name = 'foo' // todo, see #34
 			validateStation(validate, s, name)
 		}

@@ -32,11 +32,12 @@ const cfg = {
 
 const validateMovement = (val, m, name = 'movement') => {
 	// todo: fix this upstream
-	const withFakeLocation = Object.assign({}, m)
-	withFakeLocation.location = Object.assign({}, m.location, {
+	const withFakeLocation = {...m}
+	withFakeLocation.location = {
+		...m.location,
 		latitude: 50,
 		longitude: 12
-	})
+	}
 	_validateMovement(val, withFakeLocation, name)
 
 	assert.ok(m.location.latitude <= 33, name + '.location.latitude is too small')

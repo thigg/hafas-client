@@ -14,7 +14,7 @@ const createFormatProductsFilter = (profile) => {
 
 	const formatProductsFilter = (filter) => {
 		if (!isObj(filter)) throw new Error('products filter must be an object')
-		filter = Object.assign({}, defaultProducts, filter)
+		filter = {...defaultProducts, ...filter}
 
 		let res = 0, products = 0
 		for (let product in filter) {

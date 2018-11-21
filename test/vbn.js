@@ -261,9 +261,7 @@ test.skip('radar', co(function* (t) {
 		duration: 5 * 60, when, results: 10
 	})
 
-	const customCfg = Object.assign({}, cfg, {
-		stationCoordsOptional: true, // see #28
-	})
+	const customCfg = {...cfg, stationCoordsOptional: true} // see #28
 	const validate = createValidate(customCfg, {})
 	validate(t, vehicles, 'movements', 'vehicles')
 

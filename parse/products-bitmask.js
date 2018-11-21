@@ -12,7 +12,7 @@ const createParseBitmask = (profile) => {
 	withBitmask.sort((a, b) => b[0] - a[0]) // descending
 
 	const parseBitmask = (bitmask) => {
-		const res = Object.assign({}, defaultProducts)
+		const res = {...defaultProducts}
 
 		for (let [pBitmask, product] of withBitmask) {
 			if ((pBitmask & bitmask) > 0) {

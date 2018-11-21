@@ -6,7 +6,7 @@ const anyOf = require('validate-fptf/lib/any-of')
 const validators = require('./validators')
 
 const create = (cfg, customValidators = {}) => {
-	const val = Object.assign({}, defaultValidators)
+	const val = {...defaultValidators}
 	for (let key of Object.keys(validators)) {
 		val[key] = validators[key](cfg)
 	}

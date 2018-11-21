@@ -36,9 +36,9 @@ const createValidateStation = (cfg) => {
 const validateStop = (val, s, name = 'stop') => {
 	// HAFAS doesn't always return the station of a stop. We mock it here
 	// to silence `validate-fptf`.
-	const station = Object.assign({}, s)
+	const station = {...s}
 	station.type = 'station'
-	s = Object.assign({station}, s)
+	s = {station, ...s}
 	defaultValidators.stop(val, s, name)
 }
 
@@ -185,10 +185,11 @@ const validateTicket = (val, ti, name = 'ticket') => {
 
 const createValidateJourneyLeg = (cfg) => {
 	const validateJourneyLeg = (val, leg, name = 'journeyLeg') => {
-		const withFakeScheduleAndOperator = Object.assign({
+		const withFakeScheduleAndOperator = {
 			schedule: 'foo', // todo: let hafas-client parse a schedule ID
-			operator: 'bar' // todo: let hafas-client parse the operator
-		}, leg)
+			operator: 'bar', // todo: let hafas-client parse the operator
+			...leg
+		}
 		defaultValidators.journeyLeg(val, withFakeScheduleAndOperator, name)
 
 		if (leg.arrival !== null) {
@@ -237,9 +238,7 @@ const createValidateJourneyLeg = (cfg) => {
 }
 
 const validateJourney = (val, j, name = 'journey') => {
-	const withFakeId = Object.assign({
-		id: 'foo' // todo: let hafas-client parse a journey ID
-	}, j)
+	const withFakeId = {id: 'foo', ...j} // todo: let hafas-client parse a journey ID
 	defaultValidators.journey(val, withFakeId, name)
 	// todo: j.refreshToken
 

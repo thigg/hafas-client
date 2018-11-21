@@ -27,7 +27,7 @@ const validateLocation = (loc, name = 'location') => {
 }
 
 const createClient = (profile, userAgent, request = _request) => {
-	profile = Object.assign({}, defaultProfile, profile)
+	profile = {...defaultProfile, ...profile}
 	if (!profile.parseProducts) {
 		profile.parseProducts = createParseBitmask(profile)
 	}
@@ -49,15 +49,16 @@ const createClient = (profile, userAgent, request = _request) => {
 			throw new Error('type must be a non-empty string.')
 		}
 
-		opt = Object.assign({
+		opt = {
 			direction: null, // only show departures heading to this station
 			duration: 10, // show departures for the next n minutes
 			stationLines: false, // parse & expose lines of the station?
 			remarks: true, // parse & expose hints & warnings?
 			// departures at related stations
 			// e.g. those that belong together on the metro map.
-			includeRelatedStations: true
-		}, opt)
+			includeRelatedStations: true,
+			...opt
+		}
 		opt.when = new Date(opt.when || Date.now())
 		if (Number.isNaN(+opt.when)) throw new Error('opt.when is invalid')
 		const products = profile.formatProductsFilter(opt.products || {})
@@ -127,7 +128,7 @@ const createClient = (profile, userAgent, request = _request) => {
 			journeysRef = opt.laterThan
 		}
 
-		opt = Object.assign({
+		opt = {
 			results: 5, // how many journeys?
 			via: null, // let journeys pass this station?
 			stopovers: false, // return stations on the way?
@@ -141,8 +142,9 @@ const createClient = (profile, userAgent, request = _request) => {
 			remarks: true, // parse & expose hints & warnings?
 			// Consider walking to nearby stations at the beginning of a journey?
 			startWithWalking: true,
-			scheduledDays: false
-		}, opt)
+			scheduledDays: false,
+			...opt
+		}
 		if (opt.via) opt.via = profile.formatLocation(profile, opt.via, 'opt.via')
 
 		if (opt.when !== undefined) {
@@ -243,12 +245,13 @@ const createClient = (profile, userAgent, request = _request) => {
 			new Error('refreshToken must be a non-empty string.')
 		}
 
-		opt = Object.assign({
+		opt = {
 			stopovers: false, // return stations on the way?
 			tickets: false, // return tickets?
 			polylines: false, // return leg shapes?
-			remarks: true // parse & expose hints & warnings?
-		}, opt)
+			remarks: true, // parse & expose hints & warnings?
+			...opt
+		}
 
 		return request(profile, userAgent, opt, {
 			meth: 'Reconstruction',
@@ -280,14 +283,15 @@ const createClient = (profile, userAgent, request = _request) => {
 		if (!isNonEmptyString(query)) {
 			throw new Error('query must be a non-empty string.')
 		}
-		opt = Object.assign({
+		opt = {
 			fuzzy: true, // find only exact matches?
 			results: 10, // how many search results?
 			stations: true,
 			addresses: true,
 			poi: true, // points of interest
-			stationLines: false // parse & expose lines of the station?
-		}, opt)
+			stationLines: false, // parse & expose lines of the station?
+			...opt
+		}
 
 		const f = profile.formatLocationFilter(opt.stations, opt.addresses, opt.poi)
 		return request(profile, userAgent, opt, {
@@ -314,9 +318,10 @@ const createClient = (profile, userAgent, request = _request) => {
 		else if ('string' === typeof station) station = profile.formatStation(station)
 		else throw new Error('station must be an object or a string.')
 
-		opt = Object.assign({
-			stationLines: false // parse & expose lines of the station?
-		}, opt)
+		opt = {
+			stationLines: false, // parse & expose lines of the station?
+			...opt
+		}
 		return request(profile, userAgent, opt, {
 			meth: 'LocDetails',
 			req: {
@@ -335,13 +340,14 @@ const createClient = (profile, userAgent, request = _request) => {
 	const nearby = (location, opt = {}) => {
 		validateLocation(location, 'location')
 
-		opt = Object.assign({
+		opt = {
 			results: 8, // maximum number of results
 			distance: null, // maximum walking distance in meters
 			poi: false, // return points of interest?
 			stations: true, // return stations?
-			stationLines: false // parse & expose lines of the station?
-		}, opt)
+			stationLines: false, // parse & expose lines of the station?
+			...opt
+		}
 
 		return request(profile, userAgent, opt, {
 			cfg: {polyEnc: 'GPA'},
@@ -374,11 +380,12 @@ const createClient = (profile, userAgent, request = _request) => {
 		if (!isNonEmptyString(lineName)) {
 			throw new Error('lineName must be a non-empty string.')
 		}
-		opt = Object.assign({
+		opt = {
 			stopovers: true, // return stations on the way?
 			polyline: false, // return a track shape?
-			remarks: true // parse & expose hints & warnings?
-		}, opt)
+			remarks: true, // parse & expose hints & warnings?
+			...opt
+		}
 
 		return request(profile, userAgent, opt, {
 			cfg: {polyEnc: 'GPA'},
@@ -420,14 +427,15 @@ const createClient = (profile, userAgent, request = _request) => {
 		if (north <= south) throw new Error('north must be larger than south.')
 		if (east <= west) throw new Error('east must be larger than west.')
 
-		opt = Object.assign({
+		opt = {
 			results: 256, // maximum number of vehicles
 			duration: 30, // compute frames for the next n seconds
 			// todo: what happens with `frames: 0`?
 			frames: 3, // nr of frames to compute
 			products: null, // optionally an object of booleans
-			polylines: false // return a track shape for each vehicle?
-		}, opt || {})
+			polylines: false, // return a track shape for each vehicle?
+			...opt
+		}
 		opt.when = new Date(opt.when || Date.now())
 		if (Number.isNaN(+opt.when)) throw new Error('opt.when is invalid')
 
@@ -467,12 +475,13 @@ const createClient = (profile, userAgent, request = _request) => {
 	const reachableFrom = (address, opt = {}) => {
 		validateLocation(address, 'address')
 
-		opt = Object.assign({
+		opt = {
 			when: Date.now(),
 			maxTransfers: 5, // maximum of 5 transfers
 			maxDuration: 20, // maximum travel duration in minutes, pass `null` for infinite
-			products: {}
-		}, opt)
+			products: {},
+			...opt
+		}
 		if (Number.isNaN(+opt.when)) throw new Error('opt.when is invalid')
 
 		const refetch = () => {

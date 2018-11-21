@@ -34,7 +34,7 @@ const validateMovement = (val, m, name = 'movement') => {
 	const dummyStopA = {type: 'stop', id: '123'}
 	const dummyStopB = {type: 'stop', id: '321'}
 
-	const withFakeFrame = Object.assign({}, m)
+	const withFakeFrame = {...m}
 	if (!m.frames.length) {
 		withFakeFrame.frames = [
 			{t: 5, origin: dummyStopA, destination: dummyStopB}

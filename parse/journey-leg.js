@@ -3,8 +3,6 @@
 const parseDateTime = require('./date-time')
 const findRemark = require('./find-remark')
 
-const clone = obj => Object.assign({}, obj)
-
 const locX = Symbol('locX')
 
 const applyRemarks = (leg, hints, warnings, refs) => {
@@ -51,9 +49,11 @@ const createParseJourneyLeg = (profile, opt, data) => {
 	const parseJourneyLeg = (j, pt, parseStopovers = true) => {
 		const dep = profile.parseDateTime(profile, j.date, pt.dep.dTimeR || pt.dep.dTimeS)
 		const arr = profile.parseDateTime(profile, j.date, pt.arr.aTimeR || pt.arr.aTimeS)
+		const origin = locations[parseInt(pt.dep.locX)] || null
+		const destination = locations[parseInt(pt.arr.locX)] || null
 		const res = {
-			origin: clone(locations[parseInt(pt.dep.locX)]) || null,
-			destination: clone(locations[parseInt(pt.arr.locX)]),
+			origin: {...origin},
+			destination: {...destination},
 			departure: dep.toISO(),
 			arrival: arr.toISO()
 		}
