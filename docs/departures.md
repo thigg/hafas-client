@@ -96,7 +96,6 @@ The response may look like this:
 		metro: false,
 		express: false,
 		night: false,
-		productCode: 0,
 		operator: {
 			type: 'operator',
 			id: 's-bahn-berlin-gmbh',
@@ -124,7 +123,6 @@ The response may look like this:
 		metro: false,
 		express: false,
 		night: false,
-		productCode: 0,
 		operator: { /* … */ }
 	},
 	direction: 'S Westkreuz',
@@ -149,7 +147,6 @@ The response may look like this:
 		metro: false,
 		express: false,
 		night: false,
-		productCode: 1,
 		operator: { /* … */ }
 	},
 	direction: 'U Rudow'
