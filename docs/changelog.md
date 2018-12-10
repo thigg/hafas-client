@@ -1,5 +1,21 @@
 # Changelog
 
+## `4.0.0`
+
+This version is not fully backwords-compatible. Check out [the migration guide](migrating-to-4.md).
+
+### new features ✨
+
+- todo
+
+### breaking changes 💥
+
+- todo
+
+### bugfixes
+
+- todo
+
 ## `3.6.1`
 
 - b809281 fix error parsing 🐛
