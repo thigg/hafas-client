@@ -11,9 +11,9 @@ const products = require('./products')
 const formatLoyaltyCard = require('./loyalty-cards').format
 
 const transformReqBody = (body) => {
-	body.client = {id: 'DB', v: '16040000', type: 'IPH', name: 'DB Navigator'}
-	body.ext = 'DB.R15.12.a'
-	body.ver = '1.16'
+	body.client = {id: 'DB', v: '18060000', type: 'IPH', name: 'DB Navigator'}
+	body.ext = 'DB.R18.06.a'
+	body.ver = '1.18'
 	body.auth = {type: 'AID', aid: 'n91dB8Z77MLdoR0K'}
 
 	return body
@@ -320,6 +320,7 @@ const dbProfile = {
 	formatStation,
 
 	trip: true, // todo: #49
+	radar: true,
 	reachableFrom: true
 }
 
