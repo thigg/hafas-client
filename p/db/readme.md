@@ -13,6 +13,11 @@ const client = createClient(dbProfile, 'my-awesome-program')
 ```
 
 
+## Caveats
+
+- The `radar()` method does not have *all* U-Bahn & bus trips.
+
+
 ## Customisations
 
 - supports 1st and 2nd class with `journey()`

@@ -26,6 +26,11 @@ client.journeys('8011167', '8000261', {results: 1, tickets: true})
 // 	when: new Date('2018-08-27T10:00:00+0200'),
 // 	maxDuration: 50
 // })
+client.radar({
+	// around Berlin Hbf
+	north: 52.528010, west: 13.359856,
+	south: 52.522728, east: 13.377594
+}, {results: 20})
 
 .then((data) => {
 	console.log(require('util').inspect(data, {depth: null, colors: true}))
