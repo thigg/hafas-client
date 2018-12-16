@@ -13,6 +13,7 @@ const dbProfile = require('../p/db')
 const products = require('../p/db/products')
 const {
 	station: createValidateStation,
+	movement: createValidateMovement,
 	journeyLeg: createValidateJourneyLeg
 } = require('./lib/validators')
 const createValidate = require('./lib/validate-fptf-with')
@@ -52,8 +53,16 @@ const validateStation = (validate, s, name) => {
 	}
 }
 
+const _validateMovement = createValidateMovement(cfg)
+const validateMovement = (validate, m, name) => {
+	m = Object.assign({}, m)
+	if (!m.direction) m.direction = 'foo' // todo: find a proper solution
+	return _validateMovement(validate, m, name)
+}
+
 const validate = createValidate(cfg, {
-	station: validateStation
+	station: validateStation,
+	movement: validateMovement
 })
 
 const assertValidPrice = (t, p) => {
@@ -361,6 +370,17 @@ test('station', co(function* (t) {
 	validate(t, s, ['stop', 'station'], 'station')
 	t.equal(s.id, regensburgHbf)
 
+	t.end()
+}))
+
+test.only('radar', co(function* (t) {
+	const vehicles = yield client.radar({
+		// around Berlin Hbf
+		north: 52.528010, west: 13.359856,
+		south: 52.522728, east: 13.377594
+	}, {when})
+
+	validate(t, vehicles, 'movements', 'vehicles')
 	t.end()
 }))
 

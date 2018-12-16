@@ -6,10 +6,10 @@ const dbProfile = require('.')
 const client = createClient(dbProfile, 'hafas-client-example')
 
 // Berlin Jungfernheide to München Hbf
-client.journeys('8011167', '8000261', {results: 1, tickets: true})
+// client.journeys('8011167', '8000261', {results: 1}})
 // client.departures('8011167', {duration: 1})
 // client.arrivals('8011167', {duration: 10, stationLines: true})
-// client.locations('Berlin Jungfernheide')
+// client.locations('frankfurt hbf', {results: 3})
 // client.locations('Atze Musiktheater', {poi: true, addressses: false, fuzzy: false})
 // client.station('8000309') // Regensburg Hbf
 // client.nearby({
@@ -32,6 +32,12 @@ client.radar({
 	south: 52.522728, east: 13.377594
 }, {results: 20})
 
+// .then((data) => {
+// 	const leg = data[0].legs.find(l => l.line)
+// 	return client.trip(leg.id, leg.line.name, {stopovers: true})
+// })
+
 .then((data) => {
-	console.log(require('util').inspect(data, {depth: null, colors: true}))
+	console.log(data)
+	// console.log(require('util').inspect(data, {depth: null, colors: true}))
 }, console.error)

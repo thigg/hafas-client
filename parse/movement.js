@@ -3,8 +3,7 @@
 const createParseMovement = (profile, opt, data) => {
 	const {locations, lines, polylines} = data
 
-	// todo: what is m.dirGeo? maybe the speed?
-	// todo: what is m.stopL?
+	// todo: what is m.dirGeo? maybe the bearing?
 	// todo: what is m.proc? wut?
 	// todo: what is m.pos?
 	// todo: what is m.ani.dirGeo[n]? maybe the speed?
@@ -13,7 +12,7 @@ const createParseMovement = (profile, opt, data) => {
 		const pStopover = profile.parseStopover(profile, opt, data, m.date)
 
 		const res = {
-			direction: profile.parseStationName(m.dirTxt),
+			direction: profile.parseStationName(m.dirTxt) || null,
 			tripId: m.jid || null,
 			trip: m.jid && +m.jid.split('|')[1] || null, // todo: this seems brittle
 			line: lines[m.prodX] || null,
@@ -42,6 +41,7 @@ const createParseMovement = (profile, opt, data) => {
 					const parse = profile.parsePolyline(profile, opt, data)
 					res.polyline = parse(m.ani.poly)
 				} else if (m.ani.polyG) {
+					console.error(res.trip, res.line && res.line.name, m.anyPolyG)
 					let p = m.ani.polyG.polyXL
 					p = Array.isArray(p) && polylines[p[0]]
 					// todo: there can be >1 polyline
