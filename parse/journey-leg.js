@@ -47,6 +47,7 @@ const createParseJourneyLeg = (profile, opt, data) => {
 	// todo: what is pt.jny.dirFlg?
 	// todo: what is pt.recState?
 	// todo: what is `sty: 'UNDEF'`?
+	// todo: pt.prodL
 
 	// j = journey, pt = part
 	// todo: pt.planrtTS
@@ -115,7 +116,6 @@ const createParseJourneyLeg = (profile, opt, data) => {
 				const stopL = pt.jny.stopL
 				res.stopovers = stopL.map(parse)
 
-				// todo: is there a `pt.jny.remL`?
 				if (opt.remarks && Array.isArray(pt.jny.msgL)) {
 					for (let i = 0; i < stopL.length; i++) {
 						Object.defineProperty(res.stopovers[i], locX, {
