@@ -4,6 +4,12 @@ const codesByIcon = Object.assign(Object.create(null), {
 	cancel: 'cancelled'
 })
 
+const typesByIcon = Object.assign(Object.create(null), {
+	HimWarn: 'status',
+	HimInfo: 'status',
+	ResWarn: 'status'
+})
+
 // todo: is passing in profile necessary?
 // todo: pass in tag list from hint reference, e.g.:
 // "tagL": [
@@ -26,6 +32,7 @@ const parseHint = (profile, h, _) => {
 	const text = h.txtN && h.txtN.trim() || ''
 	const icon = h.icon || null
 	const code = h.code || (icon && icon.type && codesByIcon[icon.type]) || null
+	const type = (icon && icon.type && typesByIcon[icon.type]) || h.type || null
 
 	if (h.type === 'M') {
 		return {
@@ -52,7 +59,7 @@ const parseHint = (profile, h, _) => {
 		}
 	}
 
-	if (h.type === 'D' || h.type === 'U' || h.type === 'R' || h.type === 'N' || h.type === 'Y') {
+	if (h.type === 'D' || h.type === 'U' || h.type === 'R' || h.type === 'N' || h.type === 'Y' || type === 'status') {
 		// todo: how can we identify the individual types?
 		// todo: does `D` mean "disturbance"?
 		return {

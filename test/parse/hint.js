@@ -52,5 +52,18 @@ test('parses hints correctly', (t) => {
 	// invalid
 	t.equal(parse(profile, {...input, type: 'X'}), null)
 
+	// DB "connection unreachable" message
+	t.deepEqual(parse(profile, {
+		type: 'C',
+		code: '',
+		icoX: 10,
+		icon: {res: 'HimWarn'},
+		txtN: 'The connecting train may not be reached in time.'
+	}), {
+		type: 'status',
+		code: null,
+		text: 'The connecting train may not be reached in time.'
+	})
+
 	t.end()
 })
