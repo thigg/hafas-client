@@ -92,8 +92,22 @@ const createParseJourney = (profile, opt, data) => {
 
 	// todo: j.sotRating, j.conSubscr, j.isSotCon, j.showARSLink, k.sotCtxt
 	// todo: j.conSubscr, j.showARSLink, j.useableTime
-	const parseJourneyWithPrice = (j) => {
+	const parseJourneyWithPriceAndUnreachable = (j) => {
 		const res = parseJourney(j)
+
+		const isUnreachableRemark = (remark) => {
+			const text = (remark.text || '').toLowerCase()
+			return text.includes('connecting train may not be reached')
+		}
+		const unreachableRemark = (res.remarks || []).find(isUnreachableRemark)
+		if (unreachableRemark) {
+			for (const leg of res.legs) {
+				const legRemarks = leg.remarks || []
+				if (leg.reachable === false && !legRemarks.some(isUnreachableRemark)) {
+					legRemarks.push(unreachableRemark)
+				}
+			}
+		}
 
 		res.price = null
 		// todo: find cheapest, find discounts
@@ -126,7 +140,7 @@ const createParseJourney = (profile, opt, data) => {
 		return res
 	}
 
-	return parseJourneyWithPrice
+	return parseJourneyWithPriceAndUnreachable
 }
 
 const createParseJourneyLeg = (profile, opt, data) => {
