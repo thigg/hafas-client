@@ -1,0 +1,3478 @@
+{
+	"common": {
+		"locL": [
+			{
+				"lid": "A=1@O=Fulda@X=9683980@Y=50554722@U=80@L=8000115@",
+				"type": "S",
+				"name": "Fulda",
+				"icoX": 0,
+				"extId": "8000115",
+				"state": "F",
+				"crd": {
+					"x": 9684178,
+					"y": 50554794,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 559
+			},
+			{
+				"lid": "A=1@O=Lengede-Broistedt@X=10320695@Y=52197025@U=80@L=8001188@",
+				"type": "S",
+				"name": "Lengede-Broistedt",
+				"icoX": 3,
+				"extId": "8001188",
+				"state": "F",
+				"crd": {
+					"x": 10320641,
+					"y": 52196998,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 552
+			},
+			{
+				"lid": "A=1@O=Braunschweig Hbf@X=10540293@Y=52252218@U=80@L=8000049@",
+				"type": "S",
+				"name": "Braunschweig Hbf",
+				"icoX": 0,
+				"extId": "8000049",
+				"state": "F",
+				"crd": {
+					"x": 10540436,
+					"y": 52252128,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 299
+			},
+			{
+				"lid": "A=1@O=Kassel-Wilhelmshöhe@X=9446899@Y=51313115@U=80@L=8003200@",
+				"type": "S",
+				"name": "Kassel-Wilhelmshöhe",
+				"icoX": 0,
+				"extId": "8003200",
+				"state": "F",
+				"crd": {
+					"x": 9446845,
+					"y": 51312998,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 831
+			},
+			{
+				"lid": "A=1@O=Göttingen@X=9926069@Y=51536812@U=80@L=8000128@",
+				"type": "S",
+				"name": "Göttingen",
+				"icoX": 0,
+				"extId": "8000128",
+				"state": "F",
+				"crd": {
+					"x": 9926257,
+					"y": 51536758,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 559
+			},
+			{
+				"lid": "A=1@O=Hildesheim Hbf@X=9953495@Y=52160627@U=80@L=8000169@",
+				"type": "S",
+				"name": "Hildesheim Hbf",
+				"icoX": 0,
+				"extId": "8000169",
+				"state": "F",
+				"crd": {
+					"x": 9952281,
+					"y": 52160169,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 571
+			},
+			{
+				"lid": "A=1@O=Hoheneggelsen@X=10197822@Y=52200180@U=80@L=8002944@",
+				"type": "S",
+				"name": "Hoheneggelsen",
+				"icoX": 3,
+				"extId": "8002944",
+				"state": "F",
+				"crd": {
+					"x": 10197840,
+					"y": 52200162,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 8
+			},
+			{
+				"lid": "A=1@O=Woltwiesche@X=10279003@Y=52200755@U=80@L=8006561@",
+				"type": "S",
+				"name": "Woltwiesche",
+				"icoX": 3,
+				"extId": "8006561",
+				"state": "F",
+				"crd": {
+					"x": 10279713,
+					"y": 52200665,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 40
+			},
+			{
+				"lid": "A=1@O=Hannover Hbf@X=9741017@Y=52376764@U=80@L=8000152@",
+				"type": "S",
+				"name": "Hannover Hbf",
+				"icoX": 0,
+				"extId": "8000152",
+				"state": "F",
+				"crd": {
+					"x": 9741763,
+					"y": 52377079,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 319
+			},
+			{
+				"lid": "A=1@O=Hannover-Kleefeld@X=9790610@Y=52373609@U=80@L=8002584@",
+				"type": "S",
+				"name": "Hannover-Kleefeld",
+				"icoX": 13,
+				"extId": "8002584",
+				"state": "F",
+				"crd": {
+					"x": 9791995,
+					"y": 52373761,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 56
+			},
+			{
+				"lid": "A=1@O=Hannover Karl-Wiechert-Allee@X=9808112@Y=52374418@U=80@L=8070086@",
+				"type": "S",
+				"name": "Hannover Karl-Wiechert-Allee",
+				"icoX": 13,
+				"extId": "8070086",
+				"state": "F",
+				"crd": {
+					"x": 9808984,
+					"y": 52374445,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 312
+			},
+			{
+				"lid": "A=1@O=Hannover Anderten-Misburg@X=9861113@Y=52369159@U=80@L=8000578@",
+				"type": "S",
+				"name": "Hannover Anderten-Misburg",
+				"icoX": 13,
+				"extId": "8000578",
+				"state": "F",
+				"crd": {
+					"x": 9860555,
+					"y": 52369141,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 56
+			},
+			{
+				"lid": "A=1@O=Ahlten@X=9904611@Y=52376063@U=80@L=8000443@",
+				"type": "S",
+				"name": "Ahlten",
+				"icoX": 13,
+				"extId": "8000443",
+				"state": "F",
+				"crd": {
+					"x": 9904602,
+					"y": 52376216,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 568
+			},
+			{
+				"lid": "A=1@O=Lehrte@X=9974601@Y=52376719@U=80@L=8000226@",
+				"type": "S",
+				"name": "Lehrte",
+				"icoX": 14,
+				"extId": "8000226",
+				"state": "F",
+				"crd": {
+					"x": 9974008,
+					"y": 52376890,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 26
+			},
+			{
+				"lid": "A=1@O=Sehnde@X=9962529@Y=52318073@U=80@L=8005511@",
+				"type": "S",
+				"name": "Sehnde",
+				"icoX": 11,
+				"extId": "8005511",
+				"state": "F",
+				"crd": {
+					"x": 9962673,
+					"y": 52318550,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 560
+			},
+			{
+				"lid": "A=1@O=Algermissen@X=9966475@Y=52251877@U=80@L=8000488@",
+				"type": "S",
+				"name": "Algermissen",
+				"icoX": 11,
+				"extId": "8000488",
+				"state": "F",
+				"crd": {
+					"x": 9966637,
+					"y": 52251607,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 560
+			},
+			{
+				"lid": "A=1@O=Harsum@X=9965693@Y=52206499@U=80@L=8002607@",
+				"type": "S",
+				"name": "Harsum",
+				"icoX": 13,
+				"extId": "8002607",
+				"state": "F",
+				"crd": {
+					"x": 9965648,
+					"y": 52206364,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 24
+			},
+			{
+				"lid": "A=1@O=Frankfurt(Main)Süd@X=8686456@Y=50099365@U=80@L=8002041@",
+				"type": "S",
+				"name": "Frankfurt(Main)Süd",
+				"icoX": 0,
+				"extId": "8002041",
+				"state": "F",
+				"crd": {
+					"x": 8686187,
+					"y": 50099302,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 447
+			},
+			{
+				"lid": "A=1@O=Neuhof(Kr Fulda)@X=9620220@Y=50454816@U=80@L=8004295@",
+				"type": "S",
+				"name": "Neuhof(Kr Fulda)",
+				"icoX": 13,
+				"extId": "8004295",
+				"state": "F",
+				"crd": {
+					"x": 9621020,
+					"y": 50454852,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 40
+			},
+			{
+				"lid": "A=1@O=Flieden@X=9576613@Y=50421385@U=80@L=8002010@",
+				"type": "S",
+				"name": "Flieden",
+				"icoX": 13,
+				"extId": "8002010",
+				"state": "F",
+				"crd": {
+					"x": 9576649,
+					"y": 50421224,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 552
+			},
+			{
+				"lid": "A=1@O=Schlüchtern@X=9510039@Y=50341175@U=80@L=8000891@",
+				"type": "S",
+				"name": "Schlüchtern",
+				"icoX": 14,
+				"extId": "8000891",
+				"state": "F",
+				"crd": {
+					"x": 9509473,
+					"y": 50341157,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 42
+			},
+			{
+				"lid": "A=1@O=Steinau(Straße)@X=9443159@Y=50314351@U=80@L=8005690@",
+				"type": "S",
+				"name": "Steinau(Straße)",
+				"icoX": 13,
+				"extId": "8005690",
+				"state": "F",
+				"crd": {
+					"x": 9443078,
+					"y": 50314324,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 40
+			},
+			{
+				"lid": "A=1@O=Bad Soden-Salmünster@X=9372055@Y=50280740@U=80@L=8005261@",
+				"type": "S",
+				"name": "Bad Soden-Salmünster",
+				"icoX": 13,
+				"extId": "8005261",
+				"state": "F",
+				"crd": {
+					"x": 9372001,
+					"y": 50280605,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 552
+			},
+			{
+				"lid": "A=1@O=Wächtersbach@X=9295826@Y=50253961@U=80@L=8006132@",
+				"type": "S",
+				"name": "Wächtersbach",
+				"icoX": 13,
+				"extId": "8006132",
+				"state": "F",
+				"crd": {
+					"x": 9295826,
+					"y": 50254096,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 552
+			},
+			{
+				"lid": "A=1@O=Gelnhausen@X=9189277@Y=50196340@U=80@L=8000117@",
+				"type": "S",
+				"name": "Gelnhausen",
+				"icoX": 13,
+				"extId": "8000117",
+				"state": "F",
+				"crd": {
+					"x": 9189574,
+					"y": 50196394,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 552
+			},
+			{
+				"lid": "A=1@O=Langenselbold@X=9057684@Y=50162065@U=80@L=8003550@",
+				"type": "S",
+				"name": "Langenselbold",
+				"icoX": 13,
+				"extId": "8003550",
+				"state": "F",
+				"crd": {
+					"x": 9057432,
+					"y": 50161957,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 552
+			},
+			{
+				"lid": "A=1@O=Hanau Hbf@X=8929003@Y=50120957@U=80@L=8000150@",
+				"type": "S",
+				"name": "Hanau Hbf",
+				"icoX": 0,
+				"extId": "8000150",
+				"state": "F",
+				"crd": {
+					"x": 8929210,
+					"y": 50120903,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 575
+			},
+			{
+				"lid": "A=1@O=Offenbach(Main)Hbf@X=8760743@Y=50099266@U=80@L=8000349@",
+				"type": "S",
+				"name": "Offenbach(Main)Hbf",
+				"icoX": 17,
+				"extId": "8000349",
+				"state": "F",
+				"crd": {
+					"x": 8760833,
+					"y": 50099185,
+					"z": 0,
+					"type": "WGS84",
+					"layerX": 0,
+					"crdSysX": 0
+				},
+				"pCls": 56
+			}
+		],
+		"prodL": [
+			{
+				"name": "ICE 274",
+				"number": "274",
+				"icoX": 0,
+				"cls": 1,
+				"oprX": 0,
+				"prodCtx": {
+					"name": "ICE  274",
+					"num": "274",
+					"matchId": "12",
+					"catOut": "ICE",
+					"catOutS": "ICE",
+					"catOutL": "Intercity-Express",
+					"catIn": "ICE",
+					"catCode": "0",
+					"admin": "80____"
+				}
+			},
+			{
+				"name": "ENO83584",
+				"nameS": "DPN",
+				"number": "83584",
+				"icoX": 6,
+				"cls": 8,
+				"oprX": 1,
+				"prodCtx": {
+					"name": "ENO83584",
+					"num": "83584",
+					"line": "ENO RE50",
+					"matchId": "RE50",
+					"catOut": "ENO",
+					"catOutS": "DPN",
+					"catOutL": "enno",
+					"catIn": "DPN",
+					"catCode": "3",
+					"admin": "R0____",
+					"addName": "ENO RE50"
+				},
+				"addName": "ENO RE50"
+			},
+			{
+				"name": "ENO83587",
+				"nameS": "DPN",
+				"number": "83587",
+				"icoX": 6,
+				"cls": 8,
+				"oprX": 1,
+				"prodCtx": {
+					"name": "ENO83587",
+					"num": "83587",
+					"line": "ENO RE50",
+					"matchId": "RE50",
+					"catOut": "ENO",
+					"catOutS": "DPN",
+					"catOutL": "enno",
+					"catIn": "DPN",
+					"catCode": "3",
+					"admin": "R0____",
+					"addName": "ENO RE50"
+				},
+				"addName": "ENO RE50"
+			},
+			{
+				"name": "ICE 272",
+				"number": "272",
+				"icoX": 0,
+				"cls": 1,
+				"oprX": 0,
+				"prodCtx": {
+					"name": "ICE  272",
+					"num": "272",
+					"matchId": "12",
+					"catOut": "ICE",
+					"catOutS": "ICE",
+					"catOutL": "Intercity-Express",
+					"catIn": "ICE",
+					"catCode": "0",
+					"admin": "80____"
+				}
+			},
+			{
+				"name": "ENO83551",
+				"nameS": "DPN",
+				"number": "83551",
+				"icoX": 6,
+				"cls": 8,
+				"oprX": 1,
+				"prodCtx": {
+					"name": "ENO83551",
+					"num": "83551",
+					"line": "ENO RE50",
+					"matchId": "RE50",
+					"catOut": "ENO",
+					"catOutS": "DPN",
+					"catOutL": "enno",
+					"catIn": "DPN",
+					"catCode": "3",
+					"admin": "R0____",
+					"addName": "ENO RE50"
+				},
+				"addName": "ENO RE50"
+			},
+			{
+				"name": "S 3",
+				"nameS": "3",
+				"number": "3",
+				"icoX": 11,
+				"cls": 16,
+				"oprX": 2,
+				"prodCtx": {
+					"name": "S      3",
+					"num": "34301",
+					"line": "3",
+					"matchId": "3",
+					"catOut": "S",
+					"catOutS": "s",
+					"catOutL": "S-Bahn",
+					"catIn": "s",
+					"catCode": "4",
+					"admin": "800244"
+				}
+			},
+			{
+				"name": "RE 4539",
+				"nameS": "RE",
+				"number": "4539",
+				"icoX": 15,
+				"cls": 8,
+				"oprX": 3,
+				"prodCtx": {
+					"name": "RE  4539",
+					"num": "4539",
+					"line": "RE    50",
+					"matchId": "50",
+					"catOut": "RE",
+					"catOutS": "RE",
+					"catOutL": "Regional-Express",
+					"catIn": "RE",
+					"catCode": "3",
+					"admin": "8005KG",
+					"addName": "RE    50"
+				},
+				"addName": "RE 50"
+			},
+			{
+				"name": "ENO83550",
+				"nameS": "DPN",
+				"number": "83550",
+				"icoX": 6,
+				"cls": 8,
+				"oprX": 1,
+				"prodCtx": {
+					"name": "ENO83550",
+					"num": "83550",
+					"line": "ENO RE50",
+					"matchId": "RE50",
+					"catOut": "ENO",
+					"catOutS": "DPN",
+					"catOutL": "enno",
+					"catIn": "DPN",
+					"catCode": "3",
+					"admin": "R0____",
+					"addName": "ENO RE50"
+				},
+				"addName": "ENO RE50"
+			},
+			{
+				"name": "NJ 470",
+				"number": "470",
+				"icoX": 18,
+				"cls": 2,
+				"oprX": 4,
+				"prodCtx": {
+					"name": "NJ   470",
+					"num": "470",
+					"matchId": "12",
+					"catOut": "NJ",
+					"catOutS": "NJ",
+					"catOutL": "Nightjet",
+					"catIn": "NJ",
+					"catCode": "1",
+					"admin": "81____"
+				}
+			}
+		],
+		"polyL": [],
+		"layerL": [
+			{
+				"id": "standard",
+				"name": "standard",
+				"index": 0,
+				"annoCnt": 0
+			}
+		],
+		"crdSysL": [
+			{
+				"id": "standard",
+				"index": 0,
+				"type": "WGS84",
+				"dim": 3
+			}
+		],
+		"opL": [
+			{
+				"name": "DB Fernverkehr AG",
+				"icoX": 1
+			},
+			{
+				"name": "enno",
+				"icoX": 7
+			},
+			{
+				"name": "DB Regio AG Nord",
+				"icoX": 12
+			},
+			{
+				"name": "DB Regio AG Mitte",
+				"icoX": 16
+			},
+			{
+				"name": "Österreichische Bundesbahnen",
+				"icoX": 19
+			}
+		],
+		"remL": [
+			{
+				"type": "D",
+				"code": "",
+				"icoX": 2,
+				"txtN": "Delay from preceding run",
+				"sIdx": 0
+			},
+			{
+				"type": "A",
+				"code": "CK",
+				"prio": 200,
+				"icoX": 4,
+				"txtN": "Komfort Check-in möglich  http://bahn.de/komfortcheckin"
+			},
+			{
+				"type": "A",
+				"code": "BR",
+				"prio": 450,
+				"icoX": 5,
+				"txtN": "Bordrestaurant"
+			},
+			{
+				"type": "A",
+				"code": "FB",
+				"prio": 260,
+				"icoX": 8,
+				"txtN": "Number of bicycles conveyed limited"
+			},
+			{
+				"type": "A",
+				"code": "RO",
+				"prio": 560,
+				"icoX": 9,
+				"txtN": "space for wheelchairs"
+			},
+			{
+				"type": "A",
+				"code": "WV",
+				"prio": 710,
+				"icoX": 4,
+				"txtN": "Wifi available"
+			},
+			{
+				"type": "C",
+				"code": "",
+				"icoX": 10,
+				"txtN": "The connecting train may not be reached in time."
+			},
+			{
+				"type": "D",
+				"code": "",
+				"icoX": 2,
+				"txtN": "Operating delays",
+				"sIdx": 0
+			},
+			{
+				"type": "A",
+				"code": "AO",
+				"prio": 350,
+				"icoX": 4,
+				"txtN": "Konsum alkoholischer Getränke im Zug verboten"
+			},
+			{
+				"type": "A",
+				"code": "EH",
+				"prio": 560,
+				"icoX": 4,
+				"txtN": "vehicle-mounted accessaid"
+			},
+			{
+				"type": "A",
+				"code": "EA",
+				"prio": 560,
+				"icoX": 4,
+				"txtN": "Behindertengerechte Ausstattung"
+			},
+			{
+				"type": "A",
+				"code": "KL",
+				"prio": 610,
+				"icoX": 4,
+				"txtN": "air conditioning"
+			},
+			{
+				"type": "A",
+				"code": "RP",
+				"prio": 185,
+				"icoX": 20,
+				"txtN": "Subject to compulsory reservation"
+			},
+			{
+				"type": "A",
+				"code": "J2",
+				"prio": 300,
+				"icoX": 21,
+				"txtN": "2nd class only seated accommodation"
+			},
+			{
+				"type": "A",
+				"code": "OJ",
+				"prio": 320,
+				"icoX": 4,
+				"txtN": "ÖBB Nightjet (www.nightjet.com)"
+			},
+			{
+				"type": "A",
+				"code": "GP",
+				"prio": 320,
+				"icoX": 4,
+				"txtN": "Global price"
+			},
+			{
+				"type": "A",
+				"code": "SW",
+				"prio": 400,
+				"icoX": 22,
+				"txtN": "Sleeping-car"
+			},
+			{
+				"type": "A",
+				"code": "LW",
+				"prio": 400,
+				"icoX": 23,
+				"txtN": "Couchettes"
+			},
+			{
+				"type": "A",
+				"code": "MN",
+				"prio": 450,
+				"icoX": 4,
+				"txtN": "snacks and beverages available from sleeper/couchette attendant"
+			},
+			{
+				"type": "A",
+				"code": "OA",
+				"prio": 560,
+				"icoX": 4,
+				"txtN": "Wheelchair space - For advance notification, call +43 5 1717"
+			},
+			{
+				"type": "A",
+				"code": "OC",
+				"prio": 560,
+				"icoX": 4,
+				"txtN": "WC accessible for wheelchair"
+			},
+			{
+				"type": "M",
+				"code": "",
+				"icoX": 24,
+				"txtS": "NJ   470: Frankfurt(Main)Süd->Braunschweig Hbf: Information.",
+				"txtN": "Attention! You are only allowed to board this train if you have a valid ticket and reservation.",
+				"sIdx": 1
+			},
+			{
+				"type": "C",
+				"code": "",
+				"icoX": 24,
+				"txtN": "Current information available."
+			},
+			{
+				"type": "H",
+				"code": "",
+				"icoX": 25,
+				"txtN": "Includes trains requiring a reservation"
+			}
+		],
+		"icoL": [
+			{
+				"res": "ICE"
+			},
+			{
+				"res": "D",
+				"txt": "DB Fernverkehr AG"
+			},
+			{
+				"res": "Empty"
+			},
+			{
+				"res": "DPN"
+			},
+			{
+				"res": "attr_info"
+			},
+			{
+				"res": "attr_resto"
+			},
+			{
+				"res": "ENO"
+			},
+			{
+				"res": "DPN",
+				"txt": "enno"
+			},
+			{
+				"res": "attr_bike"
+			},
+			{
+				"res": "attr_wchair"
+			},
+			{
+				"res": "HimWarn"
+			},
+			{
+				"res": "S"
+			},
+			{
+				"res": "RE",
+				"txt": "DB Regio AG Nord"
+			},
+			{
+				"res": "Bus"
+			},
+			{
+				"res": "IC"
+			},
+			{
+				"res": "RE"
+			},
+			{
+				"res": "RE",
+				"txt": "DB Regio AG Mitte"
+			},
+			{
+				"res": "RB"
+			},
+			{
+				"res": "NJ"
+			},
+			{
+				"res": "D",
+				"txt": "Österreichische Bundesbahnen"
+			},
+			{
+				"res": "attr_booking"
+			},
+			{
+				"res": "attr_2nd"
+			},
+			{
+				"res": "attr_sleeper"
+			},
+			{
+				"res": "attr_couchette"
+			},
+			{
+				"res": "HimInfo"
+			},
+			{
+				"res": "ResHint"
+			}
+		],
+		"tcocL": [
+			{
+				"c": "FIRST",
+				"r": 1
+			},
+			{
+				"c": "SECOND",
+				"r": 1
+			}
+		]
+	},
+	"outConL": [
+		{
+			"cid": "C-0",
+			"date": "20190903",
+			"dur": "020000",
+			"chg": 1,
+			"sDays": {
+				"sDaysR": "daily",
+				"sDaysI": "not 29. Sep until 1. Oct 2019",
+				"sDaysB": "000000000000000000000000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFC7FFFFFFFFFFFFFFFFFE0"
+			},
+			"isNotRdbl": true,
+			"badSecRefX": 0,
+			"dep": {
+				"locX": 0,
+				"idx": 9,
+				"dProdX": 0,
+				"dPlatfS": "6",
+				"dInR": true,
+				"dTimeS": "201200",
+				"dTimeR": "204400",
+				"dProgType": "PROGNOSED",
+				"dTrnCmpSX": {
+					"tcocX": [
+						0,
+						1
+					]
+				},
+				"dTZOffset": 120,
+				"msgL": [
+					{
+						"type": "REM",
+						"remX": 0,
+						"txtC": {
+							"r": 204,
+							"g": 0,
+							"b": 0,
+							"a": 255
+						},
+						"prio": 478,
+						"fIdx": -1,
+						"tIdx": -1,
+						"tagL": [
+							"RES_LOC_H3"
+						]
+					}
+				],
+				"type": "N"
+			},
+			"arr": {
+				"locX": 1,
+				"idx": 4,
+				"aPlatfS": "2",
+				"aOutR": true,
+				"aTimeS": "224400",
+				"aTimeR": "224400",
+				"aProgType": "PROGNOSED",
+				"aTZOffset": 120,
+				"type": "N"
+			},
+			"secL": [
+				{
+					"type": "JNY",
+					"icoX": 0,
+					"dep": {
+						"locX": 0,
+						"idx": 9,
+						"dProdX": 0,
+						"dPlatfS": "6",
+						"dInR": true,
+						"dTimeS": "201200",
+						"dTimeR": "204400",
+						"dProgType": "PROGNOSED",
+						"dTrnCmpSX": {
+							"tcocX": [
+								0,
+								1
+							],
+							"tcM": 1
+						},
+						"dTZOffset": 120,
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 0,
+								"txtC": {
+									"r": 204,
+									"g": 0,
+									"b": 0,
+									"a": 255
+								},
+								"prio": 478,
+								"fIdx": -1,
+								"tIdx": -1,
+								"tagL": [
+									"RES_LOC_H3"
+								]
+							}
+						],
+						"type": "N"
+					},
+					"arr": {
+						"locX": 2,
+						"idx": 13,
+						"aPlatfS": "8",
+						"aOutR": true,
+						"aTimeS": "222700",
+						"aTimeR": "225000",
+						"aProgType": "PROGNOSED",
+						"aTrnCmpSX": {
+							"tcM": 1
+						},
+						"aTZOffset": 120,
+						"type": "N"
+					},
+					"jny": {
+						"jid": "1|205004|0|80|3092019",
+						"prodX": 0,
+						"dirTxt": "Berlin Hbf (tief)",
+						"status": "P",
+						"isRchbl": true,
+						"stopL": [
+							{
+								"locX": 0,
+								"idx": 9,
+								"dProdX": 0,
+								"dPlatfS": "6",
+								"dInR": true,
+								"dTimeS": "201200",
+								"dTimeR": "204400",
+								"dProgType": "PROGNOSED",
+								"dDirTxt": "Berlin Hbf (tief)",
+								"dTrnCmpSX": {
+									"tcocX": [
+										0,
+										1
+									]
+								},
+								"dTZOffset": 120,
+								"msgL": [
+									{
+										"type": "REM",
+										"remX": 0,
+										"txtC": {
+											"r": 204,
+											"g": 0,
+											"b": 0,
+											"a": 255
+										},
+										"prio": 478,
+										"fIdx": -1,
+										"tIdx": -1,
+										"tagL": [
+											"RES_LOC_H3"
+										]
+									}
+								],
+								"type": "N"
+							},
+							{
+								"locX": 3,
+								"idx": 10,
+								"aProdX": 0,
+								"aPlatfS": "3",
+								"aOutR": true,
+								"aTimeS": "204300",
+								"aTimeR": "211400",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"dProdX": 0,
+								"dPlatfS": "3",
+								"dInR": true,
+								"dTimeS": "204500",
+								"dTimeR": "211600",
+								"dProgType": "PROGNOSED",
+								"dTrnCmpSX": {
+									"tcocX": [
+										0,
+										1
+									]
+								},
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 4,
+								"idx": 11,
+								"aProdX": 0,
+								"aPlatfS": "9",
+								"aOutR": true,
+								"aTimeS": "210200",
+								"aTimeR": "213400",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"dProdX": 0,
+								"dPlatfS": "9",
+								"dInR": true,
+								"dTimeS": "210400",
+								"dTimeR": "213600",
+								"dProgType": "PROGNOSED",
+								"dTrnCmpSX": {
+									"tcocX": [
+										0,
+										1
+									]
+								},
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 5,
+								"idx": 12,
+								"aProdX": 0,
+								"aPlatfS": "2",
+								"aOutR": true,
+								"aTimeS": "215800",
+								"aTimeR": "222700",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"dProdX": 0,
+								"dPlatfS": "2",
+								"dInR": true,
+								"dTimeS": "220600",
+								"dTimeR": "222900",
+								"dProgType": "PROGNOSED",
+								"dTrnCmpSX": {
+									"tcocX": [
+										0,
+										1
+									]
+								},
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 2,
+								"idx": 13,
+								"aProdX": 0,
+								"aPlatfS": "8",
+								"aOutR": true,
+								"aTimeS": "222700",
+								"aTimeR": "225000",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"type": "N"
+							}
+						],
+						"poly": {
+							"delta": true,
+							"dim": 3,
+							"type": "WGS84",
+							"crdEncYX": "m~psHambz@EIwMpQwCrCeDhBiGdAqDIoDy@o]gR?C?Bau@qb@aZwPgLiFkO}DwO{AuRT}bBzP??{UbCeUhDoOdDyTvGkTrIaTpKmNtIcSvNoRpPyQhRaQ|SaLvOqKrPaKnQoj@vhA??mTlc@_KpQ{OhV{PnT}LxMkRbQ_S~NuSxLqYfMiOzEmOpDwsDrk@??y_BrVkUvB_[Z}gAqEoUVyOlAeUrDwThGkT~IiYzN??w|BhkAaOfGyIrCaUhFuOrBqRfAuRDyOo@wOcBsOsC}d@_N??y_@gLaU{EgUeC{Oi@gJ?yOf@wOzAgv@~NuO~BaeBvL??yhFt]iUvCcUbEifA~Wik@dI??efDnb@wOjA{Of@yO@a[kA{ZqDsgBe`@eUkDyOuAa[}@mUVyOz@_~@zI??afAzJa[h@a[mAiUqCmZaHsTyHa_Ac`@yT}G_U}EyZ}DmUkAc[Eg_@tA??gm@`Cw`@^kUq@aw@oFmUKmU~@iUjCoZzGkz@|YkTdJwSnLeXxR_WbVwUfYcPbVeKlQqe@~_AcKtQubA~|A??oqBj}CeP|UoLbO{LhNci@`h@??cXxV}RjOwSxLgi@hWgNlJw\\fXkNzIiTlJee@tM{IzCctA~n@????mVzKyLrCkG^kGKwMaC??y^cLAL@Msr@aTeJy@gJ`@eGtAqIbEo}@no@BNOq@wKhHeYzM??{Ar@XtBa@mCaE`AmEMuDgAyEiDsEgGaCgFmCiJeA{GMFLG]wDeCs[TEcC`CsAwD}BkEqCcDmFiE??jAmEqGcG??aAzD{X_WMd@KKuQiPgIeF{IiCkLi@??wCT_A_H??A?uA@yBB??????eS^}EQeFy@mDgAcFgCmJwIqDgF??cHaOgCwHsA}FuAeIs@yGuAeVq@iPO}LPoKr@gMrKkz@jYumBi@Qf@_MCmLu@cL_AcF{AwEgCwEkMgMcCkEmAqD_Jya@}AsFgFuL{GiK????KQlCeG??qAqHeBcPaDwo@sAkPuB_PwCiOcCuJiEyM_p@i`B??ww@koBwLk[wQuk@wLef@kFeWwEuWaEcXaFaa@oC_YwBgYaFkdA??iDwu@}D{j@}Faj@wHai@gHy_@aLuf@wb@kzA??geB_aGoHiUaIqTsI{SeJcS{Ry^yOwVy]ef@??gnAecB??{hAe`BaeAcyAmLiOiV_XeoCyjCyLqNyGcJsKyP{JeRaJkS{EgMqK{\\oZkkA????cDmO{DkN_Nw_@eHwZeF{LuDcMqFkSkBeFkG{JoIoIERaEwDs@hCkFqEyF{CgGqAsDOcJfAcf@zLCe@??mZ`I{YdL{IfCkG~@kG\\mMq@qLiA????abAuK{v@uJcmA}LkrD}a@Cl@_i@iGcUyE}YmK}S}KiSoNuMiLmHuH{LqNko@s|@wQ_SsRqPmS_NaTmKuTwH}_@iJ??o|A{]iUmCa[s@_[vAuZfFeZnJyc@xSiNrF?AF`@a`@~PiZjIaJ~AwObByOp@eJ@oUy@wOgBeaAeS}ZmCmUKqzAlGoUPgJUwOoAik@aK??c`@}HiZsIkTyIeyAwq@oTiI}TgGcUgEiUcCyjBgI??mwAeGkUcBiUsCc`@sHqrBie@wZwEaMu@eXGm_AdG??a|Ef]yZfE_JvBiOzEuIjDyNlHoS|Mg_@rZ??wxD``DcoAdkA??ovGvjGsRvPaXnSqSxMcYtOan@jZ??eo@tZaOfGsTvHmOlEmfD|y@????_k@nMcJ`Ac[`AgJC_JkByFcDeFaFiGgKaD_J{BaKsA_Lk@oLi@ap@??????Xe|B^iZt@kLpAaLbJym@`AkLb@oL\\gq@QkQ_AiLiDkT??kI_j@{@_EbB}AuCc@gAcF??iDiTYeEEeHtBwg@SsLi@{GqkB}zL??ue@y}CwCiYmgAy_PmSidG??gEirAGkZ??nAy`KWAV@ZeN??dAaRhAcLtZu{BvAsPTsLc@gQiAcLmDmTIDHEyB{M??mHec@s@b@??mFeZ`@qC??_vAumIoIk_@aiAmvEoCuOu@mHy@eJc@uCIDqAwLaBwKs_@{jBHEBCI]iIsa@cC}OyBcU}@_Qa@uUN{UtEclANwUq@uUcDe_@G@FA_DiXmNot@gCwJsIkTgCuJyAyKy@mR??_@DYuIw@kLaAqGiCyJ}IeQsJyNuIsOaAvB`AwBo@aAb@cA",
+							"crdEncZ": "????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"crdEncS": "NNLNMNLNNNNNLNNNNNNKNLNMNLNMNLNKNNNLNMNLNMNNKNNNMNNNMNMNMNNNKNNLNLNLNNNMNNKNLNKNNNNLNNNNNMKNNNNLNMNLNNNNNMNLNMNMNMNNMNMNMNMNMNMNNNLNLNNNKNKNNNMNMNLMNNKNNNNNNKNNNNNNNMNMNNNNMNNNNNMNMNMNMNNNNNNNKNKNNNNNNNNNMNNNNNNNNNNNNNNKNKNNNNNKNKNNLNLNMNNMNMNLNNLNKNMNNNNNNLNLNLNKNNNKNNNKNLNKNNNMNNNMNNNNKNKNNMNNNNMKNNNKNLNKNNNNNKNNNMNLNNNNNNLNLNMNNNMLNKNNNNNKLLNNNNNNNKNMNMNMNMNNNNNNNNNNNNNNKNKNMNNNNMNKNNNMNLNMNMNNNNLNMNNLNNNNNKNKNMNNNNNLNLNLNNNKNKNNNMNKNMNMNMNMNNNNNMNKNNLNMNMNNNNNNNNLNMNLNNNNNNNNNNNNMNNNLNNNMNLNNNNNNNNNNNNLNLNNNNKNNNNNLNMNMNNNNNNNNNMMNMNNNKNLNMLNNNNN",
+							"crdEncF": "????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"ppLocRefL": [
+								{
+									"ppIdx": 0,
+									"locX": 0
+								},
+								{
+									"ppIdx": 173,
+									"locX": 3
+								},
+								{
+									"ppIdx": 324,
+									"locX": 4
+								},
+								{
+									"ppIdx": 469,
+									"locX": 5
+								},
+								{
+									"ppIdx": 555,
+									"locX": 2
+								}
+							]
+						},
+						"ctxRecon": "T$A=1@O=Fulda@L=8000115@a=128@$A=1@O=Braunschweig Hbf@L=8000049@a=128@$201909032012$201909032227$ICE  274$$1$",
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 1,
+								"fLocX": 0,
+								"tLocX": 2,
+								"fIdx": 9,
+								"tIdx": 13,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 2,
+								"fLocX": 0,
+								"tLocX": 2,
+								"fIdx": 9,
+								"tIdx": 13,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							}
+						],
+						"chRatingRT": 4,
+						"subscr": "F",
+						"dTrnCmpSX": {
+							"tcocX": [
+								0,
+								1
+							]
+						}
+					},
+					"minChg": "000600",
+					"resState": "N",
+					"resRecommendation": "N"
+				},
+				{
+					"type": "JNY",
+					"icoX": 6,
+					"dep": {
+						"locX": 2,
+						"idx": 3,
+						"dProdX": 1,
+						"dPlatfS": "6",
+						"dInR": true,
+						"dTimeS": "223500",
+						"dTimeR": "223500",
+						"dProgType": "PROGNOSED",
+						"dTZOffset": 120,
+						"type": "N"
+					},
+					"arr": {
+						"locX": 1,
+						"idx": 4,
+						"aProdX": 1,
+						"aPlatfS": "2",
+						"aOutR": true,
+						"aTimeS": "224400",
+						"aTimeR": "224400",
+						"aProgType": "PROGNOSED",
+						"aTZOffset": 120,
+						"type": "N"
+					},
+					"jny": {
+						"jid": "1|285315|14|80|3092019",
+						"prodX": 1,
+						"dirTxt": "Hildesheim Hbf",
+						"status": "P",
+						"isRchbl": false,
+						"stopL": [
+							{
+								"locX": 2,
+								"idx": 3,
+								"dProdX": 1,
+								"dPlatfS": "6",
+								"dInR": true,
+								"dTimeS": "223500",
+								"dTimeR": "223500",
+								"dProgType": "PROGNOSED",
+								"dDirTxt": "Hildesheim Hbf",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 1,
+								"idx": 4,
+								"aProdX": 1,
+								"aPlatfS": "2",
+								"aOutR": true,
+								"aTimeS": "224400",
+								"aTimeR": "224400",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"type": "N"
+							}
+						],
+						"poly": {
+							"delta": true,
+							"dim": 3,
+							"type": "WGS84",
+							"crdEncYX": "wn|}Huti_Ac@bAn@`AaAvB`AwBtIrOrJxN|IdQhCxJ`ApGv@jLXtI^E??x@lRxAxKfCtJrIjTfCvJlNnt@~ChXG@FAbDd_@p@tUOvUuEblAOzU`@tU|@~PxBbUbC|OhIra@H\\CBBCt_@dkBfBrKpAnLKDb@tCx@dJt@lHnCtO`iAlvEnIj_@~uAtmI??a@pClFdZ??r@c@lHdc@??",
+							"crdEncZ": "??????????????????????????????????????????????????????",
+							"crdEncS": "NNNNNLMNLNKNNNMNMMNNNNNNNNNMNMNLNNNNNKNNNNLNLNNNNNNNNN",
+							"crdEncF": "??????????????????????????????????????????????????????",
+							"ppLocRefL": [
+								{
+									"ppIdx": 0,
+									"locX": 2
+								},
+								{
+									"ppIdx": 53,
+									"locX": 1
+								}
+							]
+						},
+						"ctxRecon": "T$A=1@O=Braunschweig Hbf@L=8000049@a=128@$A=1@O=Lengede-Broistedt@L=8001188@a=128@$201909032235$201909032244$ENO83584$$1$",
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 3,
+								"fLocX": 2,
+								"tLocX": 1,
+								"fIdx": 3,
+								"tIdx": 4,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 4,
+								"fLocX": 2,
+								"tLocX": 1,
+								"fIdx": 3,
+								"tIdx": 4,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 5,
+								"fLocX": 2,
+								"tLocX": 1,
+								"fIdx": 3,
+								"tIdx": 4,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							}
+						],
+						"subscr": "F"
+					},
+					"resState": "N",
+					"resRecommendation": "N"
+				}
+			],
+			"ctxRecon": "¶HKI¶T$A=1@O=Fulda@L=8000115@a=128@$A=1@O=Braunschweig Hbf@L=8000049@a=128@$201909032012$201909032227$ICE  274$$1$§T$A=1@O=Braunschweig Hbf@L=8000049@a=128@$A=1@O=Lengede-Broistedt@L=8001188@a=128@$201909032235$201909032244$ENO83584$$1$",
+			"trfRes": {
+				"statusCode": "OK",
+				"fareSetL": [
+					{
+						"fareL": [
+							{
+								"prc": 21300,
+								"isFromPrice": true,
+								"isBookable": true,
+								"isUpsell": false,
+								"targetCtx": "D",
+								"buttonText": "Continue to booking"
+							}
+						]
+					}
+				]
+			},
+			"msgL": [
+				{
+					"type": "REM",
+					"remX": 6,
+					"txtC": {
+						"r": 204,
+						"g": 0,
+						"b": 0,
+						"a": 255
+					},
+					"prio": 200,
+					"fIdx": -1,
+					"tIdx": -1,
+					"tagL": [
+						"SUM_CON_FTR_H3"
+					]
+				}
+			],
+			"conSubscr": "F",
+			"resState": "N",
+			"resRecommendation": "N",
+			"recState": "U",
+			"sotRating": 4,
+			"isSotCon": false,
+			"showARSLink": false,
+			"sotCtxt": {
+				"cnLocX": 0,
+				"calcDate": "20190903",
+				"jid": "1|205004|0|80|-1",
+				"locMode": "FROM_START",
+				"pLocX": 0,
+				"reqMode": "UNKNOWN",
+				"sectX": 0,
+				"calcTime": "200300"
+			},
+			"cksum": "38b14e9a_3",
+			"dTrnCmpSX": {
+				"tcocX": [
+					0,
+					1
+				]
+			}
+		},
+		{
+			"cid": "C-1",
+			"date": "20190903",
+			"dur": "022700",
+			"chg": 1,
+			"sDays": {
+				"sDaysR": "daily",
+				"sDaysI": "not 29. Sep until 1. Oct 2019",
+				"sDaysB": "000000000000000000000000000000000000000000000003FFFFFFFFFFFFFFFFFFFFFFFFFC7FFFFFFFFFFFFFFFFFE0"
+			},
+			"isAlt": true,
+			"dep": {
+				"locX": 0,
+				"idx": 9,
+				"dProdX": 0,
+				"dPlatfS": "6",
+				"dInR": true,
+				"dTimeS": "201200",
+				"dTimeR": "204400",
+				"dProgType": "PROGNOSED",
+				"dTrnCmpSX": {
+					"tcocX": [
+						0,
+						1
+					]
+				},
+				"dTZOffset": 120,
+				"msgL": [
+					{
+						"type": "REM",
+						"remX": 0,
+						"txtC": {
+							"r": 204,
+							"g": 0,
+							"b": 0,
+							"a": 255
+						},
+						"prio": 478,
+						"fIdx": -1,
+						"tIdx": -1,
+						"tagL": [
+							"RES_LOC_H3"
+						]
+					}
+				],
+				"type": "N"
+			},
+			"arr": {
+				"locX": 1,
+				"idx": 3,
+				"aProdX": 2,
+				"aPlatfS": "1",
+				"aOutR": true,
+				"aTimeS": "231100",
+				"aTimeR": "231100",
+				"aProgType": "PROGNOSED",
+				"aTZOffset": 120,
+				"type": "N"
+			},
+			"secL": [
+				{
+					"type": "JNY",
+					"icoX": 0,
+					"dep": {
+						"locX": 0,
+						"idx": 9,
+						"dProdX": 0,
+						"dPlatfS": "6",
+						"dInR": true,
+						"dTimeS": "201200",
+						"dTimeR": "204400",
+						"dProgType": "PROGNOSED",
+						"dTrnCmpSX": {
+							"tcocX": [
+								0,
+								1
+							],
+							"tcM": 1
+						},
+						"dTZOffset": 120,
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 0,
+								"txtC": {
+									"r": 204,
+									"g": 0,
+									"b": 0,
+									"a": 255
+								},
+								"prio": 478,
+								"fIdx": -1,
+								"tIdx": -1,
+								"tagL": [
+									"RES_LOC_H3"
+								]
+							}
+						],
+						"type": "N"
+					},
+					"arr": {
+						"locX": 5,
+						"idx": 12,
+						"aProdX": 0,
+						"aPlatfS": "2",
+						"aOutR": true,
+						"aTimeS": "215800",
+						"aTimeR": "222700",
+						"aProgType": "PROGNOSED",
+						"aTrnCmpSX": {
+							"tcM": 1
+						},
+						"aTZOffset": 120,
+						"type": "N"
+					},
+					"jny": {
+						"jid": "1|205004|0|80|3092019",
+						"prodX": 0,
+						"dirTxt": "Berlin Hbf (tief)",
+						"status": "P",
+						"isRchbl": true,
+						"stopL": [
+							{
+								"locX": 0,
+								"idx": 9,
+								"dProdX": 0,
+								"dPlatfS": "6",
+								"dInR": true,
+								"dTimeS": "201200",
+								"dTimeR": "204400",
+								"dProgType": "PROGNOSED",
+								"dDirTxt": "Berlin Hbf (tief)",
+								"dTrnCmpSX": {
+									"tcocX": [
+										0,
+										1
+									]
+								},
+								"dTZOffset": 120,
+								"msgL": [
+									{
+										"type": "REM",
+										"remX": 0,
+										"txtC": {
+											"r": 204,
+											"g": 0,
+											"b": 0,
+											"a": 255
+										},
+										"prio": 478,
+										"fIdx": -1,
+										"tIdx": -1,
+										"tagL": [
+											"RES_LOC_H3"
+										]
+									}
+								],
+								"type": "N"
+							},
+							{
+								"locX": 3,
+								"idx": 10,
+								"aProdX": 0,
+								"aPlatfS": "3",
+								"aOutR": true,
+								"aTimeS": "204300",
+								"aTimeR": "211400",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"dProdX": 0,
+								"dPlatfS": "3",
+								"dInR": true,
+								"dTimeS": "204500",
+								"dTimeR": "211600",
+								"dProgType": "PROGNOSED",
+								"dTrnCmpSX": {
+									"tcocX": [
+										0,
+										1
+									]
+								},
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 4,
+								"idx": 11,
+								"aProdX": 0,
+								"aPlatfS": "9",
+								"aOutR": true,
+								"aTimeS": "210200",
+								"aTimeR": "213400",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"dProdX": 0,
+								"dPlatfS": "9",
+								"dInR": true,
+								"dTimeS": "210400",
+								"dTimeR": "213600",
+								"dProgType": "PROGNOSED",
+								"dTrnCmpSX": {
+									"tcocX": [
+										0,
+										1
+									]
+								},
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 5,
+								"idx": 12,
+								"aProdX": 0,
+								"aPlatfS": "2",
+								"aOutR": true,
+								"aTimeS": "215800",
+								"aTimeR": "222700",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"type": "N"
+							}
+						],
+						"poly": {
+							"delta": true,
+							"dim": 3,
+							"type": "WGS84",
+							"crdEncYX": "m~psHambz@EIwMpQwCrCeDhBiGdAqDIoDy@o]gR?C?Bau@qb@aZwPgLiFkO}DwO{AuRT}bBzP??{UbCeUhDoOdDyTvGkTrIaTpKmNtIcSvNoRpPyQhRaQ|SaLvOqKrPaKnQoj@vhA??mTlc@_KpQ{OhV{PnT}LxMkRbQ_S~NuSxLqYfMiOzEmOpDwsDrk@??y_BrVkUvB_[Z}gAqEoUVyOlAeUrDwThGkT~IiYzN??w|BhkAaOfGyIrCaUhFuOrBqRfAuRDyOo@wOcBsOsC}d@_N??y_@gLaU{EgUeC{Oi@gJ?yOf@wOzAgv@~NuO~BaeBvL??yhFt]iUvCcUbEifA~Wik@dI??efDnb@wOjA{Of@yO@a[kA{ZqDsgBe`@eUkDyOuAa[}@mUVyOz@_~@zI??afAzJa[h@a[mAiUqCmZaHsTyHa_Ac`@yT}G_U}EyZ}DmUkAc[Eg_@tA??gm@`Cw`@^kUq@aw@oFmUKmU~@iUjCoZzGkz@|YkTdJwSnLeXxR_WbVwUfYcPbVeKlQqe@~_AcKtQubA~|A??oqBj}CeP|UoLbO{LhNci@`h@??cXxV}RjOwSxLgi@hWgNlJw\\fXkNzIiTlJee@tM{IzCctA~n@????mVzKyLrCkG^kGKwMaC??y^cLAL@Msr@aTeJy@gJ`@eGtAqIbEo}@no@BNOq@wKhHeYzM??{Ar@XtBa@mCaE`AmEMuDgAyEiDsEgGaCgFmCiJeA{GMFLG]wDeCs[TEcC`CsAwD}BkEqCcDmFiE??jAmEqGcG??aAzD{X_WMd@KKuQiPgIeF{IiCkLi@??wCT_A_H??A?uA@yBB??????eS^}EQeFy@mDgAcFgCmJwIqDgF??cHaOgCwHsA}FuAeIs@yGuAeVq@iPO}LPoKr@gMrKkz@jYumBi@Qf@_MCmLu@cL_AcF{AwEgCwEkMgMcCkEmAqD_Jya@}AsFgFuL{GiK????KQlCeG??qAqHeBcPaDwo@sAkPuB_PwCiOcCuJiEyM_p@i`B??ww@koBwLk[wQuk@wLef@kFeWwEuWaEcXaFaa@oC_YwBgYaFkdA??iDwu@}D{j@}Faj@wHai@gHy_@aLuf@wb@kzA??geB_aGoHiUaIqTsI{SeJcS{Ry^yOwVy]ef@??gnAecB??{hAe`BaeAcyAmLiOiV_XeoCyjCyLqNyGcJsKyP{JeRaJkS{EgMqK{\\oZkkA????cDmO{DkN_Nw_@eHwZeF{LuDcMqFkSkBeFkG{JoIoIERaEwDs@hCkFqEyF{CgGqAsDOcJfAcf@zLCe@??mZ`I{YdL{IfCkG~@kG\\mMq@qLiA????abAuK{v@uJcmA}LkrD}a@Cl@_i@iGcUyE}YmK}S}KiSoNuMiLmHuH{LqNko@s|@wQ_SsRqPmS_NaTmKuTwH}_@iJ??o|A{]iUmCa[s@_[vAuZfFeZnJyc@xSiNrF?AF`@a`@~PiZjIaJ~AwObByOp@eJ@oUy@wOgBeaAeS}ZmCmUKqzAlGoUPgJUwOoAik@aK??c`@}HiZsIkTyIeyAwq@oTiI}TgGcUgEiUcCyjBgI??mwAeGkUcBiUsCc`@sHqrBie@wZwEaMu@eXGm_AdG??a|Ef]yZfE_JvBiOzEuIjDyNlHoS|Mg_@rZ??wxD``DcoAdkA??ovGvjGsRvPaXnSqSxMcYtOan@jZ??eo@tZaOfGsTvHmOlEmfD|y@????_k@nMcJ`Ac[`AgJC_JkByFcDeFaFiGgKaD_J{BaKsA_Lk@oLi@ap@??????Xe|B^iZt@kLpAaLbJym@`AkLb@oL\\gq@QkQ_AiLiDkT??kI_j@{@_EbB}AuCc@gAcFPK",
+							"crdEncZ": "???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"crdEncS": "NNLNMNLNNNNNLNNNNNNKNLNMNLNMNLNKNNNLNMNLNMNNKNNNMNNNMNMNMNNNKNNLNLNLNNNMNNKNLNKNNNNLNNNNNMKNNNNLNMNLNNNNNMNLNMNMNMNNMNMNMNMNMNMNNNLNLNNNKNKNNNMNMNLMNNKNNNNNNKNNNNNNNMNMNNNNMNNNNNMNMNMNMNNNNNNNKNKNNNNNNNNNMNNNNNNNNNNNNNNKNKNNNNNKNKNNLNLNMNNMNMNLNNLNKNMNNNNNNLNLNLNKNNNKNNNKNLNKNNNMNNNMNNNNKNKNNMNNNNMKNNNKNLNKNNNNNKNNNMNLNNNNNNLNLNMNNNMLNKNNNNNKLLNNNNNNNKNMNMNMNMNNNNNNNNNNNNNNKNKNMNNNNMNKNNNMNLNMNMNNNNLNMNNLNNNNNKNKNMNNNNNLNLNLNNNKNKNNNMNKNMNMNMNMNNNNNMNKNNLNMNMNNNNNNNN",
+							"crdEncF": "???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"ppLocRefL": [
+								{
+									"ppIdx": 0,
+									"locX": 0
+								},
+								{
+									"ppIdx": 173,
+									"locX": 3
+								},
+								{
+									"ppIdx": 324,
+									"locX": 4
+								},
+								{
+									"ppIdx": 470,
+									"locX": 5
+								}
+							]
+						},
+						"ctxRecon": "T$A=1@O=Fulda@L=8000115@a=128@$A=1@O=Hildesheim Hbf@L=8000169@a=128@$201909032012$201909032158$ICE  274$$1$",
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 1,
+								"fLocX": 0,
+								"tLocX": 5,
+								"fIdx": 9,
+								"tIdx": 12,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 2,
+								"fLocX": 0,
+								"tLocX": 5,
+								"fIdx": 9,
+								"tIdx": 12,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							}
+						],
+						"chRatingRT": 2,
+						"subscr": "F",
+						"chgDurR": 28,
+						"dTrnCmpSX": {
+							"tcocX": [
+								0,
+								1
+							]
+						}
+					},
+					"minChg": "000600",
+					"resState": "N",
+					"resRecommendation": "N"
+				},
+				{
+					"type": "JNY",
+					"icoX": 6,
+					"dep": {
+						"locX": 5,
+						"idx": 0,
+						"dProdX": 2,
+						"dPlatfS": "4",
+						"dInR": true,
+						"dTimeS": "225500",
+						"dTimeR": "225500",
+						"dProgType": "PROGNOSED",
+						"dTZOffset": 120,
+						"type": "N"
+					},
+					"arr": {
+						"locX": 1,
+						"idx": 3,
+						"aProdX": 2,
+						"aPlatfS": "1",
+						"aOutR": true,
+						"aTimeS": "231100",
+						"aTimeR": "231100",
+						"aProgType": "PROGNOSED",
+						"aTZOffset": 120,
+						"type": "N"
+					},
+					"jny": {
+						"jid": "1|285317|0|80|3092019",
+						"prodX": 2,
+						"dirTxt": "Wolfsburg Hbf",
+						"status": "P",
+						"isRchbl": true,
+						"stopL": [
+							{
+								"locX": 5,
+								"idx": 0,
+								"dProdX": 2,
+								"dPlatfS": "4",
+								"dInR": true,
+								"dTimeS": "225500",
+								"dTimeR": "225500",
+								"dProgType": "PROGNOSED",
+								"dDirTxt": "Wolfsburg Hbf",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 6,
+								"idx": 1,
+								"aProdX": 2,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "230400",
+								"aTimeR": "230400",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"dProdX": 2,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "230400",
+								"dTimeR": "230400",
+								"dProgType": "PROGNOSED",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 7,
+								"idx": 2,
+								"aProdX": 2,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "230800",
+								"aTimeR": "230800",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"dProdX": 2,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "230800",
+								"dTimeR": "230800",
+								"dProgType": "PROGNOSED",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 1,
+								"idx": 3,
+								"aProdX": 2,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "231100",
+								"aTimeR": "231100",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"type": "N"
+							}
+						],
+						"poly": {
+							"delta": true,
+							"dim": 3,
+							"type": "WGS84",
+							"crdEncYX": "_pj}Hwxv{@QJiDiTYeEEeHtBwg@SsLi@{GqkB}zL??ue@y}CwCiYmgAy_PmSidG??gEirAGkZ??nAy`KWAV@ZeN??dAaRhAcLtZu{BvAsPTsLc@gQiAcLmDmTIDHEyB{M??",
+							"crdEncZ": "???????????????????????????????????",
+							"crdEncS": "NNLNMNLNNNNNNNNNNNNMNNNLNNNMNLNNNNN",
+							"crdEncF": "???????????????????????????????????",
+							"ppLocRefL": [
+								{
+									"ppIdx": 0,
+									"locX": 5
+								},
+								{
+									"ppIdx": 13,
+									"locX": 6
+								},
+								{
+									"ppIdx": 21,
+									"locX": 7
+								},
+								{
+									"ppIdx": 34,
+									"locX": 1
+								}
+							]
+						},
+						"ctxRecon": "T$A=1@O=Hildesheim Hbf@L=8000169@a=128@$A=1@O=Lengede-Broistedt@L=8001188@a=128@$201909032255$201909032311$ENO83587$$1$",
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 3,
+								"fLocX": 5,
+								"tLocX": 1,
+								"fIdx": 0,
+								"tIdx": 3,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 4,
+								"fLocX": 5,
+								"tLocX": 1,
+								"fIdx": 0,
+								"tIdx": 3,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 5,
+								"fLocX": 5,
+								"tLocX": 1,
+								"fIdx": 0,
+								"tIdx": 3,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							}
+						],
+						"subscr": "F"
+					},
+					"resState": "N",
+					"resRecommendation": "N"
+				}
+			],
+			"ctxRecon": "¶HKI¶T$A=1@O=Fulda@L=8000115@a=128@$A=1@O=Hildesheim Hbf@L=8000169@a=128@$201909032012$201909032158$ICE  274$$1$§T$A=1@O=Hildesheim Hbf@L=8000169@a=128@$A=1@O=Lengede-Broistedt@L=8001188@a=128@$201909032255$201909032311$ENO83587$$1$",
+			"trfRes": {
+				"statusCode": "OK",
+				"fareSetL": [
+					{
+						"fareL": [
+							{
+								"prc": 16800,
+								"isFromPrice": true,
+								"isBookable": true,
+								"isUpsell": false,
+								"targetCtx": "D",
+								"buttonText": "Continue to booking"
+							}
+						]
+					}
+				]
+			},
+			"conSubscr": "F",
+			"resState": "N",
+			"resRecommendation": "N",
+			"recState": "U",
+			"sotRating": 0,
+			"isSotCon": false,
+			"showARSLink": false,
+			"sotCtxt": {
+				"cnLocX": 0,
+				"calcDate": "20190903",
+				"jid": "1|205004|0|80|-1",
+				"locMode": "FROM_START",
+				"pLocX": 0,
+				"reqMode": "UNKNOWN",
+				"sectX": 0,
+				"calcTime": "200300"
+			},
+			"cksum": "c3413100_3",
+			"dTrnCmpSX": {
+				"tcocX": [
+					0,
+					1
+				]
+			}
+		},
+		{
+			"cid": "C-2",
+			"date": "20190903",
+			"dur": "065600",
+			"chg": 2,
+			"sDays": {
+				"sDaysR": "Mo - Th",
+				"sDaysI": "not 30. Sep until 2. Oct 2019",
+				"sDaysB": "78F020C78F1E3C78F1E1C58F1E3C0001C1C58F1E3C68A003C78F1E3C78F1E3C78F1E3C78F023C78F1E3C78F1E3C780"
+			},
+			"dep": {
+				"locX": 0,
+				"idx": 9,
+				"dProdX": 3,
+				"dPlatfS": "6",
+				"dInR": true,
+				"dTimeS": "221200",
+				"dTimeR": "221500",
+				"dProgType": "PROGNOSED",
+				"dTrnCmpSX": {
+					"tcocX": [
+						0,
+						1
+					]
+				},
+				"dTZOffset": 120,
+				"msgL": [
+					{
+						"type": "REM",
+						"remX": 7,
+						"txtC": {
+							"r": 204,
+							"g": 0,
+							"b": 0,
+							"a": 255
+						},
+						"prio": 478,
+						"fIdx": -1,
+						"tIdx": -1,
+						"tagL": [
+							"RES_LOC_H3"
+						]
+					}
+				],
+				"type": "N"
+			},
+			"arr": {
+				"locX": 1,
+				"idx": 3,
+				"aProdX": 4,
+				"aPlatfS": "1",
+				"aOutR": true,
+				"aTimeS": "01051100",
+				"aTZOffset": 120,
+				"type": "N"
+			},
+			"secL": [
+				{
+					"type": "JNY",
+					"icoX": 0,
+					"dep": {
+						"locX": 0,
+						"idx": 9,
+						"dProdX": 3,
+						"dPlatfS": "6",
+						"dInR": true,
+						"dTimeS": "221200",
+						"dTimeR": "221500",
+						"dProgType": "PROGNOSED",
+						"dTrnCmpSX": {
+							"tcocX": [
+								0,
+								1
+							],
+							"tcM": 1
+						},
+						"dTZOffset": 120,
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 7,
+								"txtC": {
+									"r": 204,
+									"g": 0,
+									"b": 0,
+									"a": 255
+								},
+								"prio": 478,
+								"fIdx": -1,
+								"tIdx": -1,
+								"tagL": [
+									"RES_LOC_H3"
+								]
+							}
+						],
+						"type": "N"
+					},
+					"arr": {
+						"locX": 8,
+						"idx": 12,
+						"aProdX": 3,
+						"aPlatfS": "8",
+						"aOutR": true,
+						"aTimeS": "01000200",
+						"aTrnCmpSX": {
+							"tcM": 1
+						},
+						"aTZOffset": 120,
+						"type": "N"
+					},
+					"jny": {
+						"jid": "1|337901|0|80|3092019",
+						"prodX": 3,
+						"dirTxt": "Hamburg-Altona",
+						"status": "P",
+						"isPartCncl": true,
+						"isRchbl": true,
+						"stopL": [
+							{
+								"locX": 0,
+								"idx": 9,
+								"dProdX": 3,
+								"dPlatfS": "6",
+								"dInR": true,
+								"dTimeS": "221200",
+								"dTimeR": "221500",
+								"dProgType": "PROGNOSED",
+								"dDirTxt": "Hamburg-Altona",
+								"dTrnCmpSX": {
+									"tcocX": [
+										0,
+										1
+									]
+								},
+								"dTZOffset": 120,
+								"msgL": [
+									{
+										"type": "REM",
+										"remX": 7,
+										"txtC": {
+											"r": 204,
+											"g": 0,
+											"b": 0,
+											"a": 255
+										},
+										"prio": 478,
+										"fIdx": -1,
+										"tIdx": -1,
+										"tagL": [
+											"RES_LOC_H3"
+										]
+									}
+								],
+								"type": "N"
+							},
+							{
+								"locX": 3,
+								"idx": 10,
+								"aProdX": 3,
+								"aPlatfS": "3",
+								"aOutR": true,
+								"aTimeS": "224300",
+								"aTimeR": "224600",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"dProdX": 3,
+								"dPlatfS": "3",
+								"dInR": true,
+								"dTimeS": "224500",
+								"dTimeR": "224800",
+								"dProgType": "PROGNOSED",
+								"dTrnCmpSX": {
+									"tcocX": [
+										0,
+										1
+									]
+								},
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 4,
+								"idx": 11,
+								"aProdX": 3,
+								"aPlatfS": "4",
+								"aOutR": true,
+								"aTimeS": "230400",
+								"aTimeR": "230700",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"dProdX": 3,
+								"dPlatfS": "4",
+								"dInR": true,
+								"dTimeS": "230600",
+								"dTimeR": "230900",
+								"dProgType": "PROGNOSED",
+								"dTrnCmpSX": {
+									"tcocX": [
+										0,
+										1
+									]
+								},
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 8,
+								"idx": 12,
+								"aProdX": 3,
+								"aPlatfS": "8",
+								"aOutR": true,
+								"aTimeS": "01000200",
+								"aTimeR": "01000500",
+								"aProgType": "PROGNOSED",
+								"aTZOffset": 120,
+								"type": "N"
+							}
+						],
+						"poly": {
+							"delta": true,
+							"dim": 3,
+							"type": "WGS84",
+							"crdEncYX": "m~psHambz@EIwMpQwCrCeDhBiGdAqDIoDy@o]gR?C?Bau@qb@aZwPgLiFkO}DwO{AuRT}bBzP??{UbCeUhDoOdDyTvGkTrIaTpKmNtIcSvNoRpPyQhRaQ|SaLvOqKrPaKnQoj@vhA??mTlc@_KpQ{OhV{PnT}LxMkRbQ_S~NuSxLqYfMiOzEmOpDwsDrk@??y_BrVkUvB_[Z}gAqEoUVyOlAeUrDwThGkT~IiYzN??w|BhkAaOfGyIrCaUhFuOrBqRfAuRDyOo@wOcBsOsC}d@_N??y_@gLaU{EgUeC{Oi@gJ?yOf@wOzAgv@~NuO~BaeBvL??yhFt]iUvCcUbEifA~Wik@dI??efDnb@wOjA{Of@yO@a[kA{ZqDsgBe`@eUkDyOuAa[}@mUVyOz@_~@zI??afAzJa[h@a[mAiUqCmZaHsTyHa_Ac`@yT}G_U}EyZ}DmUkAc[Eg_@tA??gm@`Cw`@^kUq@aw@oFmUKmU~@iUjCoZzGkz@|YkTdJwSnLeXxR_WbVwUfYcPbVeKlQqe@~_AcKtQubA~|A??oqBj}CeP|UoLbO{LhNci@`h@??cXxV}RjOwSxLgi@hWgNlJw\\fXkNzIiTlJee@tM{IzCctA~n@????mVzKyLrCkG^kGKwMaC??y^cLAL@Msr@aTeJy@gJ`@eGtAqIbEo}@no@BNOq@wKhHeYzM??{Ar@XtBa@mCaE`AmEMuDgAyEiDsEgGaCgFmCiJeA{GMFLG]wDeCs[TEcC`CsAwD}BkEqCcDmFiE??jAmEqGcG??aAzD{X_WMd@KKuQiPgIeF{IiCkLi@??wCT_A_H??A?uA@yBB??????eS^}EQeFy@mDgAcFgCmJwIqDgF??cHaOgCwHsA}FuAeIs@yGuAeVq@iPO}LPoKr@gMrKkz@jYumBi@Qf@_MCmLu@cL_AcF{AwEgCwEkMgMcCkEmAqD_Jya@}AsFgFuL{GiK????KQlCeG??qAqHeBcPaDwo@sAkPuB_PwCiOcCuJiEyM_p@i`B??ww@koBwLk[wQuk@wLef@kFeWwEuWaEcXaFaa@oC_YwBgYaFkdA??iDwu@}D{j@}Faj@wHai@gHy_@aLuf@wb@kzA??geB_aGoHiUaIqTsI{SeJcS{Ry^yOwVy]ef@??gnAecB??{hAe`BaeAcyAmLiOiV_XeoCyjCyLqNyGcJsKyP{JeRaJkS{EgMqK{\\oZkkA????cDmO{DkN_Nw_@eHwZeF{LuDcMqFkSkBeFkG{JoIoIERaEwDs@hCkFqEyF{CgGqAsDOcJfAcf@zLCe@??mZ`I{YdL{IfCkG~@kG\\mMq@qLiA????abAuK{v@uJcmA}LkrD}a@Cl@_i@iGcUyE}YmK}S}KiSoNuMiLmHuH{LqNko@s|@wQ_SsRqPmS_NaTmKuTwH}_@iJ??o|A{]iUmCa[s@_[vAuZfFeZnJyc@xSiNrF?AF`@a`@~PiZjIaJ~AwObByOp@eJ@oUy@wOgBeaAeS}ZmCmUKqzAlGoUPgJUwOoAik@aK??c`@}HiZsIkTyIeyAwq@oTiI}TgGcUgEiUcCyjBgI??mwAeGkUcBiUsCc`@sHqrBie@wZwEaMu@eXGm_AdG??a|Ef]yZfE_JvBiOzEuIjDyNlHoS|Mg_@rZ??wxD``DcoAdkA??ovGvjGsRvPaXnSqSxMcYtOan@jZ??eo@tZaOfGsTvHmOlEmfD|y@??????c]vIuTlHkThJaY`PiStNwM`LukAvgA????{cAf`A}MtKgIpF}SfLaOdGkOrEcUhEgq@`GmUdA{OEkUwAgUsDkO_E{I}CeT{Je]eS??ya@}UkL_F}IqCoOeDwOeBgJ_@yOFiUnBqO~C}InCkTdJ_|@~a@????of@lVeIvFo]lY??smAbcAa]~WgdAp{@yOxL??uLrHod@rU?A?@igCdqAg}@p^??ufAhe@uFtDyE|FcCdEsB`FqD|NsGl]sBlWeAlG}DhKmI`RDD",
+							"crdEncZ": "??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"crdEncS": "NNLNMNLNNNNNLNNNNNNKNLNMNLNMNLNKNNNLNMNLNMNNKNNNMNNNMNMNMNNNKNNLNLNLNNNMNNKNLNKNNNNLNNNNNMKNNNNLNMNLNNNNNMNLNMNMNMNNMNMNMNMNMNMNNNLNLNNNKNKNNNMNMNLMNNKNNNNNNKNNNNNNNMNMNNNNMNNNNNMNMNMNMNNNNNNNKNKNNNNNNNNNMNNNNNNNNNNNNNNKNKNNNNNKNKNNLNLNMNNMNMNLNNLNKNMNNNNNNLNLNLNKNNNKNNNKNLNKNNNMNNNMNNNNKNKNNMNNNNMKNNNKNLNKNNNNNKNNNMNLNNNNNNLNLNMNNNMLNKNNNNNKLLNNNNNNNKNMNMNMNMNNNNNNNNNNNNNNKNKNMNNNNMNKNNNMNLNMNMNNNNLNMNNLNNNNNKNKNMNNNNNLNLNLNNNKNKNNNNLNMNLNNNNNKNMNMNLNMNNKNMNNNKNLNKNNKNKNNNNKNNKKKNNLNNNNNNNMNKNNNMNKNN",
+							"crdEncF": "??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"ppLocRefL": [
+								{
+									"ppIdx": 0,
+									"locX": 0
+								},
+								{
+									"ppIdx": 173,
+									"locX": 3
+								},
+								{
+									"ppIdx": 324,
+									"locX": 4
+								},
+								{
+									"ppIdx": 505,
+									"locX": 8
+								}
+							]
+						},
+						"ctxRecon": "T$A=1@O=Fulda@L=8000115@a=128@$A=1@O=Hannover Hbf@L=8000152@a=128@$201909032212$201909040002$ICE  272$$1$",
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 1,
+								"fLocX": 0,
+								"tLocX": 8,
+								"fIdx": 9,
+								"tIdx": 12,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							}
+						],
+						"chRatingRT": 2,
+						"subscr": "F",
+						"chgDurR": 29,
+						"dTrnCmpSX": {
+							"tcocX": [
+								0,
+								1
+							]
+						}
+					},
+					"minChg": "000800",
+					"resState": "N",
+					"resRecommendation": "N"
+				},
+				{
+					"type": "JNY",
+					"icoX": 11,
+					"dep": {
+						"locX": 8,
+						"idx": 0,
+						"dProdX": 5,
+						"dPlatfS": "14",
+						"dInR": true,
+						"dTimeS": "01003400",
+						"dTZOffset": 120,
+						"type": "N"
+					},
+					"arr": {
+						"locX": 5,
+						"idx": 9,
+						"aProdX": 5,
+						"aPlatfS": "7",
+						"aOutR": true,
+						"aTimeS": "01011300",
+						"aTZOffset": 120,
+						"type": "N"
+					},
+					"jny": {
+						"jid": "1|220470|0|80|4092019",
+						"prodX": 5,
+						"dirTxt": "Hildesheim Hbf",
+						"status": "P",
+						"isRchbl": true,
+						"stopL": [
+							{
+								"locX": 8,
+								"idx": 0,
+								"dProdX": 5,
+								"dPlatfS": "14",
+								"dInR": true,
+								"dTimeS": "01003400",
+								"dDirTxt": "Hildesheim Hbf",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 9,
+								"idx": 1,
+								"aProdX": 5,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "01003700",
+								"aTZOffset": 120,
+								"dProdX": 5,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "01003800",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 10,
+								"idx": 2,
+								"aProdX": 5,
+								"aPlatfS": "2",
+								"aOutR": true,
+								"aTimeS": "01003900",
+								"aTZOffset": 120,
+								"dProdX": 5,
+								"dPlatfS": "2",
+								"dInR": true,
+								"dTimeS": "01004000",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 11,
+								"idx": 3,
+								"aProdX": 5,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "01004300",
+								"aTZOffset": 120,
+								"dProdX": 5,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "01004300",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 12,
+								"idx": 4,
+								"aProdX": 5,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "01004600",
+								"aTZOffset": 120,
+								"dProdX": 5,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "01004600",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 13,
+								"idx": 5,
+								"aProdX": 5,
+								"aPlatfS": "11",
+								"aOutR": true,
+								"aTimeS": "01005000",
+								"aTZOffset": 120,
+								"dProdX": 5,
+								"dPlatfS": "11",
+								"dInR": true,
+								"dTimeS": "01005100",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 14,
+								"idx": 6,
+								"aProdX": 5,
+								"aPlatfS": "2",
+								"aOutR": true,
+								"aTimeS": "01005800",
+								"aTZOffset": 120,
+								"dProdX": 5,
+								"dPlatfS": "2",
+								"dInR": true,
+								"dTimeS": "01005900",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 15,
+								"idx": 7,
+								"aProdX": 5,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "01010400",
+								"aTZOffset": 120,
+								"dProdX": 5,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "01010400",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 16,
+								"idx": 8,
+								"aProdX": 5,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "01010800",
+								"aTZOffset": 120,
+								"dProdX": 5,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "01010800",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 5,
+								"idx": 9,
+								"aProdX": 5,
+								"aPlatfS": "7",
+								"aOutR": true,
+								"aTimeS": "01011300",
+								"aTZOffset": 120,
+								"type": "N"
+							}
+						],
+						"poly": {
+							"delta": true,
+							"dim": 3,
+							"type": "WGS84",
+							"crdEncYX": "u{t~H_umz@eAwAzA_EjJ_OzBuGv@_FhCk^lEuy@Z}UOcQ????uFmmCM@eBmp@m@ww@??w@ukANmUn@eQhCqY|VuoBfBsPn@oLVwLO{S??eCunAoAqUcC}TuQspA????{Ign@yBgU??cAmU}FsuBw@sc@aC{~@Ymq@sB_q@wAZdBi@_CgTe@_HGeHp@oLbAmGpCyIjC_FdHcI[oAjBiBj@t@~EgIvDgMzMuaAt^}lCrBkKzDuHtFqDpDc@xAJlDdAvChBhI|GvEbGpDlIxAxFdAnGj@zGRbHaAvzBZfQ|AtPxCpOpExMbGtKzExFpFdEfDdBdGfBp]~EzIhB`f@~GthBrV??p|@~LxOj@`sIcg@??x~@uFfJO~L|@fi@z@dw@jCrq@zApUN`UxA??vc@jB`pAfJbJpAl|@~GfJOn`@mDlGPhGt@rItDvCzCfE`HpEzMpFjZb@[",
+							"crdEncZ": "???????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"crdEncS": "NNMNMNLNMNNNNNNNNNLNNKNKNNNNNMNNNMNNLNKNNNNNKNMNMNMNNNNNNNMNNNKNKNMNNKNKNNNNNNNLNKNKKKNNNNNNKNLLMKMNNNLLNMNKNNLNNNN",
+							"crdEncF": "???????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"ppLocRefL": [
+								{
+									"ppIdx": 0,
+									"locX": 8
+								},
+								{
+									"ppIdx": 12,
+									"locX": 9
+								},
+								{
+									"ppIdx": 15,
+									"locX": 10
+								},
+								{
+									"ppIdx": 25,
+									"locX": 11
+								},
+								{
+									"ppIdx": 34,
+									"locX": 12
+								},
+								{
+									"ppIdx": 51,
+									"locX": 13
+								},
+								{
+									"ppIdx": 86,
+									"locX": 14
+								},
+								{
+									"ppIdx": 90,
+									"locX": 15
+								},
+								{
+									"ppIdx": 99,
+									"locX": 16
+								},
+								{
+									"ppIdx": 114,
+									"locX": 5
+								}
+							]
+						},
+						"ctxRecon": "T$A=1@O=Hannover Hbf@L=8000152@a=128@$A=1@O=Hildesheim Hbf@L=8000169@a=128@$201909040034$201909040113$S      3$$1$",
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 3,
+								"fLocX": 8,
+								"tLocX": 5,
+								"fIdx": 0,
+								"tIdx": 9,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 8,
+								"fLocX": 8,
+								"tLocX": 5,
+								"fIdx": 0,
+								"tIdx": 9,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 9,
+								"fLocX": 8,
+								"tLocX": 5,
+								"fIdx": 0,
+								"tIdx": 9,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 10,
+								"fLocX": 8,
+								"tLocX": 5,
+								"fIdx": 0,
+								"tIdx": 9,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							}
+						],
+						"subscr": "F",
+						"chgDurR": 222
+					},
+					"minChg": "000600",
+					"resState": "N",
+					"resRecommendation": "N"
+				},
+				{
+					"type": "JNY",
+					"icoX": 6,
+					"dep": {
+						"locX": 5,
+						"idx": 0,
+						"dProdX": 4,
+						"dPlatfS": "4",
+						"dInR": true,
+						"dTimeS": "01045500",
+						"dTZOffset": 120,
+						"type": "N"
+					},
+					"arr": {
+						"locX": 1,
+						"idx": 3,
+						"aProdX": 4,
+						"aPlatfS": "1",
+						"aOutR": true,
+						"aTimeS": "01051100",
+						"aTZOffset": 120,
+						"type": "N"
+					},
+					"jny": {
+						"jid": "1|285310|0|80|4092019",
+						"prodX": 4,
+						"dirTxt": "Wolfsburg Hbf",
+						"status": "P",
+						"isRchbl": true,
+						"stopL": [
+							{
+								"locX": 5,
+								"idx": 0,
+								"dProdX": 4,
+								"dPlatfS": "4",
+								"dInR": true,
+								"dTimeS": "01045500",
+								"dDirTxt": "Wolfsburg Hbf",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 6,
+								"idx": 1,
+								"aProdX": 4,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "01050400",
+								"aTZOffset": 120,
+								"dProdX": 4,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "01050400",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 7,
+								"idx": 2,
+								"aProdX": 4,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "01050800",
+								"aTZOffset": 120,
+								"dProdX": 4,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "01050800",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 1,
+								"idx": 3,
+								"aProdX": 4,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "01051100",
+								"aTZOffset": 120,
+								"type": "N"
+							}
+						],
+						"poly": {
+							"delta": true,
+							"dim": 3,
+							"type": "WGS84",
+							"crdEncYX": "_pj}Hwxv{@QJiDiTYeEEeHtBwg@SsLi@{GqkB}zL??ue@y}CwCiYmgAy_PmSidG??gEirAGkZ??nAy`KWAV@ZeN??dAaRhAcLtZu{BvAsPTsLc@gQiAcLmDmTIDHEyB{M??",
+							"crdEncZ": "???????????????????????????????????",
+							"crdEncS": "NNLNMNLNNNNNNNNNNNNMNNNLNNNMNLNNNNN",
+							"crdEncF": "???????????????????????????????????",
+							"ppLocRefL": [
+								{
+									"ppIdx": 0,
+									"locX": 5
+								},
+								{
+									"ppIdx": 13,
+									"locX": 6
+								},
+								{
+									"ppIdx": 21,
+									"locX": 7
+								},
+								{
+									"ppIdx": 34,
+									"locX": 1
+								}
+							]
+						},
+						"ctxRecon": "T$A=1@O=Hildesheim Hbf@L=8000169@a=128@$A=1@O=Lengede-Broistedt@L=8001188@a=128@$201909040455$201909040511$ENO83551$$1$",
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 3,
+								"fLocX": 5,
+								"tLocX": 1,
+								"fIdx": 0,
+								"tIdx": 3,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 4,
+								"fLocX": 5,
+								"tLocX": 1,
+								"fIdx": 0,
+								"tIdx": 3,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 5,
+								"fLocX": 5,
+								"tLocX": 1,
+								"fIdx": 0,
+								"tIdx": 3,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							}
+						],
+						"subscr": "F"
+					},
+					"resState": "N",
+					"resRecommendation": "N"
+				}
+			],
+			"ctxRecon": "¶HKI¶T$A=1@O=Fulda@L=8000115@a=128@$A=1@O=Hannover Hbf@L=8000152@a=128@$201909032212$201909040002$ICE  272$$1$§T$A=1@O=Hannover Hbf@L=8000152@a=128@$A=1@O=Hildesheim Hbf@L=8000169@a=128@$201909040034$201909040113$S      3$$1$§T$A=1@O=Hildesheim Hbf@L=8000169@a=128@$A=1@O=Lengede-Broistedt@L=8001188@a=128@$201909040455$201909040511$ENO83551$$1$",
+			"trfRes": {
+				"statusCode": "OK",
+				"fareSetL": [
+					{
+						"fareL": [
+							{
+								"prc": 16170,
+								"isFromPrice": true,
+								"isBookable": true,
+								"isUpsell": false,
+								"targetCtx": "D",
+								"buttonText": "Continue to booking"
+							}
+						]
+					}
+				]
+			},
+			"conSubscr": "F",
+			"resState": "N",
+			"resRecommendation": "N",
+			"recState": "U",
+			"sotRating": 0,
+			"isSotCon": false,
+			"showARSLink": false,
+			"sotCtxt": {
+				"cnLocX": 0,
+				"calcDate": "20190903",
+				"jid": "1|337901|0|80|-1",
+				"locMode": "FROM_START",
+				"pLocX": 0,
+				"reqMode": "UNKNOWN",
+				"sectX": 0,
+				"calcTime": "200300"
+			},
+			"cksum": "ccd70c0c_3",
+			"dTrnCmpSX": {
+				"tcocX": [
+					0,
+					1
+				]
+			}
+		},
+		{
+			"cid": "C-3",
+			"date": "20190903",
+			"dur": "063300",
+			"chg": 2,
+			"sDays": {
+				"sDaysR": "not every day",
+				"sDaysI": "3. Sep until 24. Oct 2019 Mo - Th, Su; not 16., 25. Sep, 2. Oct",
+				"sDaysB": "000000000000000000000000000000000000000000000000001F3E7CF9D3E7CF9F3E7CB9D3A7CF9F00000000000000"
+			},
+			"dep": {
+				"locX": 0,
+				"idx": 0,
+				"dProdX": 6,
+				"dPlatfS": "1",
+				"dInR": true,
+				"dTimeS": "231100",
+				"dProgType": "PROGNOSED",
+				"dTZOffset": 120,
+				"type": "N"
+			},
+			"arr": {
+				"locX": 1,
+				"idx": 4,
+				"aProdX": 7,
+				"aPlatfS": "2",
+				"aOutR": true,
+				"aTimeS": "01054400",
+				"aProgType": "PROGNOSED",
+				"aTZOffset": 120,
+				"type": "N"
+			},
+			"secL": [
+				{
+					"type": "JNY",
+					"icoX": 15,
+					"dep": {
+						"locX": 0,
+						"idx": 0,
+						"dProdX": 6,
+						"dPlatfS": "1",
+						"dInR": true,
+						"dTimeS": "231100",
+						"dProgType": "PROGNOSED",
+						"dTZOffset": 120,
+						"type": "N"
+					},
+					"arr": {
+						"locX": 17,
+						"idx": 11,
+						"aProdX": 6,
+						"aPlatfS": "5",
+						"aOutR": true,
+						"aTimeS": "01002500",
+						"aProgType": "PROGNOSED",
+						"aTZOffset": 120,
+						"type": "N"
+					},
+					"jny": {
+						"jid": "1|242376|0|80|3092019",
+						"prodX": 6,
+						"dirTxt": "Frankfurt(Main)Hbf",
+						"status": "P",
+						"isRchbl": true,
+						"stopL": [
+							{
+								"locX": 0,
+								"idx": 0,
+								"dProdX": 6,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "231100",
+								"dProgType": "PROGNOSED",
+								"dDirTxt": "Frankfurt(Main)Hbf",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 18,
+								"idx": 1,
+								"aProdX": 6,
+								"aPlatfS": "3",
+								"aOutR": true,
+								"aTimeS": "232000",
+								"aTZOffset": 120,
+								"dProdX": 6,
+								"dPlatfS": "3",
+								"dInR": true,
+								"dTimeS": "232100",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 19,
+								"idx": 2,
+								"aProdX": 6,
+								"aPlatfS": "2",
+								"aOutR": true,
+								"aTimeS": "232500",
+								"aTZOffset": 120,
+								"dProdX": 6,
+								"dPlatfS": "2",
+								"dInR": true,
+								"dTimeS": "232600",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 20,
+								"idx": 3,
+								"aProdX": 6,
+								"aPlatfS": "4",
+								"aOutR": true,
+								"aTimeS": "233300",
+								"aTZOffset": 120,
+								"dProdX": 6,
+								"dPlatfS": "4",
+								"dInR": true,
+								"dTimeS": "233300",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 21,
+								"idx": 4,
+								"aProdX": 6,
+								"aPlatfS": "3",
+								"aOutR": true,
+								"aTimeS": "233800",
+								"aTZOffset": 120,
+								"dProdX": 6,
+								"dPlatfS": "3",
+								"dInR": true,
+								"dTimeS": "233900",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 22,
+								"idx": 5,
+								"aProdX": 6,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "234400",
+								"aTZOffset": 120,
+								"dProdX": 6,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "234400",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 23,
+								"idx": 6,
+								"aProdX": 6,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "234900",
+								"aTZOffset": 120,
+								"dProdX": 6,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "234900",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 24,
+								"idx": 7,
+								"aProdX": 6,
+								"aPlatfS": "2",
+								"aOutR": true,
+								"aTimeS": "235600",
+								"aTZOffset": 120,
+								"dProdX": 6,
+								"dPlatfS": "2",
+								"dInR": true,
+								"dTimeS": "235600",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 25,
+								"idx": 8,
+								"aProdX": 6,
+								"aPlatfS": "1",
+								"aOutR": true,
+								"aTimeS": "01000200",
+								"aTZOffset": 120,
+								"dProdX": 6,
+								"dPlatfS": "1",
+								"dInR": true,
+								"dTimeS": "01000300",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 26,
+								"idx": 9,
+								"aProdX": 6,
+								"aPlatfS": "6",
+								"aOutR": true,
+								"aTimeS": "01001000",
+								"aTZOffset": 120,
+								"dProdX": 6,
+								"dPlatfS": "6",
+								"dInR": true,
+								"dTimeS": "01001200",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 27,
+								"idx": 10,
+								"aProdX": 6,
+								"aPlatfS": "2",
+								"aOutR": true,
+								"aTimeS": "01002000",
+								"aTZOffset": 120,
+								"dProdX": 6,
+								"dPlatfS": "2",
+								"dInR": true,
+								"dTimeS": "01002000",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 17,
+								"idx": 11,
+								"aProdX": 6,
+								"aPlatfS": "5",
+								"aOutR": true,
+								"aTimeS": "01002500",
+								"aTZOffset": 120,
+								"type": "N"
+							}
+						],
+						"poly": {
+							"delta": true,
+							"dim": 3,
+							"type": "WGS84",
+							"crdEncYX": "m~psHambz@Tf@|@mA??lJmMlD_GxDeEjFwC`GgAtHIfb@lA???Kle@jA@K@QlN|@hItCzjAdw@@GBO~\\hUnr@pc@tI~CpIhA~GEjGu@h~@{RhG{@lGEdJt@zI~B|FrC~H|F~ElFlGnJrDzHjp@rrB??pi@lcBbK`XnCrFlG~I`HvGfJhG??l]~SbDbCjFzFdG`KtZlv@??pItSvFtKdZ~g@hIzJv\\|[fGdHbRpWtP~[r@mAdK`SrG`IbGhEl\\`OvG|CpFpD`HjIzBjExCvIrB|Jt@lGzBbThA|FzAnFpBxE`CbElMnOs@rBr@sBdlEb_FfEdExFzCbCc@KrA~n@|QpDb@rDQjDgA`D{B~MyRzCmCdLqFnDu@rDKhGv@hDpAbDtB|EpFdGpK??dDxHtFjQfA~FjDp\\lCbJdEzGl_@ta@pDxHvArFjArKJvGkBt~ABxGfAdPfBbKvArFhB`FzDlHxExFlF`ExIzCjUbBnDn@hDzAbFzEzDlH|AnF`AbGd@pGl@`^??p@d]nApKvArFt^lgAxAnFhBdKn@lGf@`Lx@f|@^tGjBbK`FnL`n@ljAvX|g@??rM~R`HhIpHdHrPrL`L`GjL`F??|f@pSdIlFdH~H`EbHhDdIlCdJjB`KdC`Tb~@tjIlB|JlCdJjDdIrEnH|Az@??O`@jEhEbzBphBzJpJdCzDlRt^hB~EvAtF~AdKt@xKFdLg@lM??kBt[MnPHjCz@vKvAlInBbHlBzE`EbHnCbDreArfAxGxI|GpL??``@~q@rDxHjGnPbFzQ~EzVjBtOx@hP~Ata@`CxYzAhO??th@bsF??hBdRfJb}@tAxJvu@lkD??ndBf{H??`nA`vFnDjNdJ`Y??pzBpxGpO~f@hL~\\DArEjLlBpD|N|PbCzDnBxEtArF|@fGZpG@vGw@xKwBtJmZrs@`@B??{B`CJNy@hBpAhB?@kD`H_AbDwAvEqCfQiD`Lq@|D_@~If@xK?@??@DtBfKzNf^OP|B~GjA|Fn@lGN~Kq@zKsGh_@u@fGa@rGItGfBh`A`Cla@f@n]vBh}@??lCfgAM???nBjy@LAfBrq@x@xK|AfKzBrJjb@d}AtQzk@KJ?@x\\vfAhC`Ol@lGb@~J??v@PvAje@v@dJPGQFhHru@`Gxj@[LfCl[l@lIHtGQtGm@jGuBxJq]zvAsAlKg@|KBbLpBn`Aj@|~ArAxPvGzg@YHxAvIrArFrKvWBA",
+							"crdEncZ": "???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"crdEncS": "NNNNKNMNMNNNNNNNNNNNNNNMNLNKNLNLNLNLNNNNNLNMNNNKNNNNMNNNLNNNNNNMNKNNLNLNNKNKNNNNNMNNNNLNLNMNNKNNKNMNNLNLNNNNMNMNKNNKNLNMNNKNMNNLNLNNNNKNKNKNNMNMKNNNKNNKNNNNMNLNLNNLNLNNNNLMNKNKNMNMNNNKNMNKNLNNLNNNLNMNMNNNNNNNNKNNNNNNLNNLKNNKNNLNKNKNNNNNNNLNNNNNMMLNNNNNNNNNLNMNNKNKNNMKNNNNNNNNLNKNNNNNNKNNNMNNNKNNNLNLNKNMNLNNMNNKNNN",
+							"crdEncF": "???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"ppLocRefL": [
+								{
+									"ppIdx": 0,
+									"locX": 0
+								},
+								{
+									"ppIdx": 44,
+									"locX": 18
+								},
+								{
+									"ppIdx": 59,
+									"locX": 19
+								},
+								{
+									"ppIdx": 99,
+									"locX": 20
+								},
+								{
+									"ppIdx": 130,
+									"locX": 21
+								},
+								{
+									"ppIdx": 152,
+									"locX": 22
+								},
+								{
+									"ppIdx": 166,
+									"locX": 23
+								},
+								{
+									"ppIdx": 204,
+									"locX": 24
+								},
+								{
+									"ppIdx": 213,
+									"locX": 25
+								},
+								{
+									"ppIdx": 234,
+									"locX": 26
+								},
+								{
+									"ppIdx": 294,
+									"locX": 27
+								},
+								{
+									"ppIdx": 314,
+									"locX": 17
+								}
+							]
+						},
+						"ctxRecon": "T$A=1@O=Fulda@L=8000115@a=128@$A=1@O=Frankfurt(Main)Süd@L=8002041@a=128@$201909032311$201909040025$RE  4539$$1$",
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 3,
+								"fLocX": 0,
+								"tLocX": 17,
+								"fIdx": 0,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 9,
+								"fLocX": 0,
+								"tLocX": 17,
+								"fIdx": 0,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 11,
+								"fLocX": 0,
+								"tLocX": 17,
+								"fIdx": 0,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							}
+						],
+						"subscr": "F",
+						"chgDurR": 22
+					},
+					"minChg": "000600",
+					"resState": "N",
+					"resRecommendation": "N"
+				},
+				{
+					"type": "JNY",
+					"icoX": 18,
+					"dep": {
+						"locX": 17,
+						"idx": 7,
+						"dProdX": 8,
+						"dPlatfS": "8",
+						"dInR": true,
+						"dTimeS": "01004700",
+						"dProgType": "PROGNOSED",
+						"dTZOffset": 120,
+						"type": "N"
+					},
+					"arr": {
+						"locX": 2,
+						"idx": 11,
+						"aProdX": 8,
+						"aPlatfS": "7",
+						"aOutR": true,
+						"aTimeS": "01052900",
+						"aProgType": "PROGNOSED",
+						"aTZOffset": 120,
+						"type": "N"
+					},
+					"jny": {
+						"jid": "1|340189|0|80|3092019",
+						"prodX": 8,
+						"dirTxt": "Berlin Ostbahnhof",
+						"status": "P",
+						"isRchbl": true,
+						"stopL": [
+							{
+								"locX": 17,
+								"idx": 7,
+								"dProdX": 8,
+								"dPlatfS": "8",
+								"dInR": true,
+								"dTimeS": "01004700",
+								"dDirTxt": "Berlin Ostbahnhof",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 3,
+								"idx": 8,
+								"aProdX": 8,
+								"aOutS": false,
+								"aOutR": false,
+								"aTZOffset": 120,
+								"dProdX": 8,
+								"dInS": false,
+								"dInR": false,
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 4,
+								"idx": 9,
+								"aProdX": 8,
+								"aPlatfS": "4",
+								"aOutR": true,
+								"aTimeS": "01033500",
+								"aTZOffset": 120,
+								"dProdX": 8,
+								"dPlatfS": "4",
+								"dInR": true,
+								"dTimeS": "01033700",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 5,
+								"idx": 10,
+								"aProdX": 8,
+								"aOutS": false,
+								"aOutR": false,
+								"aTZOffset": 120,
+								"dProdX": 8,
+								"dInS": false,
+								"dInR": false,
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 2,
+								"idx": 11,
+								"aProdX": 8,
+								"aPlatfS": "7",
+								"aOutR": true,
+								"aTimeS": "01052900",
+								"aTZOffset": 120,
+								"type": "N"
+							}
+						],
+						"poly": {
+							"delta": true,
+							"dim": 3,
+							"type": "WGS84",
+							"crdEncYX": "s_xpHso_t@C@sKwWsAsFyAwIXIwG{g@sAyPk@}~AqBo`ACcLf@}KrAmKp]{vAtByJl@kGPuGIuGm@mIgCm[ZMaGyj@iHsu@PGQFw@eJwAke@w@Q??c@_Km@mGiCaOy\\wfA?AJKuQ{k@kb@e}A{BsJ}AgKy@yKgBsq@M@oBky@????mCcgALCwBi}@g@o]aCma@gBi`AHuG`@sGt@gGrGi_@p@{KO_Lo@mGkA}F}B_HNQ{Ng^uBgKAE???Ag@yK^_Jp@}DhDaLpCgQvAwE~@cDjDaH?AqAiBx@iBKOzBaC??a@ClZss@vBuJv@yKAwG[qG}@gGuAsFoByEcC{D}N}PQOyDmHgCmGJOiL_]qO_g@qzBqxG??eJaYoDkNanAavF??odBg{H??wu@mkDuAyJgJc}@iBeR??uh@csF??{AiOaCyY_Bua@y@iPkBuO_F{VcF{QkGoPsDyHa`@_r@??}GqLyGyIseAsfAoCcDaEcHmB{EoBcHwAmI{@wKIkCLoPjBu[??f@mMGeLu@yK_BeKwAuFiB_FmRu^eC{D{JqJczBqhBkEiENa@??}A{@sEoHkDeImCeJmB}Jc~@ujIeCaTkBaKmCeJiDeIaEcHeH_IeImF}f@qS??kLaFaLaGsPsLqHeHaHiIsM_S??wX}g@an@mjAaFoLkBcK_@uGy@g|@g@aLo@mGiBeKyAoFu^mgAwAsFoAqKq@e]??m@a^e@qGaAcG}AoF{DmHcF{EiD{AoDo@kUcByI{CmFaEyEyF{DmHiBaFwAsFgBcKgAePCyGjBu~AKwGkAsKwAsFqDyHm_@ua@eE{GmCcJkDq\\gA_GuFkQeDyH??eGqK}EqFcDuBiDqAiGw@sDJoDt@eLpF{ClC_NxRaDzBkDfAsDPqDc@_o@}QJsAcCb@yF{CgEeEelEc_Fs@rBr@sBmMoOaCcEqByE{AoFiA}F{BcTu@mGsB}JyCwI{BkEaHkIqFqDwG}Cm\\aOcGiEsGaIeKaSs@lAuP_\\cRqWgGeHw\\}[iI{JeZ_h@wFuKqIuS??uZmv@eGaKkF{FcDcCm]_T??gJiGaHwGmG_JoCsFcKaXqi@mcB??kp@srBsD{HmGoJ_FmF_I}F}FsC{I_CeJu@mGDiGz@i~@zRkGt@_HDqIiAuI_Dor@qc@_]iUCNAF{jAew@iIuCmN}@APAJme@kA?J??gb@mAuHHaGfAkFvCyDdEmD~FmJlM??}@lA[q@wMpQwCrCeDhBiGdAqDIoDy@o]gR?C?Bau@qb@aZwPgLiFkO}DwO{AuRT}bBzP??{UbCeUhDoOdDyTvGkTrIaTpKmNtIcSvNoRpPyQhRaQ|SaLvOqKrPaKnQoj@vhA??mTlc@_KpQ{OhV{PnT}LxMkRbQ_S~NuSxLqYfMiOzEmOpDwsDrk@??y_BrVkUvB_[Z}gAqEoUVyOlAeUrDwThGkT~IiYzN??w|BhkAaOfGyIrCaUhFuOrBqRfAuRDyOo@wOcBsOsC}d@_N??y_@gLaU{EgUeC{Oi@gJ?yOf@wOzAgv@~NuO~BaeBvL??yhFt]iUvCcUbEifA~Wik@dI??efDnb@wOjA{Of@yO@a[kA{ZqDsgBe`@eUkDyOuAa[}@mUVyOz@_~@zI??afAzJa[h@a[mAiUqCmZaHsTyHa_Ac`@yT}G_U}EyZ}DmUkAc[Eg_@tA??gm@`Cw`@^kUq@aw@oFmUKmU~@iUjCoZzGkz@|YkTdJwSnLeXxR_WbVwUfYcPbVeKlQqe@~_AcKtQubA~|A??oqBj}CeP|UoLbO{LhNci@`h@??cXxV}RjOwSxLgi@hWgNlJw\\fXkNzIiTlJee@tM{IzCctA~n@????mVzKyLrCkG^kGKwMaC??y^cLAL@Msr@aTeJy@gJ`@eGtAqIbEo}@no@BNOq@wKhHeYzM??{Ar@XtBa@mCaE`AmEMuDgAyEiDsEgGaCgFmCiJeA{GMFLG]wDeCs[TEcC`CsAwD}BkEqCcDmFiE??jAmEqGcG??aAzD{X_WMd@KKuQiPgIeF{IiCkLi@??wCT_A_H??A?uA@yBB??????eS^}EQeFy@mDgAcFgCmJwIqDgF??cHaOgCwHsA}FuAeIs@yGuAeVq@iPO}LPoKr@gMrKkz@jYumBi@Qf@_MCmLu@cL_AcF{AwEgCwEkMgMcCkEmAqD_Jya@}AsFgFuL{GiK????KQlCeG??qAqHeBcPaDwo@sAkPuB_PwCiOcCuJiEyM_p@i`B??ww@koBwLk[wQuk@wLef@kFeWwEuWaEcXaFaa@oC_YwBgYaFkdA??iDwu@}D{j@}Faj@wHai@gHy_@aLuf@wb@kzA??geB_aGoHiUaIqTsI{SeJcS{Ry^yOwVy]ef@??gnAecB??{hAe`BaeAcyAmLiOiV_XeoCyjCyLqNyGcJsKyP{JeRaJkS{EgMqK{\\oZkkA????cDmO{DkN_Nw_@eHwZeF{LuDcMqFkSkBeFkG{JoIoIERaEwDs@hCkFqEyF{CgGqAsDOcJfAcf@zLCe@??mZ`I{YdL{IfCkG~@kG\\mMq@qLiA????abAuK{v@uJcmA}LkrD}a@Cl@_i@iGcUyE}YmK}S}KiSoNuMiLmHuH{LqNko@s|@wQ_SsRqPmS_NaTmKuTwH}_@iJ??o|A{]iUmCa[s@_[vAuZfFeZnJyc@xSiNrF?AF`@a`@~PiZjIaJ~AwObByOp@eJ@oUy@wOgBeaAeS}ZmCmUKqzAlGoUPgJUwOoAik@aK??c`@}HiZsIkTyIeyAwq@oTiI}TgGcUgEiUcCyjBgI??mwAeGkUcBiUsCc`@sHqrBie@wZwEaMu@eXGm_AdG??a|Ef]yZfE_JvBiOzEuIjDyNlHoS|Mg_@rZ??wxD``DcoAdkA??ovGvjGsRvPaXnSqSxMcYtOan@jZ??eo@tZaOfGsTvHmOlEmfD|y@????_k@nMcJ`Ac[`AgJC_JkByFcDeFaFiGgKaD_J{BaKsA_Lk@oLi@ap@??????Xe|B^iZt@kLpAaLbJym@`AkLb@oL\\gq@QkQ_AiLiDkT??kI_j@{@_EbB}AuCc@gAcF??iDiTYeEEeHtBwg@SsLi@{GqkB}zL??ue@y}CwCiYmgAy_PmSidG??gEirAGkZ??nAy`KWAV@ZeN??dAaRhAcLtZu{BvAsPTsLc@gQiAcLmDmTIDHEyB{M??mHec@s@b@??mFeZ`@qC??_vAumIoIk_@aiAmvEoCuOu@mHy@eJc@uCIDqAwLaBwKs_@{jBHEBCI]iIsa@cC}OyBcU}@_Qa@uUN{UtEclANwUq@uUcDe_@G@FA_DiXmNot@gCwJsIkTgCuJyAyKy@mR??_@DYuIw@kLaAqGiCyJ}IeQsJyNuIsOaAvB`AwBo@aAb@cA",
+							"crdEncZ": "??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"crdEncS": "NNNKNNMNNLNMNKNLNLNNNKNNNMNNNKNNNNNNKNLNNNNNNNNKMNNKNKNNMNLNNNNNNNNNLMMNNNNNLNNNNNNNKNKNLNNNKNNKLNNLNNNNNNKNNNNNNNNMNMNLNNNLNNLNKNMNKNNNMNMNKNKNMLNNNNLNLNNLNLNMNNNNKNNKNNNKMNMNNKNKNKNNNNLNLNNMNKNNMNLNKNNKNMNMNNNNLNLNNMNKNNKNNMNLNLNNNNMNNNNNKNKNNLNLNNKNMNNNNNNLNNNMNNNNKNNNMNLNNNNNLNLNLNLNKNLNMNNNNNNNNNNNNNNMNMNKNNNNLNMNLNNNNNLNNNNNNKNLNMNLNMNLNKNNNLNMNLNMNNKNNNMNNNMNMNMNNNKNNLNLNLNNNMNNKNLNKNNNNLNNNNNMKNNNNLNMNLNNNNNMNLNMNMNMNNMNMNMNMNMNMNNNLNLNNNKNKNNNMNMNLMNNKNNNNNNKNNNNNNNMNMNNNNMNNNNNMNMNMNMNNNNNNNKNKNNNNNNNNNMNNNNNNNNNNNNNNKNKNNNNNKNKNNLNLNMNNMNMNLNNLNKNMNNNNNNLNLNLNKNNNKNNNKNLNKNNNMNNNMNNNNKNKNNMNNNNMKNNNKNLNKNNNNNKNNNMNLNNNNNNLNLNMNNNMLNKNNNNNKLLNNNNNNNKNMNMNMNMNNNNNNNNNNNNNNKNKNMNNNNMNKNNNMNLNMNMNNNNLNMNNLNNNNNKNKNMNNNNNLNLNLNNNKNKNNNMNKNMNMNMNMNNNNNMNKNNLNMNMNNNNNNNNLNMNLNNNNNNNNNNNNMNNNLNNNMNLNNNNNNNNNNNNLNLNNNNKNNNNNLNMNMNNNNNNNNNMMNMNNNKNLNMLNNNNN",
+							"crdEncF": "??????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????",
+							"ppLocRefL": [
+								{
+									"ppIdx": 0,
+									"locX": 17
+								},
+								{
+									"ppIdx": 487,
+									"locX": 3
+								},
+								{
+									"ppIdx": 638,
+									"locX": 4
+								},
+								{
+									"ppIdx": 783,
+									"locX": 5
+								},
+								{
+									"ppIdx": 869,
+									"locX": 2
+								}
+							]
+						},
+						"ctxRecon": "T$A=1@O=Frankfurt(Main)Süd@L=8002041@a=128@$A=1@O=Braunschweig Hbf@L=8000049@a=128@$201909040047$201909040529$NJ   470$$1$",
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 12,
+								"fLocX": 17,
+								"tLocX": 2,
+								"fIdx": 7,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 13,
+								"fLocX": 17,
+								"tLocX": 2,
+								"fIdx": 7,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 14,
+								"fLocX": 17,
+								"tLocX": 2,
+								"fIdx": 7,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 15,
+								"fLocX": 17,
+								"tLocX": 2,
+								"fIdx": 7,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 16,
+								"fLocX": 17,
+								"tLocX": 2,
+								"fIdx": 7,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 17,
+								"fLocX": 17,
+								"tLocX": 2,
+								"fIdx": 7,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 18,
+								"fLocX": 17,
+								"tLocX": 2,
+								"fIdx": 7,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 19,
+								"fLocX": 17,
+								"tLocX": 2,
+								"fIdx": 7,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 20,
+								"fLocX": 17,
+								"tLocX": 2,
+								"fIdx": 7,
+								"tIdx": 11,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 21,
+								"prio": 240,
+								"fIdx": -1,
+								"tIdx": -1,
+								"tagL": [
+									"RES_CON_FTR_H3"
+								]
+							}
+						],
+						"subscr": "F",
+						"chgDurR": 6
+					},
+					"minChg": "000600",
+					"resState": "N",
+					"resRecommendation": "N"
+				},
+				{
+					"type": "JNY",
+					"icoX": 6,
+					"dep": {
+						"locX": 2,
+						"idx": 3,
+						"dProdX": 7,
+						"dPlatfS": "6",
+						"dInR": true,
+						"dTimeS": "01053500",
+						"dProgType": "PROGNOSED",
+						"dTZOffset": 120,
+						"type": "N"
+					},
+					"arr": {
+						"locX": 1,
+						"idx": 4,
+						"aProdX": 7,
+						"aPlatfS": "2",
+						"aOutR": true,
+						"aTimeS": "01054400",
+						"aProgType": "PROGNOSED",
+						"aTZOffset": 120,
+						"type": "N"
+					},
+					"jny": {
+						"jid": "1|285308|0|80|4092019",
+						"prodX": 7,
+						"dirTxt": "Hildesheim Hbf",
+						"status": "P",
+						"isRchbl": true,
+						"stopL": [
+							{
+								"locX": 2,
+								"idx": 3,
+								"dProdX": 7,
+								"dPlatfS": "6",
+								"dInR": true,
+								"dTimeS": "01053500",
+								"dDirTxt": "Hildesheim Hbf",
+								"dTZOffset": 120,
+								"type": "N"
+							},
+							{
+								"locX": 1,
+								"idx": 4,
+								"aProdX": 7,
+								"aPlatfS": "2",
+								"aOutR": true,
+								"aTimeS": "01054400",
+								"aTZOffset": 120,
+								"type": "N"
+							}
+						],
+						"poly": {
+							"delta": true,
+							"dim": 3,
+							"type": "WGS84",
+							"crdEncYX": "wn|}Huti_Ac@bAn@`AaAvB`AwBtIrOrJxN|IdQhCxJ`ApGv@jLXtI^E??x@lRxAxKfCtJrIjTfCvJlNnt@~ChXG@FAbDd_@p@tUOvUuEblAOzU`@tU|@~PxBbUbC|OhIra@H\\CBBCt_@dkBfBrKpAnLKDb@tCx@dJt@lHnCtO`iAlvEnIj_@~uAtmI??a@pClFdZ??r@c@lHdc@??",
+							"crdEncZ": "??????????????????????????????????????????????????????",
+							"crdEncS": "NNNNNLMNLNKNNNMNMMNNNNNNNNNMNMNLNNNNNKNNNNLNLNNNNNNNNN",
+							"crdEncF": "??????????????????????????????????????????????????????",
+							"ppLocRefL": [
+								{
+									"ppIdx": 0,
+									"locX": 2
+								},
+								{
+									"ppIdx": 53,
+									"locX": 1
+								}
+							]
+						},
+						"ctxRecon": "T$A=1@O=Braunschweig Hbf@L=8000049@a=128@$A=1@O=Lengede-Broistedt@L=8001188@a=128@$201909040535$201909040544$ENO83550$$1$",
+						"msgL": [
+							{
+								"type": "REM",
+								"remX": 3,
+								"fLocX": 2,
+								"tLocX": 1,
+								"fIdx": 3,
+								"tIdx": 4,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 4,
+								"fLocX": 2,
+								"tLocX": 1,
+								"fIdx": 3,
+								"tIdx": 4,
+								"tagL": [
+									"RES_JNY_DTL_L"
+								]
+							},
+							{
+								"type": "REM",
+								"remX": 5,
+								"fLocX": 2,
+								"tLocX": 1,
+								"fIdx": 3,
+								"tIdx": 4,
+								"tagL": [
+									"RES_JNY_DTL"
+								]
+							}
+						],
+						"subscr": "F"
+					},
+					"resState": "N",
+					"resRecommendation": "N"
+				}
+			],
+			"ctxRecon": "¶HKI¶T$A=1@O=Fulda@L=8000115@a=128@$A=1@O=Frankfurt(Main)Süd@L=8002041@a=128@$201909032311$201909040025$RE  4539$$1$§T$A=1@O=Frankfurt(Main)Süd@L=8002041@a=128@$A=1@O=Braunschweig Hbf@L=8000049@a=128@$201909040047$201909040529$NJ   470$$1$§T$A=1@O=Braunschweig Hbf@L=8000049@a=128@$A=1@O=Lengede-Broistedt@L=8001188@a=128@$201909040535$201909040544$ENO83550$$1$",
+			"trfRes": {
+				"statusCode": "NA",
+				"fareSetL": [
+					{
+						"fareL": [
+							{
+								"desc": "Fares not available",
+								"prc": -1,
+								"isFromPrice": false,
+								"isBookable": true,
+								"isUpsell": false,
+								"bookStatus": "VIA_MCP"
+							}
+						]
+					}
+				]
+			},
+			"msgL": [
+				{
+					"type": "REM",
+					"remX": 22,
+					"prio": 200,
+					"fIdx": -1,
+					"tIdx": -1,
+					"tagL": [
+						"SUM_CON_FTR_H3"
+					]
+				},
+				{
+					"type": "REM",
+					"remX": 23,
+					"prio": 200,
+					"fIdx": -1,
+					"tIdx": -1,
+					"tagL": [
+						"SUM_CON_FTR_H3"
+					]
+				}
+			],
+			"conSubscr": "F",
+			"resState": "N",
+			"resRecommendation": "N",
+			"recState": "U",
+			"sotRating": 0,
+			"isSotCon": false,
+			"showARSLink": false,
+			"sotCtxt": {
+				"cnLocX": 0,
+				"calcDate": "20190903",
+				"jid": "1|242376|0|80|-1",
+				"locMode": "FROM_START",
+				"pLocX": 0,
+				"reqMode": "UNKNOWN",
+				"sectX": 0,
+				"calcTime": "200300"
+			},
+			"cksum": "312885d1_3"
+		}
+	],
+	"outCtxScrB": "1|OB|MT#11#390012#390012#390164#390164#0#0#485#389998#1#-2147483622#0#1#2|PDH#18e3470b38b7d2d0a00944010e784fdd|RD#3092019|RT#195855",
+	"outCtxScrF": "1|OF|MT#11#390191#390191#390584#390584#0#0#565#390133#3#-2147483622#0#1#2|PDH#18e3470b38b7d2d0a00944010e784fdd|RD#3092019|RT#195855",
+	"retCtxScrF": "1|OF|MT#11#390191#390191#390584#390584#0#0#565#390133#3#-2147483622#0#1#2|PDH#18e3470b38b7d2d0a00944010e784fdd|RD#3092019|RT#195855",
+	"fpB": "20181209",
+	"fpE": "20191214",
+	"bfATS": -1,
+	"bfIOSTS": -1,
+	"planrtTS": "1567533695"
+}
