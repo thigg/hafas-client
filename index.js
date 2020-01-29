@@ -31,7 +31,7 @@ const createClient = (profile, userAgent, opt = {}) => {
 		throw new TypeError('userAgent must be a string');
 	}
 
-	const _stationBoard = (station, type, parse, opt = {}) => {
+	const _stationBoard = async (station, type, parse, opt = {}) => {
 		if (isObj(station)) station = profile.formatStation(station.id)
 		else if ('string' === typeof station) station = profile.formatStation(station)
 		else throw new TypeError('station must be an object or a string.')
@@ -63,24 +63,22 @@ const createClient = (profile, userAgent, opt = {}) => {
 
 		const req = profile.formatStationBoardReq({profile, opt}, station, type)
 
-		return profile.request({profile, opt}, userAgent, req)
-		.then(({res, common}) => {
-			if (!Array.isArray(res.jnyL)) return []
+		const {res, common} = await profile.request({profile, opt}, userAgent, req)
+		if (!Array.isArray(res.jnyL)) return []
 
-			const ctx = {profile, opt, common, res}
-			return res.jnyL.map(res => parse(ctx, res))
-			.sort((a, b) => new Date(a.when) - new Date(b.when)) // todo
-		})
+		const ctx = {profile, opt, common, res}
+		return res.jnyL.map(res => parse(ctx, res))
+		.sort((a, b) => new Date(a.when) - new Date(b.when)) // todo
 	}
 
-	const departures = (station, opt = {}) => {
-		return _stationBoard(station, 'DEP', profile.parseDeparture, opt)
+	const departures = async (station, opt = {}) => {
+		return await _stationBoard(station, 'DEP', profile.parseDeparture, opt)
 	}
-	const arrivals = (station, opt = {}) => {
-		return _stationBoard(station, 'ARR', profile.parseArrival, opt)
+	const arrivals = async (station, opt = {}) => {
+		return await _stationBoard(station, 'ARR', profile.parseArrival, opt)
 	}
 
-	const journeys = (from, to, opt = {}) => {
+	const journeys = async (from, to, opt = {}) => {
 		from = profile.formatLocation(profile, from, 'from')
 		to = profile.formatLocation(profile, to, 'to')
 
@@ -176,7 +174,7 @@ const createClient = (profile, userAgent, opt = {}) => {
 		// todo: revert this change, see https://github.com/public-transport/hafas-client/issues/76#issuecomment-424448449
 		const journeys = []
 		let earlierRef, laterRef
-		const more = (when, journeysRef) => {
+		const more = async (when, journeysRef) => {
 			const query = {
 				outDate: profile.formatDate(profile, when),
 				outTime: profile.formatTime(profile, when),
@@ -202,42 +200,39 @@ const createClient = (profile, userAgent, opt = {}) => {
 			if (profile.journeysNumF && opt.results !== null) query.numF = opt.results
 			if (profile.journeysOutFrwd) query.outFrwd = outFrwd
 
-			return profile.request({profile, opt}, userAgent, {
+			const {res, common} = await profile.request({profile, opt}, userAgent, {
 				cfg: {polyEnc: 'GPA'},
 				meth: 'TripSearch',
 				req: profile.transformJourneysQuery({profile, opt}, query)
 			})
-			.then(({res, common}) => {
-				if (!Array.isArray(res.outConL)) return []
-				// todo: outConGrpL
+			if (!Array.isArray(res.outConL)) return []
+			// todo: outConGrpL
 
-				const ctx = {profile, opt, common, res}
+			const ctx = {profile, opt, common, res}
 
-				if (!earlierRef) earlierRef = res.outCtxScrB
+			if (!earlierRef) earlierRef = res.outCtxScrB
 
-				let latestDep = -Infinity
-				for (const rawJourney of res.outConL) {
-					const journey = profile.parseJourney(ctx, rawJourney)
-					journeys.push(journey)
+			let latestDep = -Infinity
+			for (const rawJourney of res.outConL) {
+				const journey = profile.parseJourney(ctx, rawJourney)
+				journeys.push(journey)
 
-					if (opt.results !== null && journeys.length >= opt.results) { // collected enough
-						laterRef = res.outCtxScrF
-						return {earlierRef, laterRef, journeys}
-					}
-					const dep = +new Date(journey.legs[0].departure) // todo
-					if (dep > latestDep) latestDep = dep
+				if (opt.results !== null && journeys.length >= opt.results) { // collected enough
+					laterRef = res.outCtxScrF
+					return {earlierRef, laterRef, journeys}
 				}
+				const dep = +new Date(journey.legs[0].departure) // todo
+				if (dep > latestDep) latestDep = dep
+			}
 
-				if (opt.results === null) return {earlierRef, laterRef, journeys}
-				const when = new Date(latestDep)
-				return more(when, res.outCtxScrF) // otherwise continue
-			})
+			if (opt.results === null) return {earlierRef, laterRef, journeys}
+			return await more(new Date(latestDep), res.outCtxScrF) // otherwise continue
 		}
 
-		return more(when, journeysRef)
+		return await more(when, journeysRef)
 	}
 
-	const refreshJourney = (refreshToken, opt = {}) => {
+	const refreshJourney = async (refreshToken, opt = {}) => {
 		if ('string' !== typeof refreshToken || !refreshToken) {
 			new TypeError('refreshToken must be a non-empty string.')
 		}
@@ -249,7 +244,7 @@ const createClient = (profile, userAgent, opt = {}) => {
 			remarks: true // parse & expose hints & warnings?
 		}, opt)
 
-		return profile.request({profile, opt}, userAgent, {
+		const {res, common} = await profile.request({profile, opt}, userAgent, {
 			meth: 'Reconstruction',
 			req: {
 				ctxRecon: refreshToken,
@@ -259,17 +254,15 @@ const createClient = (profile, userAgent, opt = {}) => {
 				getTariff: !!opt.tickets
 			}
 		})
-		.then(({res, common}) => {
-			if (!Array.isArray(res.outConL) || !res.outConL[0]) {
-				throw new Error('invalid response')
-			}
+		if (!Array.isArray(res.outConL) || !res.outConL[0]) {
+			throw new Error('invalid response')
+		}
 
-			const ctx = {profile, opt, common, res}
-			return profile.parseJourney(ctx, res.outConL[0])
-		})
+		const ctx = {profile, opt, common, res}
+		return profile.parseJourney(ctx, res.outConL[0])
 	}
 
-	const locations = (query, opt = {}) => {
+	const locations = async (query, opt = {}) => {
 		if (!isNonEmptyString(query)) {
 			throw new TypeError('query must be a non-empty string.')
 		}
@@ -284,16 +277,14 @@ const createClient = (profile, userAgent, opt = {}) => {
 
 		const req = profile.formatLocationsReq({profile, opt}, query)
 
-		return profile.request({profile, opt}, userAgent, req)
-		.then(({res, common}) => {
-			if (!res.match || !Array.isArray(res.match.locL)) return []
+		const {res, common} = await profile.request({profile, opt}, userAgent, req)
+		if (!res.match || !Array.isArray(res.match.locL)) return []
 
-			const ctx = {profile, opt, common, res}
-			return res.match.locL.map(loc => profile.parseLocation(ctx, loc))
-		})
+		const ctx = {profile, opt, common, res}
+		return res.match.locL.map(loc => profile.parseLocation(ctx, loc))
 	}
 
-	const stop = (stop, opt = {}) => {
+	const stop = async (stop, opt = {}) => {
 		if ('object' === typeof stop) stop = profile.formatStation(stop.id)
 		else if ('string' === typeof stop) stop = profile.formatStation(stop)
 		else throw new TypeError('stop must be an object or a string.')
@@ -304,19 +295,17 @@ const createClient = (profile, userAgent, opt = {}) => {
 
 		const req = profile.formatStopReq({profile, opt}, stop)
 
-		return profile.request({profile, opt}, userAgent, req)
-		.then(({res, common}) => {
-			if (!res || !Array.isArray(res.locL) || !res.locL[0]) {
-				// todo: proper stack trace?
-				throw new Error('invalid response')
-			}
+		const {res, common} = await profile.request({profile, opt}, userAgent, req)
+		if (!res || !Array.isArray(res.locL) || !res.locL[0]) {
+			// todo: proper stack trace?
+			throw new Error('invalid response')
+		}
 
-			const ctx = {profile, opt, res, common}
-			return profile.parseLocation(ctx, res.locL[0])
-		})
+		const ctx = {profile, opt, res, common}
+		return profile.parseLocation(ctx, res.locL[0])
 	}
 
-	const nearby = (location, opt = {}) => {
+	const nearby = async (location, opt = {}) => {
 		validateLocation(location, 'location')
 
 		opt = Object.assign({
@@ -329,16 +318,14 @@ const createClient = (profile, userAgent, opt = {}) => {
 
 		const req = profile.formatNearbyReq({profile, opt}, location)
 
-		return profile.request({profile, opt}, userAgent, req)
-		.then(({common, res}) => {
-			if (!Array.isArray(res.locL)) return []
+		const {res, common} = await profile.request({profile, opt}, userAgent, req)
+		if (!Array.isArray(res.locL)) return []
 
-			const ctx = {profile, opt, common, res}
-			return res.locL.map(loc => profile.parseNearby(ctx, loc))
-		})
+		const ctx = {profile, opt, common, res}
+		return res.locL.map(loc => profile.parseNearby(ctx, loc))
 	}
 
-	const trip = (id, lineName, opt = {}) => {
+	const trip = async (id, lineName, opt = {}) => {
 		if (!isNonEmptyString(id)) {
 			throw new TypeError('id must be a non-empty string.')
 		}
@@ -352,25 +339,23 @@ const createClient = (profile, userAgent, opt = {}) => {
 		}, opt)
 
 		const req = profile.formatTripReq({profile, opt}, id, lineName)
+		const {res, common} = await profile.request({profile, opt}, userAgent, req)
 
-		return profile.request({profile, opt}, userAgent, req)
-		.then(({common, res}) => {
-			const ctx = {profile, opt, common, res}
+		const ctx = {profile, opt, common, res}
 
-			const rawLeg = { // pretend the leg is contained in a journey
-				type: 'JNY',
-				dep: minBy(res.journey.stopL, 'idx'),
-				arr: maxBy(res.journey.stopL, 'idx'),
-				jny: res.journey
-			}
-			const trip = profile.parseJourneyLeg(ctx, rawLeg, res.journey.date)
-			trip.id = trip.tripId
-			delete trip.tripId
-			return trip
-		})
+		const rawLeg = { // pretend the leg is contained in a journey
+			type: 'JNY',
+			dep: minBy(res.journey.stopL, 'idx'),
+			arr: maxBy(res.journey.stopL, 'idx'),
+			jny: res.journey
+		}
+		const trip = profile.parseJourneyLeg(ctx, rawLeg, res.journey.date)
+		trip.id = trip.tripId
+		delete trip.tripId
+		return trip
 	}
 
-	const radar = ({north, west, south, east}, opt) => {
+	const radar = async ({north, west, south, east}, opt) => {
 		if ('number' !== typeof north) throw new TypeError('north must be a number.')
 		if ('number' !== typeof west) throw new TypeError('west must be a number.')
 		if ('number' !== typeof south) throw new TypeError('south must be a number.')
@@ -391,16 +376,14 @@ const createClient = (profile, userAgent, opt = {}) => {
 
 		const req = profile.formatRadarReq({profile, opt}, north, west, south, east)
 
-		return profile.request({profile, opt}, userAgent, req)
-		.then(({res, common}) => {
-			if (!Array.isArray(res.jnyL)) return []
+		const {res, common} = await profile.request({profile, opt}, userAgent, req)
+		if (!Array.isArray(res.jnyL)) return []
 
-			const ctx = {profile, opt, common, res}
-			return res.jnyL.map(m => profile.parseMovement(ctx, m))
-		})
+		const ctx = {profile, opt, common, res}
+		return res.jnyL.map(m => profile.parseMovement(ctx, m))
 	}
 
-	const reachableFrom = (address, opt = {}) => {
+	const reachableFrom = async (address, opt = {}) => {
 		validateLocation(address, 'address')
 
 		opt = Object.assign({
@@ -413,36 +396,34 @@ const createClient = (profile, userAgent, opt = {}) => {
 
 		const req = profile.formatReachableFromReq({profile, opt}, address)
 
-		const refetch = () => {
-			return profile.request({profile, opt}, userAgent, req)
-			.then(({res, common}) => {
-				if (!Array.isArray(res.posL)) {
-					const err = new Error('invalid response')
-					err.shouldRetry = true
-					throw err
-				}
+		const refetch = async () => {
+			const {res, common} = await profile.request({profile, opt}, userAgent, req)
+			if (!Array.isArray(res.posL)) {
+				const err = new Error('invalid response')
+				err.shouldRetry = true
+				throw err
+			}
 
-				const byDuration = []
-				let i = 0, lastDuration = NaN
-				for (const pos of sortBy(res.posL, 'dur')) {
-					const loc = common.locations[pos.locX]
-					if (!loc) continue
-					if (pos.dur !== lastDuration) {
-						lastDuration = pos.dur
-						i = byDuration.length
-						byDuration.push({
-							duration: pos.dur,
-							stations: [loc]
-						})
-					} else {
-						byDuration[i].stations.push(loc)
-					}
+			const byDuration = []
+			let i = 0, lastDuration = NaN
+			for (const pos of sortBy(res.posL, 'dur')) {
+				const loc = common.locations[pos.locX]
+				if (!loc) continue
+				if (pos.dur !== lastDuration) {
+					lastDuration = pos.dur
+					i = byDuration.length
+					byDuration.push({
+						duration: pos.dur,
+						stations: [loc]
+					})
+				} else {
+					byDuration[i].stations.push(loc)
 				}
-				return byDuration
-			})
+			}
+			return byDuration
 		}
 
-		return pRetry(refetch, {
+		return await pRetry(refetch, {
 			retries: 3,
 			factor: 2,
 			minTimeout: 2 * 1000
