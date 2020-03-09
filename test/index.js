@@ -9,6 +9,7 @@ require('./bvg-journey')
 require('./db-journey')
 require('./vbb-departures')
 require('./bvg-radar')
+require('./vsn-remarks')
 require('./db-netz-remarks')
 
 require('./throttle')
