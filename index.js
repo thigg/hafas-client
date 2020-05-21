@@ -184,9 +184,6 @@ const createClient = (profile, userAgent, opt = {}) => {
 		let earlierRef = null, laterRef = null
 		const more = (when, journeysRef) => {
 			const query = {
-				outDate: profile.formatDate(profile, when),
-				outTime: profile.formatTime(profile, when),
-				ctxScr: journeysRef,
 				getPasslist: !!opt.stopovers,
 				maxChg: opt.transfers,
 				minChgTime: opt.transferTime,
@@ -205,6 +202,11 @@ const createClient = (profile, userAgent, opt = {}) => {
 				getPolyline: !!opt.polylines
 				// todo: `getConGroups: false` what is this?
 				// todo: what is getEco, fwrd?
+			}
+			if (journeysRef) query.ctxScr = journeysRef
+			else {
+				query.outDate = profile.formatDate(profile, when)
+				query.outTime = profile.formatTime(profile, when)
 			}
 			if (profile.journeysNumF && opt.results !== null) query.numF = opt.results
 			if (profile.journeysOutFrwd) query.outFrwd = outFrwd
