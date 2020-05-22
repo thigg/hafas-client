@@ -1,0 +1,35 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "date": "Fri, 22 May 2020 14:15:09 GMT",
+    "server": "Apache",
+    "content-length": "3460",
+    "connection": "close",
+    "content-type": "application/json; charset=utf-8"
+  },
+  "url": "https://fpa.invg.de/bin/mgate.exe?mic=266c69f9188c9f1212c0cb2d60253902&mac=765423f346019b7f107f78183060df0b",
+  "time": 277,
+  "request": {
+    "method": "POST",
+    "headers": {
+      "Content-Type": [
+        "application/json"
+      ],
+      "Accept-Encoding": [
+        "gzip, br, deflate"
+      ],
+      "Accept": [
+        "application/json"
+      ],
+      "user-agent": [
+        "public-transport/hafas-client:tea5d86fa35d7est"
+      ],
+      "Content-Length": [
+        "472"
+      ],
+      "Connection": [
+        "close"
+      ]
+    }
+  }
+}
