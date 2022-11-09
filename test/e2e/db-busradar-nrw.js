@@ -10,7 +10,7 @@ import {testArrivals} from './lib/arrivals.js'
 
 const isObj = o => o !== null && 'object' === typeof o && !Array.isArray(o)
 
-const T_MOCK = 1657618200 * 1000 // 2022-07-12T11:30+02:00
+const T_MOCK = 1671260400 * 1000 // 2022-12-17T08:00:00+01:00
 const when = createWhen(dbBusradarNrwProfile.timezone, dbBusradarNrwProfile.locale, T_MOCK)
 
 const cfg = {

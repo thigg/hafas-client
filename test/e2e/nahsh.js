@@ -20,7 +20,7 @@ import {testDeparturesInDirection} from './lib/departures-in-direction.js'
 import {testArrivals} from './lib/arrivals.js'
 import {testReachableFrom} from './lib/reachable-from.js'
 
-const T_MOCK = 1657618200 * 1000 // 2022-07-12T11:30+02:00
+const T_MOCK = 1671260400 * 1000 // 2022-12-17T08:00:00+01:00
 const when = createWhen(nahshProfile.timezone, nahshProfile.locale, T_MOCK)
 
 const cfg = {
