@@ -545,6 +545,7 @@ const profile = {
 	formatStation,
 
 	refreshJourneyUseOutReconL: true,
+    bestPrices: true,
 	trip: true,
 	journeysFromTrip: true,
 	radar: true,

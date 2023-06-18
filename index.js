@@ -245,7 +245,79 @@ const createClient = (profile, userAgent, opt = {}) => {
 		}
 	}
 
-	const refreshJourney = async (refreshToken, opt = {}) => {
+	const bestPrices = async (from, to, opt = {}) => {
+		from = profile.formatLocation(profile, from, 'from')
+		to = profile.formatLocation(profile, to, 'to')
+
+		opt = Object.assign({
+			via: null, // let journeys pass this station?
+			transfers: -1, // maximum nr of transfers
+			bike: false, // only bike-friendly journeys
+			tickets: false, // return tickets?
+			polylines: false, // return leg shapes?
+			subStops: false, // parse & expose sub-stops of stations?
+			entrances: false, // parse & expose entrances of stops/stations?
+			remarks: true, // parse & expose hints & warnings?
+			scheduledDays: false, // parse & expose dates each journey is valid on?
+		}, opt)
+		if (opt.via) opt.via = profile.formatLocation(profile, opt.via, 'opt.via')
+
+        let when = new Date();
+		if (opt.departure !== undefined && opt.departure !== null) {
+			when = new Date(opt.departure)
+			if (Number.isNaN(+when)) throw new TypeError('opt.departure is invalid')
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate())
+            if (today > when) {
+                throw new TypeError('opt.departure date older than current date.')
+            }
+        }
+
+		const filters = [
+			profile.formatProductsFilter({profile}, opt.products || {})
+		]
+		if (
+			opt.accessibility &&
+			profile.filters &&
+			profile.filters.accessibility &&
+			profile.filters.accessibility[opt.accessibility]
+		) {
+			filters.push(profile.filters.accessibility[opt.accessibility])
+		}
+
+		const query = {
+			maxChg: opt.transfers,
+			depLocL: [from],
+			viaLocL: opt.via ? [{loc: opt.via}] : [],
+			arrLocL: [to],
+			jnyFltrL: filters,
+			getTariff: !!opt.tickets,
+
+			getPolyline: !!opt.polylines
+		}
+		query.outDate = profile.formatDate(profile, when)
+
+		const {res, common} = await profile.request({profile, opt}, userAgent, {
+			cfg: {polyEnc: 'GPA'},
+			meth: 'BestPriceSearch',
+			req: profile.transformJourneysQuery({profile, opt}, query)
+		})
+		if (!Array.isArray(res.outConL)) return {}
+		// todo: outConGrpL
+
+		const ctx = {profile, opt, common, res}
+		const journeys = res.outConL.map(j => profile.parseJourney(ctx, j))
+		const bestPrices = res.outDaySegL.map(j => profile.parseBestPrice(ctx, j, journeys))
+
+		return {
+            bestPrices,
+			realtimeDataUpdatedAt: res.planrtTS && res.planrtTS !== '0'
+				? parseInt(res.planrtTS)
+				: null,
+		}
+	}
+
+    const refreshJourney = async (refreshToken, opt = {}) => {
 		if ('string' !== typeof refreshToken || !refreshToken) {
 			throw new TypeError('refreshToken must be a non-empty string.')
 		}
@@ -791,6 +863,7 @@ const createClient = (profile, userAgent, opt = {}) => {
 		nearby,
 		serverInfo,
 	}
+	if (profile.bestPrices) client.bestPrices = bestPrices
 	if (profile.trip) client.trip = trip
 	if (profile.radar) client.radar = radar
 	if (profile.refreshJourney) client.refreshJourney = refreshJourney
