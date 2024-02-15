@@ -1,3 +1,9 @@
+/**
+ * @typedef {import("../types-private").ProfileEx} ProfileEx
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
+/** @type {DefaultProfile["formatNearbyReq"]} */
 const formatNearbyReq = (ctx, location) => {
 	const {profile, opt} = ctx;
 

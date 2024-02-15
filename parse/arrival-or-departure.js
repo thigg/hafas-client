@@ -1,3 +1,10 @@
+/**
+ * @typedef {import("../types").Alternative} Alternative
+ * @typedef {import("../types-private").ProfileEx} ProfileEx
+ * @typedef {import("../types-private").Context} Context
+ * @typedef {import("../types-raw-api").RawJny} RawArrivalDeparture
+ */
+
 import {findRemarks} from './find-remarks.js';
 
 const ARRIVAL = 'a';
@@ -12,6 +19,10 @@ const createParseArrOrDep = (prefix) => {
 		throw new Error('invalid prefix');
 	}
 
+	/**
+	 *  @param {Context} ctx
+	 *  @param {RawArrivalDeparture} d
+	 */
 	const parseArrOrDep = (ctx, d) => { // d = raw arrival/departure
 		const {profile, opt} = ctx;
 		const {locL} = ctx.res.common;
@@ -23,6 +34,7 @@ const createParseArrOrDep = (prefix) => {
 		const plPlanned = d.stbStop[prefix + 'PlatfS'] || d.stbStop[prefix + 'PltfS'] && d.stbStop[prefix + 'PltfS'].txt || null;
 		const plPrognosed = d.stbStop[prefix + 'PlatfR'] || d.stbStop[prefix + 'PltfR'] && d.stbStop[prefix + 'PltfR'].txt || null;
 
+		/** @type {Alternative} */
 		const res = {
 			tripId: d.jid,
 			stop: d.stbStop.location || null,

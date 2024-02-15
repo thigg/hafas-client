@@ -1,11 +1,24 @@
 import brToNewline from '@derhuerst/br2nl';
 import omit from 'lodash/omit.js';
 
+/**
+ * @typedef {import("../types").Warning} Warning
+ * @typedef {import("../types").Edge} Edge
+ * @typedef {import("../types").Event} Event
+ * @typedef {import("../types-private").ProfileEx} ProfileEx
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
 const typesByIcon = Object.assign(Object.create(null), {
 	HimWarn: 'status',
 });
 
+/**
+ * @returns {(e:any) => Edge}
+ */
 const parseMsgEdge = (ctx) => (e) => {
+
+	/** @type {Edge} */
 	const res = omit(e, [
 		'icoX',
 		'fLocX',
@@ -20,6 +33,10 @@ const parseMsgEdge = (ctx) => (e) => {
 };
 
 const fallbackTime = '000000'; // midnight
+
+/**
+ * @returns {(e:any) => Event}
+ */
 const parseMsgEvent = (ctx) => (e) => {
 	const {profile} = ctx; // todo: test that covers this
 	return {
@@ -31,6 +48,7 @@ const parseMsgEvent = (ctx) => (e) => {
 	};
 };
 
+/** @type {DefaultProfile["parseWarning"]} */
 const parseWarning = (ctx, w) => {
 	const {profile, res: resp, common} = ctx;
 
@@ -58,6 +76,7 @@ const parseWarning = (ctx, w) => {
 	const icon = w.icon || null;
 	const type = icon && icon.type && typesByIcon[icon.type] || 'warning';
 
+	/** @type {Warning} */
 	const res = {
 		id: w.hid || null,
 		type,

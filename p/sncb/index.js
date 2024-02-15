@@ -5,7 +5,12 @@ const require = createRequire(import.meta.url);
 
 import {readFileSync} from 'fs';
 import {Agent} from 'https';
-import {strictEqual as eql} from 'assert';
+/** @author Jürgen Bergmann
+ *  explicit typing of eql assertion */
+import {strictEqual} from 'assert';
+
+/** @type { ( actual:string, expected: string, message?: string | Error) => asserts actual is string} */
+const eql = strictEqual;
 import {parseHook} from '../../lib/profile-hooks.js';
 import {parseLine} from '../../parse/line.js';
 const baseProfile = require('./base.json');

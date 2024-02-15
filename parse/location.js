@@ -1,6 +1,14 @@
 import {parse} from 'qs';
 import get from 'lodash/get.js';
 
+/**
+ * @typedef {import("../types").Location} Location
+ * @typedef {import("../types").Station} Station
+ * @typedef {import("../types").Stop} Stop
+ * @typedef {import("../types-private").ProfileEx} ProfileEx
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
 const POI = 'P';
 const STATION = 'S';
 const ADDRESS = 'A';
@@ -14,10 +22,15 @@ const leadingZeros = /^0+/;
 // todo: l.gidL (e.g. `["A×de:15088:8013414"]`)
 // todo: `i` param in `lid` (e.g. `A=1@O=Zöberitz@X=12033455@Y=51504612@U=80@L=8013414@i=A×de:15088:8013414@`)
 
-const parseLocation = (ctx, l) => {
+/** @author Jürgen Bergmann
+ *  add paramter ...args */
+/** @type {DefaultProfile["parseLocation"]} */
+const parseLocation = (ctx, l, ...args) => {
 	const {profile, opt} = ctx;
 
 	const lid = parse(l.lid, {delimiter: '@'});
+
+	/** @type {Location} */
 	const res = {
 		type: 'location',
 		id: (l.extId || lid.L || '').replace(leadingZeros, '') || null,
@@ -45,10 +58,11 @@ const parseLocation = (ctx, l) => {
 			.map(s => profile.parseLocation(ctx, s))
 			.filter(stop => Boolean(stop));
 
+		/** @type {Station | Stop} */
 		const stop = {
-			type: l.isMainMast || subStops.length > 0
+			type: /** @type {'station'|'stop'} */(l.isMainMast || subStops.length > 0
 				? 'station'
-				: 'stop',
+				: 'stop'),
 			id: res.id,
 			name: l.name || lid.O
 				? profile.parseStationName(ctx, l.name || lid.O)
@@ -58,7 +72,7 @@ const parseLocation = (ctx, l) => {
 				: null, // todo: remove `.id`
 		};
 		if (opt.subStops && subStops.length > 0) {
-			stop.stops = subStops;
+			/** @type {Station} */(stop).stops = subStops;
 		}
 
 		if ('pCls' in l) {
@@ -70,7 +84,7 @@ const parseLocation = (ctx, l) => {
 
 		const mMastLoc = locL[mMastLocX];
 		if (mMastLoc) {
-			stop.station = {
+			/** @type {Station} */(stop).station = {
 				...profile.parseLocation(ctx, mMastLoc),
 				type: 'station', // todo: this should be handled differently
 			};
@@ -82,7 +96,7 @@ const parseLocation = (ctx, l) => {
 				.filter(l => Boolean(l))
 				.map(l => profile.parseLocation(ctx, l))
 				.filter(loc => Boolean(loc))
-				.map(loc => loc.location);
+				.map(loc => /** @type Stop*/(loc).location);
 			if (entrances.length > 0) {
 				stop.entrances = entrances;
 			}
@@ -111,10 +125,10 @@ const parseLocation = (ctx, l) => {
 
 		const dhid = (byType('stop-dhid') || {}).text;
 		if (dhid) {
-			if (!stop.ids) {
-				stop.ids = {};
+			if (!(/** @type {Stop} */(stop).ids)) {
+				/** @type {Stop} */(stop).ids = {};
 			}
-			stop.ids.dhid = dhid;
+			/** @type {Stop} */(stop).ids.dhid = dhid;
 		}
 
 		const otherIds = hints
@@ -126,11 +140,11 @@ const parseLocation = (ctx, l) => {
 			})
 			.filter(([src]) => src !== 'NULL');
 		if (otherIds.length > 0) {
-			if (!stop.ids) {
-				stop.ids = {};
+			if (!(/** @type {Stop} */(stop).ids)) {
+				/** @type {Stop} */(stop).ids = {};
 			}
 			for (const [src, id] of otherIds) {
-				stop.ids[src] = id;
+				/** @type {Stop} */(stop).ids[src] = id;
 			}
 		}
 

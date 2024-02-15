@@ -1,18 +1,28 @@
 import _googlePolyline from 'google-polyline';
 import distance from 'gps-distance';
 
+/**
+ * @typedef {import("../types").Feature} Feature
+ * @typedef {import("../types").FeatureCollection} FeatureCollection
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
 const {decode} = _googlePolyline;
 
 // todo: what is p.delta?
 // todo: what is p.type?
 // todo: what is p.crdEncS?
 // todo: what is p.crdEncF?
+/** @type {DefaultProfile["parsePolyline"]} */
 const parsePolyline = (ctx, p) => { // p = raw polyline
+
+	/** @type {Array} */
 	const points = decode(p.crdEncYX);
 	if (points.length === 0) {
 		return null;
 	}
 
+	/** @type {Array<Feature>} */
 	const res = points.map(([lat, lon]) => ({
 		type: 'Feature',
 		properties: {},

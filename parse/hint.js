@@ -1,3 +1,8 @@
+/**
+ * @typedef {import("../types").Hint} Hint
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
 const codesByIcon = Object.assign(Object.create(null), {
 	cancel: 'cancelled',
 	himWarn: 'disturbance',

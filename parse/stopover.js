@@ -1,5 +1,11 @@
 import {findRemarks} from './find-remarks.js';
 
+/**
+ * @typedef {import("../types").StopOver} StopOver
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
+/** @type {DefaultProfile["parseStopover"]} */
 const parseStopover = (ctx, st, date) => { // st = raw stopover
 	const {profile, opt} = ctx;
 
@@ -8,6 +14,7 @@ const parseStopover = (ctx, st, date) => { // st = raw stopover
 	const dep = profile.parseWhen(ctx, date, st.dTimeS, st.dTimeR, st.dTZOffset, st.dCncl);
 	const depPl = profile.parsePlatform(ctx, st.dPlatfS || st.dPltfS && st.dPltfS.txt || null, st.dPlatfR || st.dPltfR && st.dPltfR.txt || null, st.dCncl);
 
+	/** @type {StopOver} */
 	const res = {
 		stop: st.location || null,
 		arrival: arr.when,

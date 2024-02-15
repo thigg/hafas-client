@@ -3,6 +3,12 @@
 import {createRequire} from 'module';
 const require = createRequire(import.meta.url);
 
+/**
+ * @typedef {import("../../types").RoutingMode} RoutingMode
+ * @typedef {import("../../types-private").ProfileEx} ProfileEx
+ * @typedef {import("../../types-raw-api").RawGrid} RawGridL
+ */
+
 import trim from 'lodash/trim.js';
 import uniqBy from 'lodash/uniqBy.js';
 import slugg from 'slugg';
@@ -25,10 +31,12 @@ import {formatLoyaltyCard} from './loyalty-cards.js';
 import {ageGroup, ageGroupFromAge} from './ageGroup.js';
 import {routingModes} from './routing-modes.js';
 
+/** @type {ProfileEx["transformReqBody"]} */
 const transformReqBody = (ctx, body) => {
 	const req = body.svcReqL[0] || {};
 
 	// see https://pastebin.com/qZ9WS3Cx
+	/** @type {RoutingMode} */
 	const rtMode = 'routingMode' in ctx.opt
 		? ctx.opt.routingMode
 		: routingModes.REALTIME;
@@ -41,6 +49,7 @@ const transformReqBody = (ctx, body) => {
 	return body;
 };
 
+/** @type {ProfileEx["transformReq"]} */
 const transformReq = (ctx, req) => {
 	const body = JSON.parse(req.body);
 	// stop() a.k.a. LocDetails seems broken with ver >1.16, all other methods work
@@ -68,6 +77,7 @@ const slices = (n, arr) => {
 	}, initialState).slices;
 };
 
+/** @param {RawGridL} g */
 const parseGrid = (g) => {
 	// todo: g.type, e.g. `S`
 	// todo: respect `g.itemL[].(col|row)`?
@@ -146,8 +156,11 @@ const parseLocWithDetails = ({parsed, common}, l) => {
 			rows: grid.rows.map(row => row.map(cell => cell && cell.text)),
 		});
 
+		/** @type RawGridL[] */
 		let grids = l.gridL
-			.map(grid => parseGrid(grid, common))
+			/** @author Jürgen Bergmann
+		      *  arg common removed */
+			.map(grid => parseGrid(grid))
 			.map(resolveCells);
 
 		const ausstattung = grids.find(g => slugg(g.title) === 'ausstattung');
@@ -194,6 +207,7 @@ const parseArrOrDepWithLoadFactor = ({parsed, res, opt}, d) => {
 	return parsed;
 };
 
+/** @type {ProfileEx["transformJourneysQuery"]} */
 const transformJourneysQuery = ({opt}, query) => {
 	const filters = query.jnyFltrL;
 	if (opt.bike) {

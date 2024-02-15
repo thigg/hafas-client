@@ -1,3 +1,8 @@
+/**
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
+/** @type {DefaultProfile["formatRadarReq"]} */
 const formatRadarReq = (ctx, north, west, south, east) => {
 	const {profile, opt} = ctx;
 

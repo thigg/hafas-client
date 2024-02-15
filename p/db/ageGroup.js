@@ -1,9 +1,13 @@
+/**
+ * @typedef {import("../../types").AgeGroup} AgeGroup
+ */
+
 const ageGroup = {
-	BABY: 'B',
-	CHILD: 'K',
-	YOUNG: 'Y',
-	ADULT: 'E',
-	SENIOR: 'S',
+	BABY: /** @type {AgeGroup} */('B'),
+	CHILD: /** @type {AgeGroup} */('K'),
+	YOUNG: /** @type {AgeGroup} */('Y'),
+	ADULT: /** @type {AgeGroup} */('E'),
+	SENIOR: /** @type {AgeGroup} */('S'),
 	upperBoundOf: {
 		BABY: 6,
 		CHILD: 15,
@@ -13,6 +17,10 @@ const ageGroup = {
 	},
 };
 
+/**
+ * @param {number} age
+ * @returns {AgeGroup}
+ */
 const ageGroupFromAge = (age) => {
 	const {upperBoundOf} = ageGroup;
 	if (age < upperBoundOf.BABY) {

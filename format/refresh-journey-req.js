@@ -1,6 +1,12 @@
+/**
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
+/** @type {DefaultProfile["formatRefreshJourneyReq"]} */
 const formatRefreshJourneyReq = (ctx, refreshToken) => {
 	const {profile, opt} = ctx;
 
+	/** @type {import("../types-raw-api").ReconstructionRequest} */
 	const req = {
 		getIST: true, // todo: make an option
 		getPasslist: Boolean(opt.stopovers),

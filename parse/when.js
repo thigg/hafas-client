@@ -1,18 +1,23 @@
+/**
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
+/** @type {DefaultProfile["parseWhen"]} */
 const parseWhen = (ctx, date, timeS, timeR, tzOffset, cncl = false) => {
 	const parse = ctx.profile.parseDateTime;
 
 	let planned = timeS
-		? parse(ctx, date, timeS, tzOffset, false)
+		? /** @type {string} */(parse(ctx, date, timeS, tzOffset, false))
 		: null;
 	let prognosed = timeR
-		? parse(ctx, date, timeR, tzOffset, false)
+		? /** @type {string} */(parse(ctx, date, timeR, tzOffset, false))
 		: null;
 	let delay = null;
 
 	if (planned && prognosed) {
 		const tPlanned = parse(ctx, date, timeS, tzOffset, true);
 		const tPrognosed = parse(ctx, date, timeR, tzOffset, true);
-		delay = Math.round((tPrognosed - tPlanned) / 1000);
+		delay = Math.round((/** @type {number} */(tPrognosed) - /** @type {number} */(tPlanned)) / 1000);
 	}
 
 	if (cncl) {

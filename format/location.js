@@ -1,3 +1,8 @@
+/**
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
+/** @type {DefaultProfile["formatLocation"]} */
 const formatLocation = (profile, l, name = 'location') => {
 	if ('string' === typeof l) {
 		return profile.formatStation(l);

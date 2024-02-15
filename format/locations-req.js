@@ -1,3 +1,9 @@
+/**
+ * @typedef {import("../types-private").ProfileEx} ProfileEx
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
+/** @type {DefaultProfile["formatLocationsReq"]} */
 const formatLocationsReq = (ctx, query) => {
 	const {profile, opt} = ctx;
 

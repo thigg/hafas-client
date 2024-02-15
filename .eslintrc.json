@@ -29,9 +29,11 @@
         "@stylistic/function-paren-newline": "off",
         "@stylistic/indent": ["error", "tab"],
         "@stylistic/indent-binary-ops": ["error", "tab"],
+        "@stylistic/lines-around-comment": ["error", { "ignorePattern": "Bergmann" }],
         "@stylistic/max-len": "off",
         "@stylistic/multiline-ternary": ["error", "always-multiline"],
         "@stylistic/newline-per-chained-call": ["error", { "ignoreChainWithDepth": 1 }],
+        "@stylistic/no-extra-parens": "off", /* J.B. tsc doc typing needs parens */
         "@stylistic/no-mixed-operators": "off",
         "@stylistic/no-tabs": "off",
         "@stylistic/object-property-newline": "off",

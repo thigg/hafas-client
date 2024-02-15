@@ -1,5 +1,12 @@
 import {findRemarks} from './find-remarks.js';
 
+/**
+ * @typedef {import("../types").Leg} Leg
+ * @typedef {import("../types").Alternative} Alternative
+ * @typedef {import("../types-private").ProfileEx} ProfileEx
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
 const clone = obj => Object.assign({}, obj);
 
 const addRemark = (stopoverOrLeg, remark) => {
@@ -58,9 +65,11 @@ const applyRemarks = (leg, refs) => {
 // todo: pt.planrtTS
 // todo: what is pt.jny.lPassSt?
 
+/** @type {DefaultProfile["parseJourneyLeg"]} */
 const parseJourneyLeg = (ctx, pt, date) => { // pt = raw leg
 	const {profile, opt} = ctx;
 
+	/** @type {Leg} */
 	const res = {
 		origin: clone(pt.dep.location) || null,
 		destination: clone(pt.arr.location),

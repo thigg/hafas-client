@@ -1,5 +1,10 @@
 import slugg from 'slugg';
 
+/**
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
+/** @type {DefaultProfile["parseOperator"]} */
 const parseOperator = (ctx, a) => {
 	const name = a.name && a.name.trim();
 	if (!name) {

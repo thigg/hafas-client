@@ -1,7 +1,13 @@
 import isObj from 'lodash/isObject.js';
 
+/**
+ * @typedef {import("../types-private").ProfileEx} ProfileEx
+ * @typedef {import("../types-private").DefaultProfile} DefaultProfile
+ */
+
 const hasProp = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
 
+/** @type {DefaultProfile["formatProductsFilter"]} */
 const formatProductsFilter = (ctx, filter) => {
 	if (!isObj(filter)) {
 		throw new TypeError('products filter must be an object');
