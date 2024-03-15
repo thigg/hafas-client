@@ -245,7 +245,7 @@ const createClient = (profile, userAgent, opt = {}) => {
 		}
 	}
 
-	const bestPrices = async (from, to, opt = {}) => {
+	const bestPrices = async (from, to, when,opt = {}) => {
 		from = profile.formatLocation(profile, from, 'from')
 		to = profile.formatLocation(profile, to, 'to')
 
@@ -261,8 +261,6 @@ const createClient = (profile, userAgent, opt = {}) => {
 			scheduledDays: false, // parse & expose dates each journey is valid on?
 		}, opt)
 		if (opt.via) opt.via = profile.formatLocation(profile, opt.via, 'opt.via')
-
-        let when = new Date();
 		if (opt.departure !== undefined && opt.departure !== null) {
 			when = new Date(opt.departure)
 			if (Number.isNaN(+when)) throw new TypeError('opt.departure is invalid')
