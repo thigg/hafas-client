@@ -1,74 +1,93 @@
-import isRoughlyEqual from 'is-roughly-equal'
-import {ok, AssertionError} from 'assert'
-import {DateTime} from 'luxon'
-import * as a from 'assert'
-import {createRequire} from 'module'
-import {gunzipSync} from 'zlib'
+// Polly's HTTP adapter uses nock [1] underneath, with currenctly monkey-patches the built-in `node:http` module. For this to work, it must be imported quite early, before many other parts of hafas-client.
+// Importing the adapter itself has no side effects (or rather: immediately undoes nock's monkey-patching, to re-patch when it is actually getting used). We activate it (by passing it into Polly's core) below.
+// remotely related: https://github.com/nock/nock/issues/2461
+import NodeHttpAdapter from '@pollyjs/adapter-node-http';
 
-const hour = 60 * 60 * 1000
-const day = 24 * hour
-const week = 7 * day
+import isRoughlyEqual from 'is-roughly-equal';
+import {ok, AssertionError} from 'assert';
+import {DateTime} from 'luxon';
+import * as a from 'assert';
+import {createRequire} from 'module';
+// Note: We *must* import tap up here, not just in the if(VCR_MODE) block below, because a) we can only use `require()` conditionally, not `import`; and b) requiring it below makes the teardown script behave differently.
+// may be related: https://github.com/tapjs/tapjs/issues/1005
+import tap from 'tap';
+import {gunzipSync} from 'zlib';
+
+const hour = 60 * 60 * 1000;
+const day = 24 * hour;
+const week = 7 * day;
 
 // next Monday 10 am
 const createWhen = (timezone, locale, tMock) => {
-	ok(Number.isInteger(tMock), 'tMock must be an integer')
+	ok(Number.isInteger(tMock), 'tMock must be an integer');
 
 	const t = process.env.VCR_MODE && !process.env.VCR_OFF
 		? tMock
-		: Date.now()
+		: Date.now();
 	return DateTime.fromMillis(t, {
 		zone: timezone,
 		locale,
-	}).startOf('week').plus({weeks: 1, hours: 10}).toJSDate()
-}
+	})
+		.startOf('week')
+		.plus({weeks: 1, hours: 10})
+		.toJSDate();
+};
 
 const assertValidWhen = (actual, expected, name, delta = day + 6 * hour) => {
-	const ts = +new Date(actual)
-	a.ok(!Number.isNaN(ts), name + ' is not parsable by Date')
+	const ts = Number(new Date(actual));
+	a.ok(!Number.isNaN(ts), name + ' is not parsable by Date');
 	// the timestamps might be from long-distance trains
-	if (!isRoughlyEqual(delta, +expected, ts)) {
+	if (!isRoughlyEqual(delta, Number(expected), ts)) {
 		throw new AssertionError({
 			message: name + ' is out of range',
 			actual: ts,
-			expected: `${expected - delta} - ${+expected + delta}`,
+			expected: `${expected - delta} - ${Number(expected) + delta}`,
 			operator: 'isRoughlyEqual',
-		})
+		});
 	}
-}
+};
 
 // HTTP request mocking
 if (process.env.VCR_MODE && !process.env.VCR_OFF) {
-	const require = createRequire(import.meta.url)
+	const require = createRequire(import.meta.url);
 
-	const {Polly} = require('@pollyjs/core')
-	const NodeHttpAdapter = require('@pollyjs/adapter-node-http')
-	const FSPersister = require('@pollyjs/persister-fs')
-	const tap = require('tap')
+	const {Polly} = require('@pollyjs/core');
+	const NodeHttpAdapter = require('@pollyjs/adapter-node-http');
+	const FSPersister = require('@pollyjs/persister-fs');
 
 	// monkey-patch NodeHttpAdapter to handle gzipped responses properly
 	// todo: submit a PR
 	// related: https://github.com/Netflix/pollyjs/issues/256
 	// related: https://github.com/Netflix/pollyjs/issues/463
 	// related: https://github.com/Netflix/pollyjs/issues/207
-	const _getBodyFromChunks = NodeHttpAdapter.prototype.getBodyFromChunks
+	const _getBodyFromChunks = NodeHttpAdapter.prototype.getBodyFromChunks;
 	NodeHttpAdapter.prototype.getBodyFromChunks = function getBodyFromChunksWithGunzip (chunks, headers) {
 		if (headers['content-encoding'] === 'gzip') {
-			const concatenated = Buffer.concat(chunks)
-			chunks = [gunzipSync(concatenated)]
+			const concatenated = Buffer.concat(chunks);
+			chunks = [gunzipSync(concatenated)];
 			// todo: this is ugly, find a better way
-			delete headers['content-encoding']
-			headers['content-length'] = chunks[0].length
+			delete headers['content-encoding'];
+			headers['content-length'] = chunks[0].length;
 		}
-		return _getBodyFromChunks.call(this, chunks, headers)
+		return _getBodyFromChunks.call(this, chunks, headers);
+	};
+
+	Polly.register(NodeHttpAdapter);
+	Polly.register(FSPersister);
+
+	// https://github.com/Netflix/pollyjs/blob/9b6bede12b7ee998472b8883c9dd01e2159e00a8/packages/%40pollyjs/adapter/src/index.js#L184-L189
+	if ('navigator' in global && global.navigator && !('onLine' in global.navigator)) {
+		global.navigator.onLine = true;
 	}
 
-	Polly.register(NodeHttpAdapter)
-	Polly.register(FSPersister)
-
-	let mode
-	if (process.env.VCR_MODE === 'record') mode = 'record'
-	else if (process.env.VCR_MODE === 'playback') mode = 'replay'
-	else throw new Error('invalid $VCR_MODE, must be "record" or "replay"')
+	let mode;
+	if (process.env.VCR_MODE === 'record') {
+		mode = 'record';
+	} else if (process.env.VCR_MODE === 'playback') {
+		mode = 'replay';
+	} else {
+		throw new Error('invalid $VCR_MODE, must be "record" or "replay"');
+	}
 
 	const polly = new Polly('requests', {
 		logLevel: 'warn',
@@ -93,7 +112,7 @@ if (process.env.VCR_MODE && !process.env.VCR_OFF) {
 			keepUnusedRequests: true, // todo: change to false?
 		},
 		matchRequestsBy: {
-			order: false,
+			order: false, // todo: set to true for better Git diffs?
 			headers: {
 				// todo: use an allow-list here?
 				exclude: [
@@ -106,13 +125,13 @@ if (process.env.VCR_MODE && !process.env.VCR_OFF) {
 				],
 			},
 		},
-	})
+	});
 
 	tap.teardown(async () => {
-		await polly.stop()
-	})
+		await polly.stop();
+	});
 }
 
 export {
 	hour, createWhen, assertValidWhen,
-}
+};

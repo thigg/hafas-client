@@ -1,36 +1,37 @@
-import tap from 'tap'
-import isRoughlyEqual from 'is-roughly-equal'
-import maxBy from 'lodash/maxBy.js'
-import flatMap from 'lodash/flatMap.js'
-import last from 'lodash/last.js'
+import tap from 'tap';
+import isRoughlyEqual from 'is-roughly-equal';
+import maxBy from 'lodash/maxBy.js';
+import flatMap from 'lodash/flatMap.js';
+import last from 'lodash/last.js';
 
-import {createWhen} from './lib/util.js'
-import {createClient} from '../../index.js'
-import {profile as dbProfile} from '../../p/db/index.js'
+import {createWhen} from './lib/util.js';
+import {createClient} from '../../index.js';
+import {profile as dbProfile} from '../../p/db/index.js';
+import {routingModes} from '../../p/db/routing-modes.js';
 import {
-    createValidateStation,
-	createValidateTrip
-} from './lib/validators.js'
-import {createValidateFptfWith as createValidate} from './lib/validate-fptf-with.js'
-import {testJourneysStationToStation} from './lib/journeys-station-to-station.js'
-import {testJourneysStationToAddress} from './lib/journeys-station-to-address.js'
-import {testJourneysStationToPoi} from './lib/journeys-station-to-poi.js'
-import {testEarlierLaterJourneys} from './lib/earlier-later-journeys.js'
-import {testLegCycleAlternatives} from './lib/leg-cycle-alternatives.js'
-import {testRefreshJourney} from './lib/refresh-journey.js'
-import {journeysFailsWithNoProduct} from './lib/journeys-fails-with-no-product.js'
-import {testDepartures} from './lib/departures.js'
-import {testDeparturesInDirection} from './lib/departures-in-direction.js'
-import {testArrivals} from './lib/arrivals.js'
-import {testJourneysWithDetour} from './lib/journeys-with-detour.js'
-import {testReachableFrom} from './lib/reachable-from.js'
-import {testServerInfo} from './lib/server-info.js'
+	createValidateStation,
+	createValidateTrip,
+} from './lib/validators.js';
+import {createValidateFptfWith as createValidate} from './lib/validate-fptf-with.js';
+import {testJourneysStationToStation} from './lib/journeys-station-to-station.js';
+import {testJourneysStationToAddress} from './lib/journeys-station-to-address.js';
+import {testJourneysStationToPoi} from './lib/journeys-station-to-poi.js';
+import {testEarlierLaterJourneys} from './lib/earlier-later-journeys.js';
+import {testLegCycleAlternatives} from './lib/leg-cycle-alternatives.js';
+import {testRefreshJourney} from './lib/refresh-journey.js';
+import {journeysFailsWithNoProduct} from './lib/journeys-fails-with-no-product.js';
+import {testDepartures} from './lib/departures.js';
+import {testDeparturesInDirection} from './lib/departures-in-direction.js';
+import {testArrivals} from './lib/arrivals.js';
+import {testJourneysWithDetour} from './lib/journeys-with-detour.js';
+import {testReachableFrom} from './lib/reachable-from.js';
+import {testServerInfo} from './lib/server-info.js';
 
-const isObj = o => o !== null && 'object' === typeof o && !Array.isArray(o)
-const minute = 60 * 1000
+const isObj = o => o !== null && 'object' === typeof o && !Array.isArray(o);
+const minute = 60 * 1000;
 
-const T_MOCK = 1668495600 * 1000 // 2022-11-15T08:00:00+01:00
-const when = createWhen(dbProfile.timezone, dbProfile.locale, T_MOCK)
+const T_MOCK = 1696921200 * 1000; // 2023-10-10T08:00:00+01:00
+const when = createWhen(dbProfile.timezone, dbProfile.locale, T_MOCK);
 
 const cfg = {
 	when,
@@ -39,61 +40,121 @@ const cfg = {
 	minLatitude: 46.673100,
 	maxLatitude: 55.030671,
 	minLongitude: 6.896517,
-	maxLongitude: 16.180237
-}
+	maxLongitude: 16.180237,
+};
 
-const validate = createValidate(cfg)
+const validate = createValidate(cfg);
 
 const assertValidPrice = (t, p) => {
-	t.ok(p)
+	t.ok(p);
 	if (p.amount !== null) {
-		t.equal(typeof p.amount, 'number')
-		t.ok(p.amount > 0)
+		t.equal(typeof p.amount, 'number');
+		t.ok(p.amount > 0);
 	}
 	if (p.hint !== null) {
-		t.equal(typeof p.hint, 'string')
-		t.ok(p.hint)
+		t.equal(typeof p.hint, 'string');
+		t.ok(p.hint);
 	}
-}
+};
 
-const client = createClient(dbProfile, 'public-transport/hafas-client:test')
+const assertValidTickets = (test, tickets) => {
+	test.ok(Array.isArray(tickets));
+	for (let fare of tickets) {
+		test.equal(typeof fare.name, 'string', 'Mandatory field "name" is missing or not a string');
+		test.ok(fare.name);
 
-const berlinHbf = '8011160'
-const münchenHbf = '8000261'
-const jungfernheide = '8011167'
-const blnSchwedterStr = '732652'
-const westhafen = '8089116'
-const wedding = '8089131'
-const württembergallee = '731084'
-const regensburgHbf = '8000309'
-const blnOstbahnhof = '8010255'
-const blnTiergarten = '8089091'
-const blnJannowitzbrücke = '8089019'
-const potsdamHbf = '8012666'
-const berlinSüdkreuz = '8011113'
-const kölnHbf = '8000207'
+		test.ok(isObj(fare.priceObj), 'Mandatory field "priceObj" is missing or not an object');
+		test.equal(typeof fare.priceObj.amount, 'number', 'Mandatory field "amount" in "priceObj" is missing or not a number');
+		test.ok(fare.priceObj.amount > 0);
+		if ('currency' in fare.priceObj) {
+			test.equal(typeof fare.priceObj.currency, 'string');
+		}
+
+		// Check optional fields
+		if ('addData' in fare) {
+			test.equal(typeof fare.addData, 'string');
+		}
+		if ('addDataTicketInfo' in fare) {
+			test.equal(typeof fare.addDataTicketInfo, 'string');
+		}
+		if ('addDataTicketDetails' in fare) {
+			test.equal(typeof fare.addDataTicketDetails, 'string');
+		}
+		if ('addDataTravelInfo' in fare) {
+			test.equal(typeof fare.addDataTravelInfo, 'string');
+		}
+		if ('addDataTravelDetails' in fare) {
+			test.equal(typeof fare.firstClass, 'boolean');
+		}
+	}
+};
+
+const client = createClient(dbProfile, 'public-transport/hafas-client:test');
+
+const berlinHbf = '8011160';
+const münchenHbf = '8000261';
+const jungfernheide = '8011167';
+const blnSchwedterStr = '732652';
+const westhafen = '8089116';
+const wedding = '8089131';
+const württembergallee = '731084';
+const regensburgHbf = '8000309';
+const blnOstbahnhof = '8010255';
+const blnTiergarten = '8089091';
+const blnJannowitzbrücke = '8089019';
+const potsdamHbf = '8012666';
+const berlinSüdkreuz = '8011113';
+const kölnHbf = '8000207';
 
 tap.test('journeys – Berlin Schwedter Str. to München Hbf', async (t) => {
 	const res = await client.journeys(blnSchwedterStr, münchenHbf, {
 		results: 4,
 		departure: when,
-		stopovers: true
-	})
+		stopovers: true,
+	});
 
 	await testJourneysStationToStation({
 		test: t,
 		res,
 		validate,
 		fromId: blnSchwedterStr,
-		toId: münchenHbf
-	})
+		toId: münchenHbf,
+	});
 	// todo: find a journey where there pricing info is always available
 	for (let journey of res.journeys) {
-		if (journey.price) assertValidPrice(t, journey.price)
+		if (journey.price) {
+			assertValidPrice(t, journey.price);
+		}
+		if (journey.tickets) {
+			assertValidTickets(t, journey.tickets);
+		}
+	}
+	t.end();
+});
+
+tap.test('refreshJourney – valid tickets', async (t) => {
+	const T_MOCK = 1710831600 * 1000; // 2024-03-19T08:00:00+01:00
+	const when = createWhen(dbProfile.timezone, dbProfile.locale, T_MOCK);
+
+	const journeysRes = await client.journeys(berlinHbf, münchenHbf, {
+		results: 4,
+		departure: when,
+		stopovers: true,
+	});
+	const refreshWithoutTicketsRes = await client.refreshJourney(journeysRes.journeys[0].refreshToken, {
+		tickets: false,
+	});
+	const refreshWithTicketsRes = await client.refreshJourney(journeysRes.journeys[0].refreshToken, {
+		tickets: true,
+	});
+	for (let res of [refreshWithoutTicketsRes, refreshWithTicketsRes]) {
+		if (res.journey.tickets !== undefined) {
+			assertValidTickets(t, res.journey.tickets);
+		}
 	}
 
-	t.end()
-})
+	t.end();
+});
 
 // todo: journeys, only one product
 
@@ -105,31 +166,31 @@ tap.test('journeys – fails with no product', async (t) => {
 		toId: münchenHbf,
 		when,
 		products: dbProfile.products,
-	})
-	t.end()
-})
+	});
+	t.end();
+});
 
 tap.test('Berlin Schwedter Str. to Torfstraße 17', async (t) => {
 	const torfstr = {
 		type: 'location',
 		address: 'Torfstraße 17',
 		latitude: 52.5416823,
-		longitude: 13.3491223
-	}
+		longitude: 13.3491223,
+	};
 	const res = await client.journeys(blnSchwedterStr, torfstr, {
 		results: 3,
-		departure: when
-	})
+		departure: when,
+	});
 
 	await testJourneysStationToAddress({
 		test: t,
 		res,
 		validate,
 		fromId: blnSchwedterStr,
-		to: torfstr
-	})
-	t.end()
-})
+		to: torfstr,
+	});
+	t.end();
+});
 
 tap.test('Berlin Schwedter Str. to ATZE Musiktheater', async (t) => {
 	const atze = {
@@ -138,22 +199,22 @@ tap.test('Berlin Schwedter Str. to ATZE Musiktheater', async (t) => {
 		poi: true,
 		name: 'Berlin, Atze Musiktheater für Kinder (Kultur und U',
 		latitude: 52.542417,
-		longitude: 13.350437
-	}
+		longitude: 13.350437,
+	};
 	const res = await client.journeys(blnSchwedterStr, atze, {
 		results: 3,
-		departure: when
-	})
+		departure: when,
+	});
 
 	await testJourneysStationToPoi({
 		test: t,
 		res,
 		validate,
 		fromId: blnSchwedterStr,
-		to: atze
-	})
-	t.end()
-})
+		to: atze,
+	});
+	t.end();
+});
 
 tap.test('journeys: via works – with detour', async (t) => {
 	// Going from Westhafen to Wedding via Württembergalle without detour
@@ -162,20 +223,32 @@ tap.test('journeys: via works – with detour', async (t) => {
 		via: württembergallee,
 		results: 1,
 		departure: when,
-		stopovers: true
-	})
+		stopovers: true,
+	});
 
 	await testJourneysWithDetour({
 		test: t,
 		res,
 		validate,
-		detourIds: [württembergallee]
-	})
-	t.end()
-})
+		detourIds: [württembergallee],
+	});
+	t.end();
+});
 
 // todo: walkingSpeed "Berlin - Charlottenburg, Hallerstraße" -> jungfernheide
 // todo: without detour
+
+tap.test('journeys – all routing modes work', async (t) => {
+	for (const mode in routingModes) {
+		await client.journeys(berlinHbf, münchenHbf, {
+			results: 1,
+			departure: when,
+			routingMode: mode,
+		});
+	}
+
+	t.end();
+});
 
 // todo: with the DB endpoint, earlierRef/laterRef is missing queries many days in the future
 tap.skip('earlier/later journeys, Jungfernheide -> München Hbf', async (t) => {
@@ -186,10 +259,10 @@ tap.skip('earlier/later journeys, Jungfernheide -> München Hbf', async (t) => {
 		fromId: jungfernheide,
 		toId: münchenHbf,
 		when,
-	})
+	});
 
-	t.end()
-})
+	t.end();
+});
 
 if (!process.env.VCR_MODE) {
 	tap.test('journeys – leg cycle & alternatives', async (t) => {
@@ -199,12 +272,16 @@ if (!process.env.VCR_MODE) {
 			fromId: blnTiergarten,
 			toId: blnJannowitzbrücke,
 			when,
-		})
-		t.end()
-	})
+		});
+		t.end();
+	});
 }
 
 tap.test('refreshJourney', async (t) => {
+	const T_MOCK = 1710831600 * 1000; // 2024-03-19T08:00:00+01:00
+	const when = createWhen(dbProfile.timezone, dbProfile.locale, T_MOCK);
+	const validate = createValidate({...cfg, when});
+
 	await testRefreshJourney({
 		test: t,
 		fetchJourneys: client.journeys,
@@ -212,137 +289,141 @@ tap.test('refreshJourney', async (t) => {
 		validate,
 		fromId: jungfernheide,
 		toId: münchenHbf,
-		when
-	})
-	t.end()
-})
+		when,
+	});
+	t.end();
+});
 
 tap.skip('journeysFromTrip – U Mehringdamm to U Naturkundemuseum, reroute to Spittelmarkt.', async (t) => {
-	const blnMehringdamm = '730939'
-	const blnStadtmitte = '732541'
-	const blnNaturkundemuseum = '732539'
-	const blnSpittelmarkt = '732543'
+	const blnMehringdamm = '730939';
+	const blnStadtmitte = '732541';
+	const blnNaturkundemuseum = '732539';
+	const blnSpittelmarkt = '732543';
 
-	const isU6Leg = leg => (
-		leg.line && leg.line.name
-		&& leg.line.name.toUpperCase().replace(/\s+/g, '') === 'U6'
-	)
+	const isU6Leg = leg => leg.line && leg.line.name
+		&& leg.line.name.toUpperCase()
+			.replace(/\s+/g, '') === 'U6';
+
 	const sameStopOrStation = (stopA) => (stopB) => {
-		if (stopA.id && stopB.id && stopA.id === stopB.id) return true
-		const statA = stopA.stat && stopA.stat.id || NaN
-		const statB = stopB.stat && stopB.stat.id || NaN
-		return (statA === statB || stopA.id === statB || stopB.id === statA)
-	}
-	const departureOf = st => +new Date(st.departure || st.scheduledDeparture)
-	const arrivalOf = st => +new Date(st.arrival || st.scheduledArrival)
+		if (stopA.id && stopB.id && stopA.id === stopB.id) {
+			return true;
+		}
+		const statA = stopA.stat && stopA.stat.id || NaN;
+		const statB = stopB.stat && stopB.stat.id || NaN;
+		return statA === statB || stopA.id === statB || stopB.id === statA;
+	};
+	const departureOf = st => Number(new Date(st.departure || st.scheduledDeparture));
+	const arrivalOf = st => Number(new Date(st.arrival || st.scheduledArrival));
 
 	// `journeysFromTrip` only supports queries *right now*, so we can't use `when` as in all
 	// other tests. To make the test less brittle, we pick a connection that is served all night. 🙄
-	const when = new Date()
-	const validate = createValidate({...cfg, when})
+	const when = new Date();
+	const validate = createValidate({...cfg, when});
 
 	const findTripBetween = async (stopAId, stopBId, products = {}) => {
 		const {journeys} = await client.journeys(stopAId, stopBId, {
 			departure: new Date(when - 10 * minute),
 			transfers: 0, products,
 			results: 8, stopovers: false, remarks: false,
-		})
+		});
 		for (const j of journeys) {
-			const l = j.legs.find(isU6Leg)
-			if (!l) continue
+			const l = j.legs.find(isU6Leg);
+			if (!l) {
+				continue;
+			}
 			const t = await client.trip(l.tripId, {
-				stopovers: true, remarks: false
-			})
+				stopovers: true, remarks: false,
+			});
 
 			const pastStopovers = t.stopovers
-			.filter(st => departureOf(st) < Date.now()) // todo: <= ?
+				.filter(st => departureOf(st) < Date.now()); // todo: <= ?
 			const hasStoppedAtA = pastStopovers
-			.find(sameStopOrStation({id: stopAId}))
+				.find(sameStopOrStation({id: stopAId}));
 			const willStopAtB = t.stopovers
-			.filter(st => arrivalOf(st) > Date.now()) // todo: >= ?
-			.find(sameStopOrStation({id: stopBId}))
+				.filter(st => arrivalOf(st) > Date.now()) // todo: >= ?
+				.find(sameStopOrStation({id: stopBId}));
 
 			if (hasStoppedAtA && willStopAtB) {
-				const prevStopover = maxBy(pastStopovers, departureOf)
-				return {trip: t, prevStopover}
+				const prevStopover = maxBy(pastStopovers, departureOf);
+				return {trip: t, prevStopover};
 			}
 		}
-		return {trip: null, prevStopover: null}
-	}
+		return {trip: null, prevStopover: null};
+	};
 
 	// Find a vehicle from U Mehringdamm to U Stadtmitte (to the north) that is currently
 	// between these two stations.
 	const {trip, prevStopover} = await findTripBetween(blnMehringdamm, blnStadtmitte, {
-		regionalExpress: false, regional: false, suburban: false
-	})
-	t.ok(trip, 'precondition failed: trip not found')
-	t.ok(prevStopover, 'precondition failed: previous stopover missing')
+		regionalExpress: false, regional: false, suburban: false,
+	});
+	t.ok(trip, 'precondition failed: trip not found');
+	t.ok(prevStopover, 'precondition failed: previous stopover missing');
 
 	// todo: "Error: Suche aus dem Zug: Vor Abfahrt des Zuges"
 	const newJourneys = await client.journeysFromTrip(trip.id, prevStopover, blnSpittelmarkt, {
-		results: 3, stopovers: true, remarks: false
-	})
+		results: 3, stopovers: true, remarks: false,
+	});
 
 	// Validate with fake prices.
 	const withFakePrice = (j) => {
-		const clone = Object.assign({}, j)
-		clone.price = {amount: 123, currency: 'EUR'}
-		return clone
-	}
+		const clone = Object.assign({}, j);
+		clone.price = {amount: 123, currency: 'EUR'};
+		return clone;
+	};
 	// todo: there is no such validator!
-	validate(t, newJourneys.map(withFakePrice), 'journeysFromTrip', 'newJourneys')
+	validate(t, newJourneys.map(withFakePrice), 'journeysFromTrip', 'newJourneys');
 
 	for (let i = 0; i < newJourneys.length; i++) {
-		const j = newJourneys[i]
-		const n = `newJourneys[${i}]`
+		const j = newJourneys[i];
+		const n = `newJourneys[${i}]`;
 
-		const legOnTrip = j.legs.find(l => l.tripId === trip.id)
-		t.ok(legOnTrip, n + ': leg with trip ID not found')
-		t.equal(last(legOnTrip.stopovers).stop.id, blnStadtmitte)
+		const legOnTrip = j.legs.find(l => l.tripId === trip.id);
+		t.ok(legOnTrip, n + ': leg with trip ID not found');
+		t.equal(last(legOnTrip.stopovers).stop.id, blnStadtmitte);
 	}
-})
+});
 
 tap.test('trip details', async (t) => {
 	const res = await client.journeys(berlinHbf, münchenHbf, {
-		results: 1, departure: when
-	})
+		results: 1, departure: when,
+	});
 
-	const p = res.journeys[0].legs.find(l => !l.walking)
-	t.ok(p.tripId, 'precondition failed')
-	t.ok(p.line.name, 'precondition failed')
+	const p = res.journeys[0].legs.find(l => !l.walking);
+	t.ok(p.tripId, 'precondition failed');
+	t.ok(p.line.name, 'precondition failed');
 
-	const tripRes = await client.trip(p.tripId, {when})
+	const tripRes = await client.trip(p.tripId, {when});
 
 	const validate = createValidate(cfg, {
 		trip: (cfg) => {
-			const validateTrip = createValidateTrip(cfg)
+			const validateTrip = createValidateTrip(cfg);
 			const validateTripWithFakeDirection = (val, trip, name) => {
 				validateTrip(val, {
 					...trip,
 					direction: trip.direction || 'foo', // todo, see #49
-				}, name)
-			}
-			return validateTripWithFakeDirection
-		}
-	})
-	validate(t, tripRes, 'tripResult', 'tripRes')
+				}, name);
+			};
+			return validateTripWithFakeDirection;
+		},
+	});
+	validate(t, tripRes, 'tripResult', 'tripRes');
 
-	t.end()
-})
+	t.end();
+});
 
 tap.test('departures at Berlin Schwedter Str.', async (t) => {
 	const res = await client.departures(blnSchwedterStr, {
 		duration: 5, when,
-	})
+	});
 
 	await testDepartures({
 		test: t,
 		res,
 		validate,
-		id: blnSchwedterStr
-	})
-	t.end()
-})
+		id: blnSchwedterStr,
+	});
+	t.end();
+});
 
 tap.test('departures with station object', async (t) => {
 	const res = await client.departures({
@@ -352,13 +433,13 @@ tap.test('departures with station object', async (t) => {
 		location: {
 			type: 'location',
 			latitude: 1.23,
-			longitude: 2.34
-		}
-	}, {when})
+			longitude: 2.34,
+		},
+	}, {when});
 
-	validate(t, res, 'departuresResponse', 'res')
-	t.end()
-})
+	validate(t, res, 'departuresResponse', 'res');
+	t.end();
+});
 
 tap.test('departures at Berlin Hbf in direction of Berlin Ostbahnhof', async (t) => {
 	await testDeparturesInDirection({
@@ -368,103 +449,116 @@ tap.test('departures at Berlin Hbf in direction of Berlin Ostbahnhof', async (t)
 		id: berlinHbf,
 		directionIds: [blnOstbahnhof, '8089185', '732676'],
 		when,
-		validate
-	})
-	t.end()
-})
+		validate,
+	});
+	t.end();
+});
 
 tap.test('arrivals at Berlin Schwedter Str.', async (t) => {
 	const res = await client.arrivals(blnSchwedterStr, {
 		duration: 5, when,
-	})
+	});
 
 	await testArrivals({
 		test: t,
 		res,
 		validate,
-		id: blnSchwedterStr
-	})
-	t.end()
-})
+		id: blnSchwedterStr,
+	});
+	t.end();
+});
 
 tap.test('nearby Berlin Jungfernheide', async (t) => {
 	const nearby = await client.nearby({
 		type: 'location',
 		latitude: 52.530273,
-		longitude: 13.299433
+		longitude: 13.299433,
 	}, {
-		results: 2, distance: 400
-	})
+		results: 2, distance: 400,
+	});
 
-	validate(t, nearby, 'locations', 'nearby')
+	validate(t, nearby, 'locations', 'nearby');
 
-	t.equal(nearby.length, 2)
+	t.equal(nearby.length, 2);
 
-	const s0 = nearby[0]
-	t.equal(s0.id, jungfernheide)
-	t.equal(s0.name, 'Berlin Jungfernheide')
-	t.ok(isRoughlyEqual(.0005, s0.location.latitude, 52.530408))
-	t.ok(isRoughlyEqual(.0005, s0.location.longitude, 13.299424))
-	t.ok(s0.distance >= 0)
-	t.ok(s0.distance <= 100)
+	const s0 = nearby[0];
+	t.equal(s0.id, jungfernheide);
+	t.equal(s0.name, 'Berlin Jungfernheide');
+	t.ok(isRoughlyEqual(0.0005, s0.location.latitude, 52.530408));
+	t.ok(isRoughlyEqual(0.0005, s0.location.longitude, 13.299424));
+	t.ok(s0.distance >= 0);
+	t.ok(s0.distance <= 100);
 
-	t.end()
-})
+	t.end();
+});
 
 tap.test('locations named Jungfernheide', async (t) => {
 	const locations = await client.locations('Jungfernheide', {
-		results: 10
-	})
+		results: 10,
+	});
 
-	validate(t, locations, 'locations', 'locations')
-	t.ok(locations.length <= 10)
+	validate(t, locations, 'locations', 'locations');
+	t.ok(locations.length <= 10);
 	t.ok(locations.some((l) => {
-		return l.station && l.station.id === jungfernheide || l.id === jungfernheide
-	}), 'Jungfernheide not found')
+		return l.station && l.station.id === jungfernheide || l.id === jungfernheide;
+	}), 'Jungfernheide not found');
 
-	t.end()
-})
+	t.end();
+});
 
 tap.test('stop', async (t) => {
-	const s = await client.stop(regensburgHbf)
+	const s = await client.stop(regensburgHbf);
 
-	validate(t, s, ['stop', 'station'], 'stop')
-	t.equal(s.id, regensburgHbf)
+	validate(t, s, ['stop', 'station'], 'stop');
+	t.equal(s.id, regensburgHbf);
 
-	t.end()
-})
+	t.end();
+});
 
 tap.test('line with additionalName', async (t) => {
 	const {departures} = await client.departures(potsdamHbf, {
 		when,
 		duration: 12 * 60, // 12 minutes
-		products: {bus: false, suburban: false, tram: false}
-	})
-	t.ok(departures.some(d => d.line && d.line.additionalName))
-	t.end()
-})
+		products: {bus: false, suburban: false, tram: false},
+	});
+	t.ok(departures.some(d => d.line && d.line.additionalName));
+	t.end();
+});
 
 tap.test('radar', async (t) => {
 	const res = await client.radar({
 		north: 52.52411,
 		west: 13.41002,
 		south: 52.51942,
-		east: 13.41709
+		east: 13.41709,
 	}, {
-		duration: 5 * 60, when
-	})
+		duration: 5 * 60, when,
+	});
 
-	validate(t, res, 'radarResult', 'res')
-	t.end()
-})
+	validate(t, res, 'radarResult', 'res');
+	t.end();
+});
+
+tap.test('radar works across the antimeridian', async (t) => {
+	await client.radar({
+		north: -8,
+		west: 179,
+		south: -10,
+		east: -179,
+	}, {
+		// todo: update `when`, re-record all fixtures, remove this special handling
+		when: process.env.VCR_MODE ? '2024-02-22T16:00+01:00' : when,
+	});
+	t.end();
+});
 
 tap.test('reachableFrom', {timeout: 20 * 1000}, async (t) => {
 	const torfstr17 = {
 		type: 'location',
 		address: 'Torfstraße 17',
 		latitude: 52.5416823,
-		longitude: 13.3491223
-	}
+		longitude: 13.3491223,
+	};
 
 	await testReachableFrom({
 		test: t,
@@ -472,14 +566,14 @@ tap.test('reachableFrom', {timeout: 20 * 1000}, async (t) => {
 		address: torfstr17,
 		when,
 		maxDuration: 15,
-		validate
-	})
-	t.end()
-})
+		validate,
+	});
+	t.end();
+});
 
 tap.test('serverInfo works', async (t) => {
 	await testServerInfo({
 		test: t,
 		fetchServerInfo: client.serverInfo,
-	})
-})
+	});
+});

@@ -1,5 +1,44 @@
 # Changelog
 
+## `6.2.2`
+
+- 26c56f8d/c85f083d/8a174016 fix date of next-day DEVI leg in an overnight journey 🐛 – Thanks @soerface!
+- 1ee316fa `radar()`: relax bounding box checks 🐛 – Thanks @dancesWithCycles!
+- 228c7253/66d9fb51 add linting rules enforcing code style – Thanks @KristjanESPERANTO!
+
+[🏷 `6.2.2`](https://github.com/public-transport/hafas-client/releases/tag/6.2.2), 2024-02-22
+
+## `6.2.1`
+
+- 8520eb3d [*mobil.nrw* profile](../p/mobil-nrw): fix `mode` for `ec-ic` product 🐛
+- f29ced5b handle `PROBLEMS` HAFAS error code
+
+[🏷 `6.2.1`](https://github.com/public-transport/hafas-client/releases/tag/6.2.1), 2024-01-18
+
+## `6.2.0`
+
+- 244e88de add attribute `additional` to additional stopovers ✅
+- 02c781b1 `cross-fetch@4`, `p-retry@6`
+- ecc8fccc `tap@18`
+
+[🏷 `6.2.0`](https://github.com/public-transport/hafas-client/releases/tag/6.2.0), 2023-11-27
+
+## `6.1.1`
+
+- 45610fc9 [*IVB* profile](../p/ivb): update SSL CA certificate chain 🐛
+- 581a4751 profiles' examples: fixes, minor tweaks 📝
+- 19cdde06 document testing setup 📝
+- 0bc6ba36 [*DB* profile](../p/db): pass along `opt.age` if defined ✅
+
+[🏷 `6.1.1`](https://github.com/public-transport/hafas-client/releases/tag/6.1.1), 2023-09-03
+
+## `6.1.0`
+
+- 793cc9ee with `$HTTP(S)_PROXY`, keep connections alive for 10s
+- 5ce0129c [*DB* profile](../p/db): add `routingMode` option 📝✅
+
+[🏷 `6.1.0`](https://github.com/public-transport/hafas-client/releases/tag/6.1.0), 2023-07-25
+
 ## `6.0.5`
 
 - 9a1ef7c5 `journeys()`/`journeysFromTrip()`/`refreshJourney()`/`trip()`/`tripsByName()`: apply leg-wide remarks even if `opt.stopovers` is `false` 🐛 – Thanks @traines-source!
